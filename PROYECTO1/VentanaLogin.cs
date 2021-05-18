@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace PROYECTO1
 {
-    public partial class VentanaRoles : Form
+    public partial class VentanaLogin : Form
     {
-        public VentanaRoles()
+        public VentanaLogin()
         {
             InitializeComponent();
-        }
-
-        private void iniciar_entrenador_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            VentanaLogin v1 = new VentanaLogin();
-
-            v1.Show();
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Datos
 {
-    class ConexionSQL
+    class conectar_esta_porqueria
     {
         static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true";
 

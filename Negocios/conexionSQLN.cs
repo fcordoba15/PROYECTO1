@@ -9,7 +9,9 @@ namespace Negocios
 {
     public class conexionSQLN
     {
-       
+
+        conectar_esta_porqueria v = new conectar_esta_porqueria;
+
 
     }
 }

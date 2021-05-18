@@ -29,65 +29,75 @@ namespace PROYECTO1
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.texto_usuario = new System.Windows.Forms.Label();
+            this.texto_contraseña = new System.Windows.Forms.Label();
+            this.usuario = new System.Windows.Forms.TextBox();
+            this.texto_contrasena = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // texto_usuario
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario";
+            this.texto_usuario.AutoSize = true;
+            this.texto_usuario.BackColor = System.Drawing.Color.Transparent;
+            this.texto_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.texto_usuario.ForeColor = System.Drawing.Color.Red;
+            this.texto_usuario.Location = new System.Drawing.Point(43, 19);
+            this.texto_usuario.Name = "texto_usuario";
+            this.texto_usuario.Size = new System.Drawing.Size(79, 25);
+            this.texto_usuario.TabIndex = 0;
+            this.texto_usuario.Text = "Usuario";
             // 
-            // label2
+            // texto_contraseña
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 152);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Contraseña";
+            this.texto_contraseña.AutoSize = true;
+            this.texto_contraseña.BackColor = System.Drawing.Color.Transparent;
+            this.texto_contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.texto_contraseña.ForeColor = System.Drawing.Color.Red;
+            this.texto_contraseña.Location = new System.Drawing.Point(43, 98);
+            this.texto_contraseña.Name = "texto_contraseña";
+            this.texto_contraseña.Size = new System.Drawing.Size(114, 25);
+            this.texto_contraseña.TabIndex = 1;
+            this.texto_contraseña.Text = "Contraseña";
             // 
-            // textBox1
+            // usuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(46, 95);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(286, 22);
-            this.textBox1.TabIndex = 2;
+            this.usuario.Location = new System.Drawing.Point(46, 55);
+            this.usuario.Name = "usuario";
+            this.usuario.Size = new System.Drawing.Size(286, 22);
+            this.usuario.TabIndex = 2;
             // 
-            // textBox2
+            // texto_contrasena
             // 
-            this.textBox2.Location = new System.Drawing.Point(46, 182);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(286, 22);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.texto_contrasena.Location = new System.Drawing.Point(46, 130);
+            this.texto_contrasena.Name = "texto_contrasena";
+            this.texto_contrasena.Size = new System.Drawing.Size(286, 22);
+            this.texto_contrasena.TabIndex = 3;
+            this.texto_contrasena.UseSystemPasswordChar = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(46, 280);
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.button1.Location = new System.Drawing.Point(48, 185);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 42);
             this.button1.TabIndex = 4;
             this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // VentanaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 379);
+            this.BackgroundImage = global::PROYECTO1.Properties.Resources.Fondo_Login;
+            this.ClientSize = new System.Drawing.Size(582, 281);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.texto_contrasena);
+            this.Controls.Add(this.usuario);
+            this.Controls.Add(this.texto_contraseña);
+            this.Controls.Add(this.texto_usuario);
             this.Name = "VentanaLogin";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -97,10 +107,10 @@ namespace PROYECTO1
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label texto_usuario;
+        private System.Windows.Forms.Label texto_contraseña;
+        private System.Windows.Forms.TextBox usuario;
+        private System.Windows.Forms.TextBox texto_contrasena;
         private System.Windows.Forms.Button button1;
     }
 }

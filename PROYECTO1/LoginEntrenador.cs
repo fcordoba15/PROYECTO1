@@ -5,21 +5,26 @@ using System.Windows.Forms;
 
 namespace PROYECTO1
 {
-    public partial class VentanaLogin : Form
+    public partial class LoginEntrenador : Form
     {
 
 
         conexionSQLN cn = new conexionSQLN();
-        public VentanaLogin()
+        public LoginEntrenador()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Ingresar_Click(object sender, EventArgs e)
         {
             if (cn.conSQL(usuario.Text, pass.Text) == 1)
             {
                 MessageBox.Show("Se inició sesión");
+
+                this.Hide();
+
+                ModuloEntrenador m1 = new ModuloEntrenador();
+                m1.Show();
             }
             else
             {
@@ -28,5 +33,7 @@ namespace PROYECTO1
 
 
         }
+
+
     }
 }

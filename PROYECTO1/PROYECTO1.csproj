@@ -49,11 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="VentanaLogin.cs">
+    <Compile Include="G_Mov_Ent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaLogin.Designer.cs">
-      <DependentUpon>VentanaLogin.cs</DependentUpon>
+    <Compile Include="G_Mov_Ent.Designer.cs">
+      <DependentUpon>G_Mov_Ent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloEntrenador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloEntrenador.Designer.cs">
+      <DependentUpon>ModuloEntrenador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginEntrenador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginEntrenador.Designer.cs">
+      <DependentUpon>LoginEntrenador.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanaRoles.cs">
       <SubType>Form</SubType>
@@ -69,6 +81,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="G_Mov_Ent.resx">
+      <DependentUpon>G_Mov_Ent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloEntrenador.resx">
+      <DependentUpon>ModuloEntrenador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaInicio.resx">
       <DependentUpon>VentanaInicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,8 +100,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="VentanaLogin.resx">
-      <DependentUpon>VentanaLogin.cs</DependentUpon>
+    <EmbeddedResource Include="LoginEntrenador.resx">
+      <DependentUpon>LoginEntrenador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaRoles.resx">
       <DependentUpon>VentanaRoles.cs</DependentUpon>

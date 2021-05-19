@@ -10,7 +10,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true";
+        static string conexionstring = "server= SURFACEPROPEDRO\\SQLEXPRESS; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
 
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -21,13 +21,28 @@ namespace Datos
             int count;
             con.Open();
             string query = "Select Count(*) from usuario where nombre_usuario= '"+usuario+"'" +
-                "and contrasena = '"+contrasena+"'";
+                "and contraseña = '"+contrasena+"'";
 
             SqlCommand cmd = new SqlCommand(query, con);
             count = Convert.ToInt32(cmd.ExecuteScalar());
 
             con.Close();
             return count;
+        }
+
+       /* public int AgregarMovimiento(string cod_movimiento, string descripcion, string nombre, string tipo)
+        {
+
+        } */
+        public DataTable ConsultarMov()
+        {
+            string query = "SELECT * FROM intermedia_PokemonMovimientoEntrenador";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace PROYECTO1
         {
             this.Hide();
 
-            VentanaLogin v1 = new VentanaLogin();
+            LoginEntrenador v1 = new LoginEntrenador();
 
             v1.Show();
         }

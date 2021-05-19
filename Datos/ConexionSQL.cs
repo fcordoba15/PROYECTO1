@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Datos
 {
-    class conectar_esta_porqueria
+    public class ConexionSQL
     {
         static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true";
 
@@ -20,8 +20,8 @@ namespace Datos
 
             int count;
             con.Open();
-            string query = "Select Count(*) from usuario where nombre_usuario= '" + usuario + "'" +
-                "and contrasena = '" + contrasena + "'";
+            string query = "Select Count(*) from usuario where nombre_usuario= '"+usuario+"'" +
+                "and contrasena = '"+contrasena+"'";
 
             SqlCommand cmd = new SqlCommand(query, con);
             count = Convert.ToInt32(cmd.ExecuteScalar());

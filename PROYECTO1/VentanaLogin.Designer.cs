@@ -32,7 +32,7 @@ namespace PROYECTO1
             this.texto_usuario = new System.Windows.Forms.Label();
             this.texto_contraseña = new System.Windows.Forms.Label();
             this.usuario = new System.Windows.Forms.TextBox();
-            this.texto_contrasena = new System.Windows.Forms.TextBox();
+            this.pass = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -67,13 +67,12 @@ namespace PROYECTO1
             this.usuario.Size = new System.Drawing.Size(286, 22);
             this.usuario.TabIndex = 2;
             // 
-            // texto_contrasena
+            // pass
             // 
-            this.texto_contrasena.Location = new System.Drawing.Point(46, 130);
-            this.texto_contrasena.Name = "texto_contrasena";
-            this.texto_contrasena.Size = new System.Drawing.Size(286, 22);
-            this.texto_contrasena.TabIndex = 3;
-            this.texto_contrasena.UseSystemPasswordChar = true;
+            this.pass.Location = new System.Drawing.Point(46, 130);
+            this.pass.Name = "pass";
+            this.pass.Size = new System.Drawing.Size(286, 22);
+            this.pass.TabIndex = 3;
             // 
             // button1
             // 
@@ -94,7 +93,7 @@ namespace PROYECTO1
             this.BackgroundImage = global::PROYECTO1.Properties.Resources.Fondo_Login;
             this.ClientSize = new System.Drawing.Size(582, 281);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.texto_contrasena);
+            this.Controls.Add(this.pass);
             this.Controls.Add(this.usuario);
             this.Controls.Add(this.texto_contraseña);
             this.Controls.Add(this.texto_usuario);
@@ -110,7 +109,7 @@ namespace PROYECTO1
         private System.Windows.Forms.Label texto_usuario;
         private System.Windows.Forms.Label texto_contraseña;
         private System.Windows.Forms.TextBox usuario;
-        private System.Windows.Forms.TextBox texto_contrasena;
+        private System.Windows.Forms.TextBox pass;
         private System.Windows.Forms.Button button1;
     }
 }

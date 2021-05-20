@@ -10,7 +10,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= localhost\\SQLEXPRESS02; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
 
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -40,6 +40,7 @@ namespace Datos
             SqlCommand comando = new SqlCommand(cadena, con);
 
             comando.ExecuteNonQuery();
+            con.Close();
         }
 
         public void Resgistar_Cliente(string cedula, string nombre, string telefono, string correo, string sitio_web,
@@ -53,12 +54,26 @@ namespace Datos
             SqlCommand comando = new SqlCommand(cadena, con);
 
             comando.ExecuteNonQuery();
+            con.Close();
         }
 
         /* public int AgregarMovimiento(string cod_movimiento, string descripcion, string nombre, string tipo)
          {
 
          } */
+
+        public void Resgistar_GMaps(string id_client, string Ubicacion, string Latitud, string Longitud )
+        {
+            string cadena = "INSERT INTO Resgistar_GMaps values( '"+ id_client + "', '" + Ubicacion + "','" + Latitud + "',  '"+ Longitud +"')";
+
+            con.Open();
+
+            SqlCommand comando = new SqlCommand(cadena, con);
+
+            comando.ExecuteNonQuery();
+            con.Close();
+        }
+
         public DataTable ConsultarMov()
         {
             string query = "SELECT * FROM intermedia_PokemonMovimientoEntrenador";
@@ -67,7 +82,10 @@ namespace Datos
             DataTable tabla = new DataTable();
             data.Fill(tabla);
 
+            con.Close();
             return tabla;
+
+
         }
     }
 }

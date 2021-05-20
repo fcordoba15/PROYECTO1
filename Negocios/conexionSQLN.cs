@@ -32,7 +32,9 @@ namespace Negocios
         {
             return cn.ConsultarMov();
         }
-        
+
+        public void Registrar_GMap(string id, string Ubicacion, string Latitud, string Longitud)
+        { cn.Resgistar_GMaps(id, Ubicacion, Latitud, Longitud); }
 
     }
 

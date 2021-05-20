@@ -32,10 +32,10 @@ namespace PROYECTO1
             this.Registrar_cliente = new System.Windows.Forms.Button();
             this.Registrar_administrador = new System.Windows.Forms.Button();
             this.Mensaje2 = new System.Windows.Forms.Label();
+            this.Registrar_entrenador = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.Registrar_entrenador = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -52,6 +52,7 @@ namespace PROYECTO1
             this.Registrar_cliente.TabIndex = 11;
             this.Registrar_cliente.Text = "Registrar Cliente";
             this.Registrar_cliente.UseVisualStyleBackColor = false;
+            this.Registrar_cliente.Click += new System.EventHandler(this.Registrar_cliente_Click);
             // 
             // Registrar_administrador
             // 
@@ -75,6 +76,18 @@ namespace PROYECTO1
             this.Mensaje2.Size = new System.Drawing.Size(258, 50);
             this.Mensaje2.TabIndex = 9;
             this.Mensaje2.Text = "Registrar Rol";
+            // 
+            // Registrar_entrenador
+            // 
+            this.Registrar_entrenador.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Registrar_entrenador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Registrar_entrenador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.Registrar_entrenador.Location = new System.Drawing.Point(414, 529);
+            this.Registrar_entrenador.Name = "Registrar_entrenador";
+            this.Registrar_entrenador.Size = new System.Drawing.Size(247, 55);
+            this.Registrar_entrenador.TabIndex = 12;
+            this.Registrar_entrenador.Text = "Registrar Entrenador";
+            this.Registrar_entrenador.UseVisualStyleBackColor = false;
             // 
             // pictureBox6
             // 
@@ -106,18 +119,6 @@ namespace PROYECTO1
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
-            // 
-            // Registrar_entrenador
-            // 
-            this.Registrar_entrenador.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.Registrar_entrenador.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Registrar_entrenador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.Registrar_entrenador.Location = new System.Drawing.Point(414, 529);
-            this.Registrar_entrenador.Name = "Registrar_entrenador";
-            this.Registrar_entrenador.Size = new System.Drawing.Size(247, 55);
-            this.Registrar_entrenador.TabIndex = 12;
-            this.Registrar_entrenador.Text = "Registrar Entrenador";
-            this.Registrar_entrenador.UseVisualStyleBackColor = false;
             // 
             // VentanaRegistro
             // 

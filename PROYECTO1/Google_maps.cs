@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace PROYECTO1
 {
-    public partial class VentanaRegistro : Form
+    public partial class Google_maps : Form
     {
-        public VentanaRegistro()
+        public Google_maps()
         {
             InitializeComponent();
-        }
-
-        private void Registrar_cliente_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            RegistroCliente v1 = new RegistroCliente();
-
-            v1.Show();
         }
     }
 }

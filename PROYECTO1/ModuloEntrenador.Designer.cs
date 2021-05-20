@@ -36,6 +36,7 @@ namespace PROYECTO1
             this.GestionEntrenador = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pokemonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bitacora = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,7 +58,7 @@ namespace PROYECTO1
             // 
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 40);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 42);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(746, 24);
             this.menuStrip1.TabIndex = 1;
@@ -71,7 +72,7 @@ namespace PROYECTO1
             this.GestionEntrenador});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(746, 40);
+            this.menuStrip2.Size = new System.Drawing.Size(746, 42);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -79,9 +80,10 @@ namespace PROYECTO1
             // 
             this.GestionEntrenador.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.movimientosToolStripMenuItem,
-            this.pokemonToolStripMenuItem});
+            this.pokemonToolStripMenuItem,
+            this.bitacora});
             this.GestionEntrenador.Name = "GestionEntrenador";
-            this.GestionEntrenador.Size = new System.Drawing.Size(139, 36);
+            this.GestionEntrenador.Size = new System.Drawing.Size(139, 38);
             this.GestionEntrenador.Text = "Gestiones";
             // 
             // movimientosToolStripMenuItem
@@ -96,6 +98,13 @@ namespace PROYECTO1
             this.pokemonToolStripMenuItem.Name = "pokemonToolStripMenuItem";
             this.pokemonToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.pokemonToolStripMenuItem.Text = "Pokemon";
+            this.pokemonToolStripMenuItem.Click += new System.EventHandler(this.pokemonToolStripMenuItem_Click);
+            // 
+            // bitacora
+            // 
+            this.bitacora.Name = "bitacora";
+            this.bitacora.Size = new System.Drawing.Size(359, 44);
+            this.bitacora.Text = "Bitacora";
             // 
             // pictureBox1
             // 
@@ -135,5 +144,6 @@ namespace PROYECTO1
         private System.Windows.Forms.ToolStripMenuItem movimientosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pokemonToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem bitacora;
     }
 }

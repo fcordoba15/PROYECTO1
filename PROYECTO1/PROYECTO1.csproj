@@ -49,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Google_maps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Google_maps.Designer.cs">
+      <DependentUpon>Google_maps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroCliente.Designer.cs">
+      <DependentUpon>RegistroCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,11 +99,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Google_maps.resx">
+      <DependentUpon>Google_maps.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="G_Mov_Ent.resx">
       <DependentUpon>G_Mov_Ent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModuloEntrenador.resx">
       <DependentUpon>ModuloEntrenador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroCliente.resx">
+      <DependentUpon>RegistroCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaInicio.resx">
       <DependentUpon>VentanaInicio.cs</DependentUpon>
@@ -160,6 +178,9 @@
       <Project>{7fc32f60-2d8a-4cbf-a0da-489d2c93e66f}</Project>
       <Name>Negocios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_RegistroClientes.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

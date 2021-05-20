@@ -30,10 +30,35 @@ namespace Datos
             return count;
         }
 
-       /* public int AgregarMovimiento(string cod_movimiento, string descripcion, string nombre, string tipo)
-        {
 
-        } */
+        public void Resgistar_cliente_usuario(string usuario, string contrasena, string llave)
+        {
+            string cadena = "EXEC InsertUs_clave '" + usuario + "','" + contrasena + "','" + llave + "', 'Cliente'";
+
+            con.Open();
+
+            SqlCommand comando = new SqlCommand(cadena, con);
+
+            comando.ExecuteNonQuery();
+        }
+
+        public void Resgistar_Cliente(string cedula, string nombre, string telefono, string correo, string sitio_web,
+            string provincia, string canton, string distrito, string ubicacion, string usuario)
+        {
+            string cadena = "INSERT INTO cliente VALUES('"+cedula+"', '"+nombre+"','"+telefono+"', '"+correo+"','"+sitio_web+"'," +
+                "'"+provincia+"', '"+canton+"', '"+distrito+"', '"+ubicacion+"', '"+usuario+"')";
+
+            con.Open();
+
+            SqlCommand comando = new SqlCommand(cadena, con);
+
+            comando.ExecuteNonQuery();
+        }
+
+        /* public int AgregarMovimiento(string cod_movimiento, string descripcion, string nombre, string tipo)
+         {
+
+         } */
         public DataTable ConsultarMov()
         {
             string query = "SELECT * FROM intermedia_PokemonMovimientoEntrenador";

@@ -10,7 +10,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= SURFACEPROPEDRO\\SQLEXPRESS; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
 
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -21,7 +21,7 @@ namespace Datos
             int count;
             con.Open();
             string query = "Select Count(*) from usuario where nombre_usuario= '"+usuario+"'" +
-                "and contraseña = '"+contrasena+"'";
+                "and contrasena = '"+contrasena+"'";
 
             SqlCommand cmd = new SqlCommand(query, con);
             count = Convert.ToInt32(cmd.ExecuteScalar());

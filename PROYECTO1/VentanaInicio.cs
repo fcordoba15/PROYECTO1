@@ -27,5 +27,15 @@ namespace PROYECTO1
 
             v1.Show();
         }
+
+        private void boton_registrarse_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            VentanaRegistro v1 = new VentanaRegistro();
+
+            v1.Show();
+
+        }
     }
 }

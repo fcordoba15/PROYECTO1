@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="VentanaRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaRegistro.Designer.cs">
+      <DependentUpon>VentanaRegistro.cs</DependentUpon>
+    </Compile>
     <Compile Include="G_Mov_Ent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </Compile>
     <EmbeddedResource Include="LoginEntrenador.resx">
       <DependentUpon>LoginEntrenador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaRegistro.resx">
+      <DependentUpon>VentanaRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaRoles.resx">
       <DependentUpon>VentanaRoles.cs</DependentUpon>

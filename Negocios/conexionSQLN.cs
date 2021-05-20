@@ -15,29 +15,35 @@ namespace Negocios
         public int conSQL(string usuario, string contrasena)
         {
             return cn.consultalogin(usuario, contrasena);
-        }
-
-        public void Registrar_clienteUsuario(string usuario, string contrasena, string llave)
-        {
-            cn.Resgistar_cliente_usuario(usuario, contrasena, llave);
-        }
-
-        public void Registrar_cliente(string cedula, string nombre, string telefono, string correo, string sitio_web,
-            string provincia, string canton, string distrito, string ubicacion, string usuario)
-        {
-            cn.Resgistar_Cliente(cedula,nombre,telefono, correo,sitio_web,provincia,canton,distrito,ubicacion,usuario);
-        }
+        } 
 
         public DataTable ConsultaDT()
         {
             return cn.ConsultarMov();
         }
-        
+
+        public DataTable ConsultaPok()
+        {
+            return cn.ConsultarPok();
+        }
+
+
+        public int InsertarMovimiento(string id_entrenador, int id_pokemon, string cod_movimiento)
+        {
+            return cn.InsertarMovimiento(id_entrenador, id_pokemon, cod_movimiento);
+        }
+
+        public int ModificarMovimiento(string id_entrenador, int id_pokemon, string cod_movimiento)
+        {
+            return cn.ModificarMovimiento(id_entrenador, id_pokemon, cod_movimiento);
+        }
+
+        public int EliminarMovimiento(string id_entrenador, int id_pokemon, string cod_movimiento)
+        {
+            return cn.EliminarMovimiento(id_entrenador, id_pokemon, cod_movimiento);
+        }
 
     }
-
-
-
 
     
 

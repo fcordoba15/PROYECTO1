@@ -32,7 +32,7 @@ namespace PROYECTO1
             this.Regresar = new System.Windows.Forms.Button();
             this.ConsultaMovDG = new System.Windows.Forms.DataGridView();
             this.Nuevo = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Modificar = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -64,6 +64,7 @@ namespace PROYECTO1
             this.ConsultaMovDG.RowTemplate.Height = 33;
             this.ConsultaMovDG.Size = new System.Drawing.Size(1050, 381);
             this.ConsultaMovDG.TabIndex = 1;
+           
             // 
             // Nuevo
             // 
@@ -75,15 +76,15 @@ namespace PROYECTO1
             this.Nuevo.UseVisualStyleBackColor = true;
             this.Nuevo.Click += new System.EventHandler(this.Nuevo_Click);
             // 
-            // button2
+            // Modificar
             // 
-            this.button2.Location = new System.Drawing.Point(197, 647);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 63);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Modificar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Modificar.Location = new System.Drawing.Point(197, 647);
+            this.Modificar.Name = "Modificar";
+            this.Modificar.Size = new System.Drawing.Size(117, 63);
+            this.Modificar.TabIndex = 3;
+            this.Modificar.Text = "Modificar";
+            this.Modificar.UseVisualStyleBackColor = true;
+            this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
             // 
             // Eliminar
             // 
@@ -137,18 +138,18 @@ namespace PROYECTO1
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 530);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 25);
+            this.label2.Size = new System.Drawing.Size(144, 25);
             this.label2.TabIndex = 11;
-            this.label2.Text = "ID Pokemon";
+            this.label2.Text = "ID Entrenador";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(192, 530);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(192, 25);
+            this.label3.Size = new System.Drawing.Size(128, 25);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Codigo Entrenador";
+            this.label3.Text = "ID Pokemon";
             // 
             // label4
             // 
@@ -173,7 +174,7 @@ namespace PROYECTO1
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Eliminar);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Modificar);
             this.Controls.Add(this.Nuevo);
             this.Controls.Add(this.ConsultaMovDG);
             this.Controls.Add(this.Regresar);
@@ -190,7 +191,7 @@ namespace PROYECTO1
         private System.Windows.Forms.Button Regresar;
         private System.Windows.Forms.DataGridView ConsultaMovDG;
         private System.Windows.Forms.Button Nuevo;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Modificar;
         private System.Windows.Forms.Button Eliminar;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;

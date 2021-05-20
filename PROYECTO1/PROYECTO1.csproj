@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="G_Pok_Ent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_Pok_Ent.Designer.cs">
+      <DependentUpon>G_Pok_Ent.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="G_Pok_Ent.resx">
+      <DependentUpon>G_Pok_Ent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="G_Mov_Ent.resx">
       <DependentUpon>G_Mov_Ent.cs</DependentUpon>
     </EmbeddedResource>

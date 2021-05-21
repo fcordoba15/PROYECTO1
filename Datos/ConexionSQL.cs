@@ -10,8 +10,8 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
-
+        static string conexionstring = "server= SURFACEPROPEDRO\\SQLEXPRESS; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
+        //SURFACEPROPEDRO\\SQLEXPRESS
 
         SqlConnection con = new SqlConnection(conexionstring);
 
@@ -114,7 +114,7 @@ namespace Datos
         /* 
          * 
          * 
-         * -----------------CODIGO CONSULTAS TABLA INTERMEDIA_MOV_POK_ENTRENADOR
+         * ------------------------CODIGO CONSULTAS TABLA INTERMEDIA_MOV_POK_ENTRENADOR
          * 
          * 
          */
@@ -243,7 +243,7 @@ namespace Datos
         }
         /*
          * 
-         * -------------------------CODIGO BITACORA ENTRENADOR
+         * ----------------------------CODIGO BITACORA ENTRENADOR
          * 
          */
         public int InsertarBitacora(string fecha, string descripcion, int id_entrenador_bitacora)
@@ -262,7 +262,7 @@ namespace Datos
         /*
          * 
          * 
-         * ---------------------------CODIGO GESTION POKEMONES ENTRENADOR
+         * ------------------------------CODIGO GESTION POKEMONES ENTRENADOR
          * 
          * 
          */
@@ -306,18 +306,83 @@ namespace Datos
             return flag;
         }
 
-        public int EliminarPokemonEntrenador(int id_entrenador_pokemon)
+        public int EliminarPokemonEntrenador(string id_entrenador_pokemon, int id_pokemon_entrenador)
         {
             int flag = 0;
 
             con.Open();
-            string query = "DELETE FROM intermedia_EntrenadorPokemon WHERE id_entrenador = '" + id_entrenador_pokemon+ "'";
+            string query = "DELETE FROM intermedia_EntrenadorPokemon WHERE id_entrenador = '" + id_entrenador_pokemon+ "'" +
+                " and id_pokemon = '"+ id_pokemon_entrenador + "'";
             SqlCommand cmd = new SqlCommand(query, con);
             flag = cmd.ExecuteNonQuery();
             con.Close();
 
             return flag;
         }
+        /*
+         * 
+         * 
+         * ------------------------------CODIGO ADMINISTRADOR GESTION USUARIOS
+         * 
+         * 
+         */
+
+        //MA = MODULO ADMINISTRADOR
+
+        public DataTable ConsultarUsuariosAdmin()
+        {
+            string query = "SELECT * FROM usuario";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
+        }
+
+        public int InsertarUsuarioAdmin(string nombre_usuario_MA, string password_usuario_MA, string rol_usuario_MA)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "INSERT INTO usuario VALUES ('" + nombre_usuario_MA + "', " +
+                "'" + password_usuario_MA + "','" + rol_usuario_MA + "')";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+        public int ModificarUsuarioAdmin(string nombre_usuario_MA, string password_usuario_MA, string rol_usuario_MA)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "UPDATE usuario SET nombre_usuario = '" + nombre_usuario_MA + "'," +
+                " contraseña = '" + password_usuario_MA + "', rol = '" + rol_usuario_MA + "'" +
+                " WHERE nombre_usuario = '" + nombre_usuario_MA + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+        public int EliminarUsuarioAdmin(string nombre_usuario_MA)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "DELETE FROM usuario WHERE nombre_usuario = '" + nombre_usuario_MA + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+
 
     }
 

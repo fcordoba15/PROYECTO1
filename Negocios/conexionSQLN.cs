@@ -73,7 +73,7 @@ namespace Negocios
 
         /*
          * 
-         * ---------------------->CONSULTAS POKEMON ENTRENADOR
+         * ------------------------------->CONSULTAS ADMINISTRADOR GESTION POKEMONES
          * 
          */
         public DataTable ConsultaPokemonDT()
@@ -100,7 +100,41 @@ namespace Negocios
         {
             return cn.EliminarPokemonAdministrador(id);
         }
+        /*
+        * 
+        * ------------------------------->CONSULTAS ADMINISTRADOR GESTION USUARIOS
+        * 
+        */
 
+        public DataTable ConsultaUsuariosMADT()
+        {
+            return cn.ConsultarUsuariosAdmin();
+        }
+
+        public int InsertarUsuarioAdmin(string nombre_usuario_MA, string password_usuario_MA, string rol_usuario_MA)
+        {
+            return cn.InsertarUsuarioAdmin(nombre_usuario_MA, password_usuario_MA, rol_usuario_MA);
+        }
+
+        public int ModificarUsuarioAdmin(string nombre_usuario_MA, string password_usuario_MA, string rol_usuario_MA)
+        {
+            return cn.ModificarUsuarioAdmin(nombre_usuario_MA, password_usuario_MA, rol_usuario_MA);
+        }
+
+        public int EliminarUsuarioAdmin(string nombre_usuario_MA)
+        {
+            return cn.EliminarUsuarioAdmin(nombre_usuario_MA);
+        }
+
+
+
+
+
+        /*
+        * 
+        * ---------------------->CONSULTAS POKEMON ENTRENADOR
+        * 
+        */
         public int InsertarBitacora(string fecha, string descripcion, int id_entrenador_bitacora)
         {
             return cn.InsertarBitacora(fecha, descripcion, id_entrenador_bitacora);
@@ -121,10 +155,11 @@ namespace Negocios
             return cn.ModificarPokemonEntrenador(id_entrenador_pokemon, id_pokemon_entrenador, estado);
         }
 
-       /* public int EliminarPokemonEntrenador(string id_entrenador_pokemon)
+        public int EliminarPokemonEntrenador(string id_entrenador_pokemon, int id_pokemon_entrenador)
         {
-            return cn.EliminarPokemonEntrenador(id_entrenador_pokemon);
-        }*/
+            int i = Convert.ToInt32(id_pokemon_entrenador);
+            return cn.EliminarPokemonEntrenador(id_entrenador_pokemon, i);
+        }
     }
 
 

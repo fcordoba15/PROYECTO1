@@ -53,5 +53,10 @@ namespace PROYECTO1
                 Velocidad.Text, Generacion.Text, Legendario.Text);
             ConsultaPokDG.DataSource = cn.ConsultaPokemonDT();
         }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

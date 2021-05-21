@@ -39,6 +39,7 @@ namespace PROYECTO1
             this.bitacora = new System.Windows.Forms.ToolStripMenuItem();
             this.pokemonesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.usuariosAdminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -83,7 +84,8 @@ namespace PROYECTO1
             this.movimientosToolStripMenuItem,
             this.pokemonToolStripMenuItem,
             this.bitacora,
-            this.pokemonesToolStripMenuItem});
+            this.pokemonesToolStripMenuItem,
+            this.usuariosAdminToolStripMenuItem});
             this.GestionEntrenador.Name = "GestionEntrenador";
             this.GestionEntrenador.Size = new System.Drawing.Size(139, 38);
             this.GestionEntrenador.Text = "Gestiones";
@@ -125,6 +127,13 @@ namespace PROYECTO1
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // usuariosAdminToolStripMenuItem
+            // 
+            this.usuariosAdminToolStripMenuItem.Name = "usuariosAdminToolStripMenuItem";
+            this.usuariosAdminToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.usuariosAdminToolStripMenuItem.Text = "Usuarios Admin";
+            this.usuariosAdminToolStripMenuItem.Click += new System.EventHandler(this.usuariosAdminToolStripMenuItem_Click);
+            // 
             // ModuloEntrenador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -156,5 +165,6 @@ namespace PROYECTO1
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem bitacora;
         private System.Windows.Forms.ToolStripMenuItem pokemonesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosAdminToolStripMenuItem;
     }
 }

@@ -81,6 +81,7 @@ namespace PROYECTO1
             this.Regresar.TabIndex = 1;
             this.Regresar.Text = "Regresar";
             this.Regresar.UseVisualStyleBackColor = true;
+            this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
             // 
             // ModificarPokEnt
             // 

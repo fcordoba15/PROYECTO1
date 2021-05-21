@@ -71,6 +71,7 @@ namespace PROYECTO1
             this.button2.TabIndex = 2;
             this.button2.Text = "Modificar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -80,6 +81,7 @@ namespace PROYECTO1
             this.button3.TabIndex = 3;
             this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -140,7 +142,7 @@ namespace PROYECTO1
             "Liberado"});
             this.Estado.Location = new System.Drawing.Point(430, 483);
             this.Estado.Name = "Estado";
-            this.Estado.Size = new System.Drawing.Size(121, 33);
+            this.Estado.Size = new System.Drawing.Size(155, 33);
             this.Estado.TabIndex = 11;
             // 
             // GestionPokemonesEntrenador

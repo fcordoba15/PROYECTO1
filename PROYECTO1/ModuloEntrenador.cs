@@ -55,5 +55,14 @@ namespace PROYECTO1
             m1.ShowDialog();
             this.Show();
         }
+
+        private void usuariosAdminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            G_Admin_Usuarios m1 = new G_Admin_Usuarios();
+            this.Hide();
+            m1.ShowDialog();
+            this.Show();
+
+        }
     }
 }

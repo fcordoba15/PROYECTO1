@@ -64,6 +64,12 @@
     <Compile Include="Bitacora.Designer.cs">
       <DependentUpon>Bitacora.cs</DependentUpon>
     </Compile>
+    <Compile Include="G_Admin_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_Admin_Usuarios.Designer.cs">
+      <DependentUpon>G_Admin_Usuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="G_Entrenador_Pokemon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Bitacora.resx">
       <DependentUpon>Bitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="G_Admin_Usuarios.resx">
+      <DependentUpon>G_Admin_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="G_Entrenador_Pokemon.resx">
       <DependentUpon>G_Entrenador_Pokemon.cs</DependentUpon>

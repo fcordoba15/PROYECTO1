@@ -37,6 +37,7 @@ namespace PROYECTO1
             this.movimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pokemonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bitacora = new System.Windows.Forms.ToolStripMenuItem();
+            this.pokemonesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -81,7 +82,8 @@ namespace PROYECTO1
             this.GestionEntrenador.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.movimientosToolStripMenuItem,
             this.pokemonToolStripMenuItem,
-            this.bitacora});
+            this.bitacora,
+            this.pokemonesToolStripMenuItem});
             this.GestionEntrenador.Name = "GestionEntrenador";
             this.GestionEntrenador.Size = new System.Drawing.Size(139, 38);
             this.GestionEntrenador.Text = "Gestiones";
@@ -105,6 +107,14 @@ namespace PROYECTO1
             this.bitacora.Name = "bitacora";
             this.bitacora.Size = new System.Drawing.Size(359, 44);
             this.bitacora.Text = "Bitacora";
+            this.bitacora.Click += new System.EventHandler(this.bitacora_Click);
+            // 
+            // pokemonesToolStripMenuItem
+            // 
+            this.pokemonesToolStripMenuItem.Name = "pokemonesToolStripMenuItem";
+            this.pokemonesToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.pokemonesToolStripMenuItem.Text = "Pokemones";
+            this.pokemonesToolStripMenuItem.Click += new System.EventHandler(this.pokemonesToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -145,5 +155,6 @@ namespace PROYECTO1
         private System.Windows.Forms.ToolStripMenuItem pokemonToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem bitacora;
+        private System.Windows.Forms.ToolStripMenuItem pokemonesToolStripMenuItem;
     }
 }

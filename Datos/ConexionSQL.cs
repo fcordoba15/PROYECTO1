@@ -10,18 +10,23 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= SURFACEPROPEDRO\\SQLEXPRESS; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
 
 
         SqlConnection con = new SqlConnection(conexionstring);
 
+        /*
+         * 
+         * ------------------------- CODIGO LOGIN Y REGISTRO USUARIO
+         * 
+         */
         public int consultalogin(string usuario, string contrasena)
         {
 
             int count;
             con.Open();
             string query = "Select Count(*) from usuario where nombre_usuario= '"+usuario+"'" +
-                "and contrasena = '"+contrasena+"'";
+                "and contraseña = '"+contrasena+"'";
 
             SqlCommand cmd = new SqlCommand(query, con);
             count = Convert.ToInt32(cmd.ExecuteScalar());
@@ -40,7 +45,11 @@ namespace Datos
             SqlCommand comando = new SqlCommand(cadena, con);
 
             comando.ExecuteNonQuery();
+//<<<<<<< HEAD
             
+//=======
+            con.Close();
+//>>>>>>> 8a233196ee952df0fc25b0845d6ae69061c2e5eb
         }
 
         public void Resgistar_Cliente(string cedula, string nombre, string telefono, string correo, string sitio_web,
@@ -54,12 +63,33 @@ namespace Datos
             SqlCommand comando = new SqlCommand(cadena, con);
 
             comando.ExecuteNonQuery();
+            con.Close();
         }
 
-        /* public int AgregarMovimiento(string cod_movimiento, string descripcion, string nombre, string tipo)
-         {
+        /*
+         * 
+         * ---------------------------------------CODIGO PARA REGISTRO GMAPS
+         * 
+         */
+        public void Resgistar_GMaps(string id_client, string Ubicacion, string Latitud, string Longitud )
+        {
+            string cadena = "INSERT INTO Resgistar_GMaps values( '"+ id_client + "', '" + Ubicacion + "','" + Latitud + "',  '"+ Longitud +"')";
 
-         } */
+            con.Open();
+
+            SqlCommand comando = new SqlCommand(cadena, con);
+
+            comando.ExecuteNonQuery();
+            con.Close();
+        }
+
+        /* 
+         * 
+         * 
+         * -----------------CODIGO CONSULTAS TABLA INTERMEDIA_MOV_POK_ENTRENADOR
+         * 
+         * 
+         */
         public DataTable ConsultarMov()
         {
             string query = "SELECT * FROM intermedia_PokemonMovimientoEntrenador";
@@ -68,7 +98,199 @@ namespace Datos
             DataTable tabla = new DataTable();
             data.Fill(tabla);
 
+            con.Close();
+            return tabla;
+
+        }
+       
+        public int InsertarMovimiento(string id_entrenador, int id_pokemon, string cod_movimiento)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "INSERT INTO intermedia_PokemonMovimientoEntrenador VALUES ('" + id_entrenador + "', '" + id_pokemon + "'," +
+                "'" + cod_movimiento + "')";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+        public int ModificarMovimiento(string id_entrenador, int id_pokemon, string cod_movimiento)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "UPDATE intermedia_PokemonMovimientoEntrenador SET id_entrenador = '" + id_entrenador + "', id_pokemon = '"
+                + id_pokemon + "', cod_movimiento = '" + cod_movimiento + "' WHERE id_entrenador = '" + id_entrenador + "' and id_pokemon = '" + id_pokemon + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+        public int EliminarMovimiento(string id_entrenador, int id_pokemon, string cod_movimiento)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "DELETE FROM intermedia_PokemonMovimientoEntrenador WHERE id_entrenador = '" + id_entrenador + "' and id_pokemon = '" + id_pokemon + "' and cod_movimiento = '" + cod_movimiento + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+        /*
+        * 
+        * 
+        * -------------------------CONSULTAS POKEMONES MODULO ADMINISTRADOR
+        * 
+        * 
+        */
+        public DataTable ConsultarPok()
+        {
+            string query = "SELECT * FROM pokemon";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
             return tabla;
         }
+
+        public int InsertarPokemonAdministrador(string nombre_pokemon, string id_tipo, string cod_tipo, string total,
+            string salud, string ataque, string defensa, string ataque_especial, string defensa_especial, string velocidad,
+            string generacion, string legendario)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "INSERT INTO pokemon(nombre, id_tipo, cod_tipo, total, salud, ataque, defensa, ataque_especial, defensa_especial," +
+                "velocidad, generacion, legendario)" +
+                " VALUES ('"+ nombre_pokemon + "','"+id_tipo+"','"+cod_tipo+"','"+total+"'," +
+                "'"+salud+"','"+ataque+"','"+defensa+"'," +
+                "'"+ataque_especial+"','"+defensa_especial+"','"+velocidad+"','"+generacion+"','"+legendario+"')";
+            SqlCommand cmd = new SqlCommand(query, con);
+            //cmd.Parameters.AddWithValue("cod_tipo",Convert.ToInt32(cod_tipo));
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+        public int ModificarPokemonAdministrador(int id, string nombre_pokemon, string id_tipo, string cod_tipo, string total,
+            string salud, string ataque, string defensa, string ataque_especial, string defensa_especial, string velocidad,
+            string generacion, string legendario)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "UPDATE pokemon SET nombre = '"
+                + nombre_pokemon + "', id_tipo = '" + id_tipo + "', cod_tipo = '"+cod_tipo+"',total = '"+total+"', salud = '"+salud+"'" +
+                ", ataque = '"+ataque+"', defensa = '"+defensa+"', ataque_especial = '"+ataque_especial+"'" +
+                ", defensa_especial = '"+defensa_especial+"', velocidad = '"+velocidad+"'" +
+                ", generacion = '"+generacion+"', legendario = '"+legendario+"' WHERE id = '"+id+"'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+        public int EliminarPokemonAdministrador(int id)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "DELETE FROM pokemon WHERE id = '"+id+"'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+        /*
+         * 
+         * -------------------------CODIGO BITACORA ENTRENADOR
+         * 
+         */
+        public int InsertarBitacora(string fecha, string descripcion, int id_entrenador_bitacora)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "INSERT INTO bitacora VALUES ('" + fecha + "', '" + descripcion + "'," +
+                "'" + id_entrenador_bitacora + "')";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+        /*
+         * 
+         * 
+         * ---------------------------CODIGO GESTION POKEMONES ENTRENADOR
+         * 
+         * 
+         */
+
+        public DataTable ConsultarPokemonesEntrenador()
+        {
+            string query = "SELECT * FROM intermedia_EntrenadorPokemon";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
+        }
+        public int InsertarPokemonEntrenador(string id_entrenador_pokemon, int id_pokemon_entrenador, string estado)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "INSERT INTO intermedia_EntrenadorPokemon VALUES ('" + id_entrenador_pokemon + "', " +
+                "'" + id_pokemon_entrenador + "','"+estado+"')";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+        public int ModificarPokemonEntrenador(string id_entrenador_pokemon, int id_pokemon_entrenador, string estado)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "UPDATE intermedia_EntrenadorPokemon SET id_entrenador = '" + id_entrenador_pokemon + "'," +
+                " id_pokemon = '" + id_pokemon_entrenador + "', estado = '" + estado + "'" +
+                " WHERE id_entrenador = '" + id_entrenador_pokemon + "' and id_pokemon = '" + id_pokemon_entrenador + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+        public int EliminarPokemonEntrenador(int id_entrenador_pokemon)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "DELETE FROM intermedia_EntrenadorPokemon WHERE id_entrenador = '" + id_entrenador_pokemon+ "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
     }
+
 }

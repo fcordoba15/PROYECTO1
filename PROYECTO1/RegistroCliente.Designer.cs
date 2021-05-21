@@ -29,7 +29,6 @@ namespace PROYECTO1
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -56,18 +55,7 @@ namespace PROYECTO1
             this.label12 = new System.Windows.Forms.Label();
             this.Realizar_registro_cliente = new System.Windows.Forms.Button();
             this.Seleccionar_ubicación = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PROYECTO1.Properties.Resources.fondo_RegistroClientes;
-            this.pictureBox1.Location = new System.Drawing.Point(-4, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(724, 832);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // textBox1
             // 
@@ -312,6 +300,7 @@ namespace PROYECTO1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::PROYECTO1.Properties.Resources.fondo_RegistroClientes1;
             this.ClientSize = new System.Drawing.Size(723, 828);
             this.Controls.Add(this.Seleccionar_ubicación);
             this.Controls.Add(this.Realizar_registro_cliente);
@@ -339,18 +328,14 @@ namespace PROYECTO1
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "RegistroCliente";
             this.Text = "RegistroCliente";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;

@@ -11,28 +11,18 @@ using Negocios;
 
 namespace PROYECTO1
 {
-    public partial class RegistroCliente : Form
+    public partial class RegistroEntrenador : Form
     {
-
         conexionSQLN cn = new conexionSQLN();
 
-        public RegistroCliente()
+        public RegistroEntrenador()
         {
             InitializeComponent();
         }
 
-        private void Seleccionar_ubicación_Click(object sender, EventArgs e)
-        {
-            Google_maps v1 = new Google_maps();
-
-            v1.Show();
-
-
-        }
-
         private void Realizar_registro_cliente_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == ""
+            if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox13.Text == "" && textBox4.Text == ""
                  && textBox5.Text == "" && textBox6.Text == "" && textBox7.Text == "" && textBox8.Text == ""
                   && textBox9.Text == "" && textBox10.Text == "" && textBox11.Text == "" && textBox12.Text == "")
             {
@@ -40,10 +30,12 @@ namespace PROYECTO1
             }
             else
             {
-                cn.Registrar_clienteUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
+                
+                cn.Registrar_entrenadorUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
 
-                cn.Registrar_cliente(textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text
-                    ,textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox12.Text,textBox1.Text);
+                cn.Registrar_entrenador(textBox4.Text, textBox5.Text,textBox13.Text, textBox6.Text, textBox7.Text
+                    , textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox12.Text, textBox1.Text);
+
                 MessageBox.Show("Se realizó el registro");
                 this.Hide();
                 VentanaInicio v2 = new VentanaInicio();

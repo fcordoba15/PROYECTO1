@@ -88,6 +88,7 @@ namespace PROYECTO1
             this.Registrar_entrenador.TabIndex = 12;
             this.Registrar_entrenador.Text = "Registrar Entrenador";
             this.Registrar_entrenador.UseVisualStyleBackColor = false;
+            this.Registrar_entrenador.Click += new System.EventHandler(this.Registrar_entrenador_Click);
             // 
             // pictureBox6
             // 

@@ -10,14 +10,14 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= SURFACEPROPEDRO\\SQLEXPRESS; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
 
 
         SqlConnection con = new SqlConnection(conexionstring);
 
         /*
          * 
-         * ------------------------- CODIGO LOGIN Y REGISTRO USUARIO
+         * ------------------------- CODIGO LOGIN, REGISTRO USUARIO Y ENTRENADORES
          * 
          */
         public int consultalogin(string usuario, string contrasena)
@@ -65,6 +65,34 @@ namespace Datos
             comando.ExecuteNonQuery();
             con.Close();
         }
+
+        public void Resgistar_entrenador_usuario(string usuario, string contrasena, string llave)
+        {
+            string cadena = "EXEC InsertUs_clave '" + usuario + "','" + contrasena + "','" + llave + "', 'Entrenador'";
+
+            con.Open();
+
+            SqlCommand comando = new SqlCommand(cadena, con);
+
+            comando.ExecuteNonQuery();
+
+            con.Close();
+        }
+
+        public void Resgistar_Entrenador(string cedula, string nombre, string calificacion, string telefono, string correo, 
+            string sitio_web, string provincia, string canton, string distrito, string ubicacion, string usuario)
+        {
+            string cadena = "INSERT INTO entrenador VALUES('" + cedula + "', '" + nombre + "','"+calificacion+"','" + telefono + "', '" + correo + "','" + sitio_web + "'," +
+                "'" + provincia + "', '" + canton + "', '" + distrito + "', '" + ubicacion + "', '" + usuario + "')";
+
+            con.Open();
+
+            SqlCommand comando = new SqlCommand(cadena, con);
+
+            comando.ExecuteNonQuery();
+            con.Close();
+        }
+
 
         /*
          * 

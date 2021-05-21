@@ -88,6 +88,12 @@
     <Compile Include="RegistroCliente.Designer.cs">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistroEntrenador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroEntrenador.Designer.cs">
+      <DependentUpon>RegistroEntrenador.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistroCliente.resx">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroEntrenador.resx">
+      <DependentUpon>RegistroEntrenador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaInicio.resx">
       <DependentUpon>VentanaInicio.cs</DependentUpon>
@@ -218,6 +227,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondo_RegistroClientes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_RegistroEntrenadores.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_RegistroClientes1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,5 +25,12 @@ namespace PROYECTO1
 
             v1.Show();
         }
+
+        private void Registrar_entrenador_Click(object sender, EventArgs e)
+        {
+            RegistroEntrenador v1 = new RegistroEntrenador();
+            this.Hide();
+            v1.Show();
+        }
     }
 }

@@ -37,6 +37,18 @@ namespace Negocios
         { 
             cn.Resgistar_GMaps(id, Ubicacion, Latitud, Longitud);
         }
+
+        public void Registrar_entrenadorUsuario(string usuario, string contrasena, string llave)
+        {
+            cn.Resgistar_entrenador_usuario(usuario, contrasena, llave);
+        }
+
+        public void Registrar_entrenador(string cedula, string nombre,string calificacion, string telefono, string correo, string sitio_web,
+            string provincia, string canton, string distrito, string ubicacion, string usuario)
+        {
+            cn.Resgistar_Entrenador(cedula, nombre, calificacion, telefono, correo, sitio_web, provincia, canton, distrito, ubicacion, usuario);
+        }
+
         /*
          *---------------------->CODIGO PARA CONSULTAS TABLA INTERMEDIA_MOV_POK_ENTRENADOR
          * 

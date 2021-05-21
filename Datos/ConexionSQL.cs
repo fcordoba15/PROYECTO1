@@ -40,6 +40,7 @@ namespace Datos
             SqlCommand comando = new SqlCommand(cadena, con);
 
             comando.ExecuteNonQuery();
+            
         }
 
         public void Resgistar_Cliente(string cedula, string nombre, string telefono, string correo, string sitio_web,

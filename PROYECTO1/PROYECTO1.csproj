@@ -58,11 +58,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bitacora.Designer.cs">
+      <DependentUpon>Bitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="G_Pokemon_Ent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_Pokemon_Ent.Designer.cs">
+      <DependentUpon>G_Pokemon_Ent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Google_maps.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Google_maps.Designer.cs">
       <DependentUpon>Google_maps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProyectoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProyectoDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="RegistroCliente.cs">
       <SubType>Form</SubType>
@@ -108,6 +125,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Bitacora.resx">
+      <DependentUpon>Bitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="G_Pokemon_Ent.resx">
+      <DependentUpon>G_Pokemon_Ent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Google_maps.resx">
       <DependentUpon>Google_maps.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +180,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ProyectoDataSet.xsc">
+      <DependentUpon>ProyectoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProyectoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProyectoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProyectoDataSet.xss">
+      <DependentUpon>ProyectoDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Fondo_inicial.jpg" />
   </ItemGroup>
   <ItemGroup>

@@ -105,6 +105,7 @@ namespace PROYECTO1
             this.bitacora.Name = "bitacora";
             this.bitacora.Size = new System.Drawing.Size(359, 44);
             this.bitacora.Text = "Bitacora";
+            this.bitacora.Click += new System.EventHandler(this.bitacora_Click);
             // 
             // pictureBox1
             // 

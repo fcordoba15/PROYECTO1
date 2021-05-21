@@ -34,10 +34,18 @@ namespace PROYECTO1
 
         private void pokemonToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*G_Pok_Ent m1 = new G_Pok_Ent();
+            ConsultaPokEnt m1 = new ConsultaPokEnt();
             this.Hide();
             m1.ShowDialog();
-            this.Show();*/
+            this.Show();
+        }
+
+        private void bitacora_Click(object sender, EventArgs e)
+        {
+            BitacoraEntrenador m1 = new BitacoraEntrenador();
+            this.Hide();
+            m1.ShowDialog();
+            this.Show();
         }
     }
 }

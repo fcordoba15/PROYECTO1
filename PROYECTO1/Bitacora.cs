@@ -11,18 +11,20 @@ using Negocios;
 
 namespace PROYECTO1
 {
-    public partial class G_Pok_Ent : Form
+    
+    public partial class BitacoraEntrenador : Form
     {
         conexionSQLN cn = new conexionSQLN();
-        public G_Pok_Ent()
+        public BitacoraEntrenador()
         {
             InitializeComponent();
-            ConsultaPokDG.DataSource = cn.ConsultaPok();
         }
 
-        private void G_Pok_Ent_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            //int i = Convert.ToInt32(dateTimePicker1.Value.ToString());
+            int i2 = Convert.ToInt32(ID_Ent_Bitacora.Text);
+            cn.InsertarBitacora(dateTimePicker1.Value.ToString(), Texto_Bitacora.Text, i2);
         }
     }
 }

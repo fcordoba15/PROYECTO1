@@ -39,6 +39,20 @@ namespace PROYECTO1
 
         private void gMapControl1_Load(object sender, EventArgs e)
         {
+
+            dt = new DataTable();
+            dt.Columns.Add(new DataColumn("Ubicación", typeof(string)));
+            dt.Columns.Add(new DataColumn("Lat", typeof(double)));
+            dt.Columns.Add(new DataColumn("Long", typeof(double)));
+
+            //Insertar datos dt para mostrar pick up
+            dt.Rows.Add("Ubicación 1", LatInicial, LngInicial);
+            dataGridView1.DataSource = dt;
+
+            //Desactivar columns
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[2].Visible = false;
+
             gMapControl1.DragButton = MouseButtons.Left;
             gMapControl1.CanDragMap = true;
             gMapControl1.MapProvider = GMapProviders.GoogleMap;
@@ -59,6 +73,55 @@ namespace PROYECTO1
 
             gMapControl1.Overlays.Add(markerOverlay);
             
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void SeleccionarRegistro(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            filaSeleccionada = e.RowIndex; //Fila seleccionada
+            //Recuperamos los datos del grid y asignarlos 
+            txtUbicacion.Text = dataGridView1.Rows[filaSeleccionada].Cells[0].Value.ToString();
+            txtLatitud.Text = dataGridView1.Rows[filaSeleccionada].Cells[1].Value.ToString();
+            txtLongitud.Text = dataGridView1.Rows[filaSeleccionada].Cells[2].Value.ToString();
+
+            //Se asignan los valores del grid al marcador
+            marker.Position = new PointLatLng(Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
+            //Posicionar Mapa
+            gMapControl1.Position = marker.Position;
+
+
+
+        }
+
+        private void gMapControl1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            //Obtener datos lat y log del cursor
+            double lat = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lat;
+            double lng = gMapControl1.FromLocalToLatLng(e.X, e.Y).Lng;
+
+            //se posicionan en txt de lat y long
+            txtLatitud.Text = lat.ToString();
+            txtLongitud.Text = lng.ToString();
+
+            //Mover maker
+            marker.Position = new PointLatLng(lat, lng);
+            //mensaje
+            marker.ToolTipText = string.Format("Ubicación: \n Latitud: {0} \n Longitud: {1}", lat, lng);
+
+
+
+
+        }
+
+        private void guardar_Click(object sender, EventArgs e)
+        {
+            dt.Rows.Add(txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);
+           /* cn.Resgistar_GMaps(,txtUbicacion, txtLatitud, txtLongitud);*/
+
         }
     }
 }

@@ -358,7 +358,7 @@ namespace PROYECTO1
             this.Controls.Add(this.Regresar);
             this.Controls.Add(this.ConsultaPokDG);
             this.Name = "ConsultaPokEnt";
-            this.Text = "Pokemones Entrenador";
+            this.Text = "Gestion Pokemon Administrador";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaPokDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -10,7 +10,7 @@ namespace Negocios
 {
     public class conexionSQLN
     {
-        // CODIGO PARA CONECTAR A LA BASE DE DATOS 
+        // ---------------------->CODIGO PARA CONECTAR A LA BASE DE DATOS 
 
         ConexionSQL cn = new ConexionSQL();
         public int conSQL(string usuario, string contrasena)
@@ -19,7 +19,7 @@ namespace Negocios
         }
 
         /*
-         * CODIGO PARA REGISTRAR USUARIOS
+         * ---------------------->CODIGO PARA REGISTRAR USUARIOS
          * 
          */
         public void Registrar_clienteUsuario(string usuario, string contrasena, string llave)
@@ -38,7 +38,7 @@ namespace Negocios
             cn.Resgistar_GMaps(id, Ubicacion, Latitud, Longitud);
         }
         /*
-         * CODIGO PARA CONSULTAS TABLA INTERMEDIA_MOV_POK_ENTRENADOR
+         *---------------------->CODIGO PARA CONSULTAS TABLA INTERMEDIA_MOV_POK_ENTRENADOR
          * 
          */
         public DataTable ConsultaDT()
@@ -61,32 +61,32 @@ namespace Negocios
 
         /*
          * 
-         * CONSULTAS POKEMON ENTRENADOR
+         * ---------------------->CONSULTAS POKEMON ENTRENADOR
          * 
          */
         public DataTable ConsultaPokemonDT()
         {
             return cn.ConsultarPok();
         }
-        public int InsertarPokemonEntrenador(string nombre_pokemon, string id_tipo, string cod_tipo, string total,
+        public int InsertarPokemonAdministrador(string nombre_pokemon, string id_tipo, string cod_tipo, string total,
             string salud, string ataque, string defensa, string ataque_especial, string defensa_especial, string velocidad,
             string generacion, string legendario)
         {
-            return cn.InsertarPokemonEntrenador(nombre_pokemon, id_tipo, cod_tipo, total, salud, ataque, defensa,
+            return cn.InsertarPokemonAdministrador(nombre_pokemon, id_tipo, cod_tipo, total, salud, ataque, defensa,
                 ataque_especial, defensa_especial, velocidad, generacion, legendario);
         }
 
-        public int ModificarPokemonEntrenador(int id, string nombre_pokemon, string id_tipo, string cod_tipo, string total,
+        public int ModificarPokemonAdministrador(int id, string nombre_pokemon, string id_tipo, string cod_tipo, string total,
             string salud, string ataque, string defensa, string ataque_especial, string defensa_especial, string velocidad,
             string generacion, string legendario)
         {
-            return cn.ModificarPokemonEntrenador(id, nombre_pokemon, id_tipo, cod_tipo, total, salud, ataque, defensa,
+            return cn.ModificarPokemonAdministrador(id, nombre_pokemon, id_tipo, cod_tipo, total, salud, ataque, defensa,
                 ataque_especial, defensa_especial, velocidad, generacion, legendario);
         }
 
-        public int EliminarPokemonEntrenador(int id)
+        public int EliminarPokemonAdministrador(int id)
         {
-            return cn.EliminarPokemonEntrenador(id);
+            return cn.EliminarPokemonAdministrador(id);
         }
 
         public int InsertarBitacora(string fecha, string descripcion, int id_entrenador_bitacora)
@@ -94,6 +94,25 @@ namespace Negocios
             return cn.InsertarBitacora(fecha, descripcion, id_entrenador_bitacora);
         }
 
+        public DataTable ConsultaPokemonesEntrenador()
+        {
+            return cn.ConsultarPokemonesEntrenador();
+        }
+
+        public int InsertarPokemonEntrenador(string id_entrenador_pokemon, int id_pokemon_entrenador, string estado)
+        {
+            return cn.InsertarPokemonEntrenador(id_entrenador_pokemon, id_pokemon_entrenador, estado);
+        }
+
+        public int ModificarPokemonEntrenador(string id_entrenador_pokemon, int id_pokemon_entrenador, string estado)
+        {
+            return cn.ModificarPokemonEntrenador(id_entrenador_pokemon, id_pokemon_entrenador, estado);
+        }
+
+       /* public int EliminarPokemonEntrenador(string id_entrenador_pokemon)
+        {
+            return cn.EliminarPokemonEntrenador(id_entrenador_pokemon);
+        }*/
     }
 
 

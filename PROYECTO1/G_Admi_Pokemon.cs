@@ -25,7 +25,7 @@ namespace PROYECTO1
         {
             try
             {
-                cn.InsertarPokemonEntrenador(Nombre_Pokemon.Text, ID_Tipo.Text, Codigo_Tipo.Text, Total.Text,
+                cn.InsertarPokemonAdministrador(Nombre_Pokemon.Text, ID_Tipo.Text, Codigo_Tipo.Text, Total.Text,
                 Salud.Text, Ataque.Text, Defensa.Text, Ataque_Especial.Text, Defensa_Especial.Text,
                 Velocidad.Text, Generacion.Text, Legendario.Text);
                 ConsultaPokDG.DataSource = cn.ConsultaPokemonDT();
@@ -40,7 +40,7 @@ namespace PROYECTO1
         private void EliminarPokEnt_Click_1(object sender, EventArgs e)
         {
             int i = Convert.ToInt32(ID_Pokemon.Text);
-            cn.EliminarPokemonEntrenador(i);
+            cn.EliminarPokemonAdministrador(i);
             ConsultaPokDG.DataSource = cn.ConsultaPokemonDT();
 
         }
@@ -48,7 +48,7 @@ namespace PROYECTO1
         private void ModificarPokEnt_Click_1(object sender, EventArgs e)
         {
             int i = Convert.ToInt32(ID_Pokemon.Text);
-            cn.ModificarPokemonEntrenador(i, Nombre_Pokemon.Text, ID_Tipo.Text, Codigo_Tipo.Text, Total.Text,
+            cn.ModificarPokemonAdministrador(i, Nombre_Pokemon.Text, ID_Tipo.Text, Codigo_Tipo.Text, Total.Text,
                 Salud.Text, Ataque.Text, Defensa.Text, Ataque_Especial.Text, Defensa_Especial.Text,
                 Velocidad.Text, Generacion.Text, Legendario.Text);
             ConsultaPokDG.DataSource = cn.ConsultaPokemonDT();

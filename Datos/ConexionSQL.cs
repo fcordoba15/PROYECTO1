@@ -15,6 +15,11 @@ namespace Datos
 
         SqlConnection con = new SqlConnection(conexionstring);
 
+        /*
+         * 
+         * ------------------------- CODIGO LOGIN Y REGISTRO USUARIO
+         * 
+         */
         public int consultalogin(string usuario, string contrasena)
         {
 
@@ -59,7 +64,7 @@ namespace Datos
 
         /*
          * 
-         * CODIGO PARA REGISTRO
+         * ---------------------------------------CODIGO PARA REGISTRO GMAPS
          * 
          */
         public void Resgistar_GMaps(string id_client, string Ubicacion, string Latitud, string Longitud )
@@ -77,7 +82,7 @@ namespace Datos
         /* 
          * 
          * 
-         * CODIGO CONSULTAS TABLA INTERMEDIA_MOV_POK_ENTRENADOR
+         * -----------------CODIGO CONSULTAS TABLA INTERMEDIA_MOV_POK_ENTRENADOR
          * 
          * 
          */
@@ -138,7 +143,7 @@ namespace Datos
         /*
         * 
         * 
-        * CONSULTAS POKEMONES MODULO ENTRENADOR
+        * -------------------------CONSULTAS POKEMONES MODULO ADMINISTRADOR
         * 
         * 
         */
@@ -153,7 +158,7 @@ namespace Datos
             return tabla;
         }
 
-        public int InsertarPokemonEntrenador(string nombre_pokemon, string id_tipo, string cod_tipo, string total,
+        public int InsertarPokemonAdministrador(string nombre_pokemon, string id_tipo, string cod_tipo, string total,
             string salud, string ataque, string defensa, string ataque_especial, string defensa_especial, string velocidad,
             string generacion, string legendario)
         {
@@ -173,7 +178,7 @@ namespace Datos
             return flag;
         }
 
-        public int ModificarPokemonEntrenador(int id, string nombre_pokemon, string id_tipo, string cod_tipo, string total,
+        public int ModificarPokemonAdministrador(int id, string nombre_pokemon, string id_tipo, string cod_tipo, string total,
             string salud, string ataque, string defensa, string ataque_especial, string defensa_especial, string velocidad,
             string generacion, string legendario)
         {
@@ -192,7 +197,7 @@ namespace Datos
             return flag;
         }
 
-        public int EliminarPokemonEntrenador(int id)
+        public int EliminarPokemonAdministrador(int id)
         {
             int flag = 0;
 
@@ -206,7 +211,7 @@ namespace Datos
         }
         /*
          * 
-         * CODIGO BITACORA ENTRENADOR
+         * -------------------------CODIGO BITACORA ENTRENADOR
          * 
          */
         public int InsertarBitacora(string fecha, string descripcion, int id_entrenador_bitacora)
@@ -216,6 +221,65 @@ namespace Datos
             con.Open();
             string query = "INSERT INTO bitacora VALUES ('" + fecha + "', '" + descripcion + "'," +
                 "'" + id_entrenador_bitacora + "')";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+        /*
+         * 
+         * 
+         * ---------------------------CODIGO GESTION POKEMONES ENTRENADOR
+         * 
+         * 
+         */
+
+        public DataTable ConsultarPokemonesEntrenador()
+        {
+            string query = "SELECT * FROM intermedia_EntrenadorPokemon";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
+        }
+        public int InsertarPokemonEntrenador(string id_entrenador_pokemon, int id_pokemon_entrenador, string estado)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "INSERT INTO intermedia_EntrenadorPokemon VALUES ('" + id_entrenador_pokemon + "', " +
+                "'" + id_pokemon_entrenador + "','"+estado+"')";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+        public int ModificarPokemonEntrenador(string id_entrenador_pokemon, int id_pokemon_entrenador, string estado)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "UPDATE intermedia_EntrenadorPokemon SET id_entrenador = '" + id_entrenador_pokemon + "'," +
+                " id_pokemon = '" + id_pokemon_entrenador + "', estado = '" + estado + "'" +
+                " WHERE id_entrenador = '" + id_entrenador_pokemon + "' and id_pokemon = '" + id_pokemon_entrenador + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+        public int EliminarPokemonEntrenador(int id_entrenador_pokemon)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "DELETE FROM intermedia_EntrenadorPokemon WHERE id_entrenador = '" + id_entrenador_pokemon+ "'";
             SqlCommand cmd = new SqlCommand(query, con);
             flag = cmd.ExecuteNonQuery();
             con.Close();

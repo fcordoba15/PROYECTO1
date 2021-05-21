@@ -47,5 +47,13 @@ namespace PROYECTO1
             m1.ShowDialog();
             this.Show();
         }
+
+        private void pokemonesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestionPokemonesEntrenador m1 = new GestionPokemonesEntrenador();
+            this.Hide();
+            m1.ShowDialog();
+            this.Show();
+        }
     }
 }

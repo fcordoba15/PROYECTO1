@@ -10,7 +10,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= SURFACEPROPEDRO\\SQLEXPRESS; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
         //SURFACEPROPEDRO\\SQLEXPRESS
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -20,19 +20,45 @@ namespace Datos
          * ------------------------- CODIGO LOGIN, REGISTRO USUARIO Y ENTRENADORES
          * 
          */
-        public int consultalogin(string usuario, string contrasena)
+        public string consultalogin_cliente(string usuario, string contrasena)
         {
-
-            int count;
+            String dato;
             con.Open();
-            string query = "Select Count(*) from usuario where nombre_usuario= '"+usuario+"'" +
-                "and contraseña = '"+contrasena+"'";
+            string query = "EXEC [LoginUsuario] '"+usuario+"', 'Cliente', '"+contrasena+"'";
 
             SqlCommand cmd = new SqlCommand(query, con);
-            count = Convert.ToInt32(cmd.ExecuteScalar());
+            dato = Convert.ToString(cmd.ExecuteScalar());
 
             con.Close();
-            return count;
+            return dato;
+        }
+
+        public string consultalogin_entrenador(string usuario, string contrasena)
+        {
+
+            String dato;
+            con.Open();
+            string query = "EXEC [LoginUsuario] '" + usuario + "', 'Entrenador', '" + contrasena + "'";
+
+            SqlCommand cmd = new SqlCommand(query, con);
+            dato = Convert.ToString(cmd.ExecuteScalar());
+
+            con.Close();
+            return dato;
+        }
+
+        public string consultalogin_administrador(string usuario, string contrasena)
+        {
+
+            string dato;
+            con.Open();
+            string query = "EXEC [LoginUsuario] '" + usuario + "', 'Administrador', '" + contrasena + "'";
+
+            SqlCommand cmd = new SqlCommand(query, con);
+            dato = Convert.ToString(cmd.ExecuteScalar());
+
+            con.Close();
+            return dato;
         }
 
 

@@ -88,6 +88,18 @@
     <Compile Include="Google_maps.Designer.cs">
       <DependentUpon>Google_maps.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAdministrador.Designer.cs">
+      <DependentUpon>LoginAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginCliente.Designer.cs">
+      <DependentUpon>LoginCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +167,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="G_Entrenador_Movimiento.resx">
       <DependentUpon>G_Entrenador_Movimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAdministrador.resx">
+      <DependentUpon>LoginAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginCliente.resx">
+      <DependentUpon>LoginCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModuloEntrenador.resx">
       <DependentUpon>ModuloEntrenador.cs</DependentUpon>

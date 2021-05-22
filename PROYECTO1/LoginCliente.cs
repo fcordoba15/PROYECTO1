@@ -1,23 +1,29 @@
-﻿using Negocios;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Negocios;
 
 namespace PROYECTO1
 {
-    public partial class LoginEntrenador : Form
+    public partial class LoginCliente : Form
     {
 
-
         conexionSQLN cn = new conexionSQLN();
-        public LoginEntrenador()
+
+        public LoginCliente()
         {
             InitializeComponent();
         }
 
-        private void Ingresar_Click(object sender, EventArgs e)
+        private void Entrar_Click(object sender, EventArgs e)
         {
-            if (cn.conSQL_entrenador(usuario.Text, pass.Text) == usuario.Text)
+            if (cn.conSQL_cliente(usuario.Text, pass.Text) == usuario.Text)
             {
                 MessageBox.Show("Se inició sesión");
 
@@ -30,10 +36,6 @@ namespace PROYECTO1
             {
                 MessageBox.Show("Error");
             }
-
-
         }
-
-
     }
 }

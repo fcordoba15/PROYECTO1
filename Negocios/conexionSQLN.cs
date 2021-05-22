@@ -13,9 +13,19 @@ namespace Negocios
         // ---------------------->CODIGO PARA CONECTAR A LA BASE DE DATOS 
 
         ConexionSQL cn = new ConexionSQL();
-        public int conSQL(string usuario, string contrasena)
+        public string conSQL_cliente(string usuario, string contrasena)
         {
-            return cn.consultalogin(usuario, contrasena);
+            return cn.consultalogin_cliente(usuario, contrasena);
+        }
+
+        public string conSQL_entrenador(string usuario, string contrasena)
+        {
+            return cn.consultalogin_entrenador(usuario, contrasena);
+        }
+
+        public string conSQL_administrador(string usuario, string contrasena)
+        {
+            return cn.consultalogin_administrador(usuario, contrasena);
         }
 
         /*

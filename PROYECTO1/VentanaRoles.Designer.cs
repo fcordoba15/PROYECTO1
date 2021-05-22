@@ -94,6 +94,7 @@ namespace PROYECTO1
             this.iniciar_administrador.TabIndex = 4;
             this.iniciar_administrador.Text = "Administrador";
             this.iniciar_administrador.UseVisualStyleBackColor = false;
+            this.iniciar_administrador.Click += new System.EventHandler(this.iniciar_administrador_Click);
             // 
             // iniciar_cliente
             // 
@@ -106,6 +107,7 @@ namespace PROYECTO1
             this.iniciar_cliente.TabIndex = 5;
             this.iniciar_cliente.Text = "Cliente";
             this.iniciar_cliente.UseVisualStyleBackColor = false;
+            this.iniciar_cliente.Click += new System.EventHandler(this.iniciar_cliente_Click);
             // 
             // iniciar_entrenador
             // 

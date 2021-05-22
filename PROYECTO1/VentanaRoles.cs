@@ -25,5 +25,23 @@ namespace PROYECTO1
 
             v1.Show();
         }
+
+        private void iniciar_cliente_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            LoginCliente v1 = new LoginCliente();
+
+            v1.Show();
+        }
+
+        private void iniciar_administrador_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            LoginAdministrador v1 = new LoginAdministrador();
+
+            v1.Show();
+        }
     }
 }

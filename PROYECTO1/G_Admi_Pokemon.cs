@@ -58,5 +58,20 @@ namespace PROYECTO1
         {
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fotografia = new OpenFileDialog();
+            DialogResult rs = fotografia.ShowDialog();
+            if(rs ==DialogResult.OK)
+            {
+                picPokemon.Image = Image.FromFile(fotografia.FileName);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -30,6 +30,9 @@ namespace PROYECTO1
                 MessageBox.Show("Se inició sesión");
 
                 this.Hide();
+                ModuloAdministrador m1 = new ModuloAdministrador();
+                m1.Show();
+
 
             }
             else

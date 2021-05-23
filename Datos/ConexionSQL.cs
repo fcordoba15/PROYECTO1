@@ -10,7 +10,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= SURFACEPROPEDRO\\SQLEXPRESS; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= localhost\\SQLEXPRESS02; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
         //SURFACEPROPEDRO\\SQLEXPRESS
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -435,10 +435,15 @@ namespace Datos
         {
             string query = "SELECT * FROM movimiento";
 
-            SqlCommand cmd = new SqlCommand();
+            SqlCommand cmd = new SqlCommand(query, con);
             SqlDataAdapter data = new SqlDataAdapter(cmd);
             DataTable tabla = new DataTable();
+        
             data.Fill(tabla);
+
+            return tabla;
+
+
 
             return tabla;
 

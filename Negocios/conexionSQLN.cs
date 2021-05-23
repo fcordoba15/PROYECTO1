@@ -142,7 +142,34 @@ namespace Negocios
             return cn.EliminarUsuarioAdmin(nombre_usuario_MA);
         }
 
+        /*
+        * 
+        * ------------------------------->CONSULTAS ADMINISTRADOR GESTION MOVIMIENTOS
+        * 
+        */
 
+        public DataTable ConsultaMovimientosAdmin()
+        {
+            return cn.ConsultarMovimientosAdmin();
+        }
+
+        public int InsertarMovimientoAdmin(string codigoMovimiento, string descripcionMovimiento, string nombreMovimiento,
+            string tipoMovimiento)
+        {
+            return cn.InsertarMovimientoAdmin(codigoMovimiento, descripcionMovimiento, nombreMovimiento, tipoMovimiento);
+        }
+
+        public int ModificarMovimientoAdmin(string codigoMovimiento, string descripcionMovimiento, string nombreMovimiento,
+           string tipoMovimiento)
+        {
+            return cn.ModificarMovimientoAdmin(codigoMovimiento,  descripcionMovimiento,  nombreMovimiento,
+            tipoMovimiento);
+        }
+
+        public int EliminarMovimientoAdmin(string codigoMovimiento)
+        {
+            return cn.EliminarMovimientoAdmin(codigoMovimiento);
+        }
 
 
 

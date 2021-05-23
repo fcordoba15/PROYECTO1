@@ -31,8 +31,6 @@ namespace PROYECTO1
 
                 this.Hide();
 
-                ModuloEntrenador m1 = new ModuloEntrenador();
-                m1.Show();
             }
             else
             {

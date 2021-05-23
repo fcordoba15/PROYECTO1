@@ -32,5 +32,14 @@ namespace PROYECTO1
             this.Hide();
             v1.Show();
         }
+
+        private void Registrar_administrador_Click(object sender, EventArgs e)
+        {
+            LoginAdministrador2 v1 = new LoginAdministrador2();
+
+            this.Hide();
+
+            v1.Show();
+        }
     }
 }

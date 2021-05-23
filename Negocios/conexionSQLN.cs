@@ -59,11 +59,17 @@ namespace Negocios
             cn.Resgistar_Entrenador(cedula, nombre, calificacion, telefono, correo, sitio_web, provincia, canton, distrito, ubicacion, usuario);
         }
 
-        /*
-         *---------------------->CODIGO PARA CONSULTAS TABLA INTERMEDIA_MOV_POK_ENTRENADOR
-         * 
-         */
-        public DataTable ConsultaDT()
+
+        public void Registrar_administradorUsuario(string usuario, string contrasena, string llave)
+        {
+            cn.Resgistar_administrador_usuario(usuario, contrasena, llave);
+        }
+
+            /*
+             *---------------------->CODIGO PARA CONSULTAS TABLA INTERMEDIA_MOV_POK_ENTRENADOR
+             * 
+             */
+            public DataTable ConsultaDT()
         {
             return cn.ConsultarMov();
         }

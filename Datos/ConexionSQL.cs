@@ -120,6 +120,21 @@ namespace Datos
         }
 
 
+        public void Resgistar_administrador_usuario(string usuario, string contrasena, string llave)
+        {
+            string cadena = "EXEC InsertUs_clave '" + usuario + "','" + contrasena + "','" + llave + "', 'Administrador'";
+
+            con.Open();
+
+            SqlCommand comando = new SqlCommand(cadena, con);
+
+            comando.ExecuteNonQuery();
+
+            con.Close();
+        }
+
+
+
         /*
          * 
          * ---------------------------------------CODIGO PARA REGISTRO GMAPS

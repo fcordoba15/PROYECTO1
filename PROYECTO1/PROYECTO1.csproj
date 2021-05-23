@@ -64,6 +64,12 @@
     <Compile Include="Bitacora.Designer.cs">
       <DependentUpon>Bitacora.cs</DependentUpon>
     </Compile>
+    <Compile Include="EresAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EresAdmin.Designer.cs">
+      <DependentUpon>EresAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="G_Admin_Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,11 +100,28 @@
     <Compile Include="LoginAdministrador.Designer.cs">
       <DependentUpon>LoginAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginAdministrador2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAdministrador2.Designer.cs">
+      <DependentUpon>LoginAdministrador2.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginCliente.Designer.cs">
       <DependentUpon>LoginCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroAdministrador.Designer.cs">
+      <DependentUpon>RegistroAdministrador.cs</DependentUpon>
     </Compile>
     <Compile Include="RegistroCliente.cs">
       <SubType>Form</SubType>
@@ -153,6 +176,9 @@
     <EmbeddedResource Include="Bitacora.resx">
       <DependentUpon>Bitacora.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EresAdmin.resx">
+      <DependentUpon>EresAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="G_Admin_Usuarios.resx">
       <DependentUpon>G_Admin_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,11 +197,17 @@
     <EmbeddedResource Include="LoginAdministrador.resx">
       <DependentUpon>LoginAdministrador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginAdministrador2.resx">
+      <DependentUpon>LoginAdministrador2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginCliente.resx">
       <DependentUpon>LoginCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModuloEntrenador.resx">
       <DependentUpon>ModuloEntrenador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroAdministrador.resx">
+      <DependentUpon>RegistroAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistroCliente.resx">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
@@ -188,14 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="LoginEntrenador.resx">
       <DependentUpon>LoginEntrenador.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +287,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondo_RegistroClientes1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_RegistroAdministratores.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EresAdmin.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

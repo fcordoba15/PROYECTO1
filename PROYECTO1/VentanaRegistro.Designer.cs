@@ -65,6 +65,7 @@ namespace PROYECTO1
             this.Registrar_administrador.TabIndex = 10;
             this.Registrar_administrador.Text = "Registrar Administrador";
             this.Registrar_administrador.UseVisualStyleBackColor = false;
+            this.Registrar_administrador.Click += new System.EventHandler(this.Registrar_administrador_Click);
             // 
             // Mensaje2
             // 

@@ -133,6 +133,16 @@ namespace PROYECTO1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EresAdmin {
+            get {
+                object obj = ResourceManager.GetObject("EresAdmin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fondo_inicial {
             get {
                 object obj = ResourceManager.GetObject("Fondo_inicial", resourceCulture);
@@ -146,6 +156,16 @@ namespace PROYECTO1.Properties {
         internal static System.Drawing.Bitmap Fondo_Login {
             get {
                 object obj = ResourceManager.GetObject("Fondo_Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo_RegistroAdministratores {
+            get {
+                object obj = ResourceManager.GetObject("fondo_RegistroAdministratores", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -10,7 +10,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= localhost\\SQLEXPRESS02; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= SURFACEPROPEDRO\\SQLEXPRESS; database= BASEACTUALIZADA; integrated security= true"; //Cambiar server segun SQL
         //SURFACEPROPEDRO\\SQLEXPRESS
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -270,6 +270,17 @@ namespace Datos
             return flag;
         }
 
+        public DataTable ConsultarPokEliminar()
+        {
+            string query = "SELECT * FROM pokemon";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
+        }
+
         public int EliminarPokemonAdministrador(int id)
         {
             int flag = 0;
@@ -281,7 +292,62 @@ namespace Datos
             con.Close();
 
             return flag;
+
         }
+
+        /*
+       * 
+       * 
+       * -------------------------CONSULTAS ENTRENADORES MODULO ADMINISTRADOR
+       * 
+       * 
+       */
+        public DataTable ConsultarEntrenadorAdmi()
+        {
+            string query = "SELECT * FROM entrenador";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
+        }
+
+        public int ModificarEntrenadorAdmin(string id_entrenador_MA, string nombre_entrenador_MA, int calificacion
+            , int telefono, string correo_electronico, string sitio_web, string provincia, string canton, string distrito, 
+            string ubicacion)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "UPDATE entrenador SET nombre_entrenador = '"
+                + nombre_entrenador_MA + "', calificacion = '" + calificacion + "', telefono_entrenador = '" + telefono + "',correo_electrónico = '" + correo_electronico + "', " +
+                "sitio_web = '" + sitio_web + "'" +
+                ", provincia = '" + provincia + "', cantón = '" + canton + "', distrito = '" + distrito + "'" +
+                ", ubicación = '" + ubicacion + "' WHERE id_entrenador = '" + id_entrenador_MA + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+        public int EliminarEntrenadorAdministrador(int id_entrenador_MA)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "DELETE FROM entrenador WHERE id_entrenador = '" + id_entrenador_MA + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+
+        }
+
+
+
         /*
          * 
          * ----------------------------CODIGO BITACORA ENTRENADOR
@@ -443,9 +509,6 @@ namespace Datos
 
             return tabla;
 
-
-
-            return tabla;
 
         }
         public int InsertarMovimientoAdmin(string codigoMovimiento, string descripcionMovimiento, string nombreMovimiento, 

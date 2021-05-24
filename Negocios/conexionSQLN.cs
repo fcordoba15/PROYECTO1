@@ -171,6 +171,33 @@ namespace Negocios
             return cn.EliminarMovimientoAdmin(codigoMovimiento);
         }
 
+        /*
+        * 
+        * 
+        * ------------------------------->CONSULTAS ADMINISTRADOR GESTION ENTRENADORES
+        * 
+        * 
+        */
+
+        public DataTable ConsultaEntrenadoresAdmin()
+        {
+            return cn.ConsultarEntrenadorAdmi();
+        }
+
+        public int ModificarEntrenadorAdmin(string id_entrenador_MA, string nombre_entrenador_MA, int calificacion
+           , int telefono, string correo_electronico, string sitio_web, string provincia, string canton, string distrito,
+           string ubicacion)
+        {
+            return cn.ModificarEntrenadorAdmin(id_entrenador_MA, nombre_entrenador_MA, calificacion, telefono, correo_electronico,
+                sitio_web, provincia, canton, distrito, ubicacion);
+        }
+
+        public int EliminarEntrenadorAdministrador(int id_entrenador_MA)
+        {
+            return cn.EliminarEntrenadorAdministrador(id_entrenador_MA);
+
+        }
+
 
 
         /*

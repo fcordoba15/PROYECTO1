@@ -27,7 +27,7 @@ namespace PROYECTO1
             {
                 cn.InsertarPokemonAdministrador(Nombre_Pokemon.Text, ID_Tipo.Text, Codigo_Tipo.Text, Total.Text,
                 Salud.Text, Ataque.Text, Defensa.Text, Ataque_Especial.Text, Defensa_Especial.Text,
-                Velocidad.Text, Generacion.Text, Legendario.Text);
+                Velocidad.Text, Generacion.Text, comboBox1.Text);
                 ConsultaPokDG.DataSource = cn.ConsultaPokemonDT();
             }
             catch(SqlException ex)
@@ -39,9 +39,9 @@ namespace PROYECTO1
 
         private void EliminarPokEnt_Click_1(object sender, EventArgs e)
         {
-            int i = Convert.ToInt32(ID_Pokemon.Text);
-            cn.EliminarPokemonAdministrador(i);
-            ConsultaPokDG.DataSource = cn.ConsultaPokemonDT();
+            this.Hide();
+            G_EliminarPokAdmin m1 = new G_EliminarPokAdmin();
+            m1.Show();
 
         }
 
@@ -50,7 +50,7 @@ namespace PROYECTO1
             int i = Convert.ToInt32(ID_Pokemon.Text);
             cn.ModificarPokemonAdministrador(i, Nombre_Pokemon.Text, ID_Tipo.Text, Codigo_Tipo.Text, Total.Text,
                 Salud.Text, Ataque.Text, Defensa.Text, Ataque_Especial.Text, Defensa_Especial.Text,
-                Velocidad.Text, Generacion.Text, Legendario.Text);
+                Velocidad.Text, Generacion.Text, comboBox1.Text);
             ConsultaPokDG.DataSource = cn.ConsultaPokemonDT();
         }
 

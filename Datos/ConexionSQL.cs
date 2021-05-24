@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Drawing;
 using System.Data.SqlClient;
 
 namespace Datos
@@ -253,7 +254,7 @@ namespace Datos
 
         public int ModificarPokemonAdministrador(int id, string nombre_pokemon, string id_tipo, string cod_tipo, string total,
             string salud, string ataque, string defensa, string ataque_especial, string defensa_especial, string velocidad,
-            string generacion, string legendario)
+            string generacion, string legendario, byte[] foto)
         {
             int flag = 0;
 
@@ -262,7 +263,7 @@ namespace Datos
                 + nombre_pokemon + "', id_tipo = '" + id_tipo + "', cod_tipo = '"+cod_tipo+"',total = '"+total+"', salud = '"+salud+"'" +
                 ", ataque = '"+ataque+"', defensa = '"+defensa+"', ataque_especial = '"+ataque_especial+"'" +
                 ", defensa_especial = '"+defensa_especial+"', velocidad = '"+velocidad+"'" +
-                ", generacion = '"+generacion+"', legendario = '"+legendario+"' WHERE id = '"+id+"'";
+                ", generacion = '"+generacion+"', legendario = '"+legendario+ "', foto = '" + foto + "'  WHERE id = '" + id+"'";
             SqlCommand cmd = new SqlCommand(query, con);
             flag = cmd.ExecuteNonQuery();
             con.Close();
@@ -295,6 +296,27 @@ namespace Datos
 
         }
 
+        public DataRow Imagen_Mostrar(int id)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT foto FROM pokemon where id = " + id, con);
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            ad.Fill(ds, "img");
+
+            byte[] datos = new byte[0];
+            DataRow dr = ds.Tables["img"].Rows[0];
+            con.Close();
+
+            return dr;
+
+
+
+            
+            
+            
+
+        }
         /*
        * 
        * 
@@ -426,6 +448,8 @@ namespace Datos
 
             return flag;
         }
+
+       
         /*
          * 
          * 

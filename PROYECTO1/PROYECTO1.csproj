@@ -70,6 +70,12 @@
     <Compile Include="EresAdmin.Designer.cs">
       <DependentUpon>EresAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="G_Admi_Pokemon_Modificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_Admi_Pokemon_Modificar.Designer.cs">
+      <DependentUpon>G_Admi_Pokemon_Modificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="G_Admin_Entrenadores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,12 @@
     </Compile>
     <Compile Include="G_Admin_Usuarios.Designer.cs">
       <DependentUpon>G_Admin_Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="G_Admi_Pokemon_Agregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_Admi_Pokemon_Agregar.Designer.cs">
+      <DependentUpon>G_Admi_Pokemon_Agregar.cs</DependentUpon>
     </Compile>
     <Compile Include="G_EliminarPokAdmin.cs">
       <SubType>Form</SubType>
@@ -203,6 +215,9 @@
     <EmbeddedResource Include="EresAdmin.resx">
       <DependentUpon>EresAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="G_Admi_Pokemon_Modificar.resx">
+      <DependentUpon>G_Admi_Pokemon_Modificar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="G_Admin_Entrenadores.resx">
       <DependentUpon>G_Admin_Entrenadores.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="G_Admin_Usuarios.resx">
       <DependentUpon>G_Admin_Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="G_Admi_Pokemon_Agregar.resx">
+      <DependentUpon>G_Admi_Pokemon_Agregar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="G_EliminarPokAdmin.resx">
       <DependentUpon>G_EliminarPokAdmin.cs</DependentUpon>

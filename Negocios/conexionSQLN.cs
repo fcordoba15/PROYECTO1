@@ -98,25 +98,36 @@ namespace Negocios
         }
         public int InsertarPokemonAdministrador(string nombre_pokemon, string id_tipo, string cod_tipo, string total,
             string salud, string ataque, string defensa, string ataque_especial, string defensa_especial, string velocidad,
-            string generacion, string legendario)
+            string generacion, string legendario, byte[] foto)
         {
             return cn.InsertarPokemonAdministrador(nombre_pokemon, id_tipo, cod_tipo, total, salud, ataque, defensa,
-                ataque_especial, defensa_especial, velocidad, generacion, legendario);
+                ataque_especial, defensa_especial, velocidad, generacion, legendario,foto);
         }
 
         public int ModificarPokemonAdministrador(int id, string nombre_pokemon, string id_tipo, string cod_tipo, string total,
             string salud, string ataque, string defensa, string ataque_especial, string defensa_especial, string velocidad,
-            string generacion, string legendario)
+            string generacion, string legendario, byte[] foto)
         {
             return cn.ModificarPokemonAdministrador(id, nombre_pokemon, id_tipo, cod_tipo, total, salud, ataque, defensa,
-                ataque_especial, defensa_especial, velocidad, generacion, legendario);
+                ataque_especial, defensa_especial, velocidad, generacion, legendario,foto);
         }
 
         public int EliminarPokemonAdministrador(int id)
         {
             return cn.EliminarPokemonAdministrador(id);
+
+
         }
+
+       public DataRow Imagen_Mostrar(int id)
+        {
+            return cn.Imagen_Mostrar(id);
+        }
+
         /*
+         * 
+         * 
+         * 
         * 
         * ------------------------------->CONSULTAS ADMINISTRADOR GESTION USUARIOS
         * 

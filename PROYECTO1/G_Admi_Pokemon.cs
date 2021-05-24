@@ -23,22 +23,11 @@ namespace PROYECTO1
 
         private void Crear_Click(object sender, EventArgs e)
         {
-
-            System.IO.MemoryStream ms = new System.IO.MemoryStream();
-            fotografia.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-
-            try
-            {
-                cn.InsertarPokemonAdministrador(Nombre_Pokemon.Text, ID_Tipo.Text, Codigo_Tipo.Text, Total.Text,
-                Salud.Text, Ataque.Text, Defensa.Text, Ataque_Especial.Text, Defensa_Especial.Text,
-                Velocidad.Text, Generacion.Text, comboBox1.Text, ms.GetBuffer());
-                ConsultaPokDG.DataSource = cn.ConsultaPokemonDT();
-            }
-            catch(SqlException ex)
-            {
-                MessageBox.Show("Escoger True o False " + ex.Message);
-                //AGREGAR CLOSE .Close();
-            }
+            this.Hide();
+            G_Admi_Pokemon_Agregar m1 = new G_Admi_Pokemon_Agregar();
+            m1.Show();
+         
+           
         }
 
         private void EliminarPokEnt_Click_1(object sender, EventArgs e)
@@ -51,29 +40,34 @@ namespace PROYECTO1
 
         private void ModificarPokEnt_Click_1(object sender, EventArgs e)
         {
-            int i = Convert.ToInt32(ID_Pokemon.Text);
-            cn.ModificarPokemonAdministrador(i, Nombre_Pokemon.Text, ID_Tipo.Text, Codigo_Tipo.Text, Total.Text,
-                Salud.Text, Ataque.Text, Defensa.Text, Ataque_Especial.Text, Defensa_Especial.Text,
-                Velocidad.Text, Generacion.Text, comboBox1.Text);
-            ConsultaPokDG.DataSource = cn.ConsultaPokemonDT();
+            this.Hide();
+            G_Admi_Pokemon_Modificar  m1 = new G_Admi_Pokemon_Modificar();
+            m1.Show();
         }
 
         private void Regresar_Click(object sender, EventArgs e)
         {
             this.Hide();
+            ModuloAdministrador m1 = new ModuloAdministrador();
+            m1.Show();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fotografia = new OpenFileDialog();
-            DialogResult rs = fotografia.ShowDialog();
-            if(rs ==DialogResult.OK)
-            {
-                picPokemon.Image = Image.FromFile(fotografia.FileName);
-            }
-        }
+                   }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ConsultaPokDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

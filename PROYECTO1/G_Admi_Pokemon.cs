@@ -23,11 +23,15 @@ namespace PROYECTO1
 
         private void Crear_Click(object sender, EventArgs e)
         {
+
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            fotografia.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+
             try
             {
                 cn.InsertarPokemonAdministrador(Nombre_Pokemon.Text, ID_Tipo.Text, Codigo_Tipo.Text, Total.Text,
                 Salud.Text, Ataque.Text, Defensa.Text, Ataque_Especial.Text, Defensa_Especial.Text,
-                Velocidad.Text, Generacion.Text, comboBox1.Text);
+                Velocidad.Text, Generacion.Text, comboBox1.Text, ms.GetBuffer());
                 ConsultaPokDG.DataSource = cn.ConsultaPokemonDT();
             }
             catch(SqlException ex)

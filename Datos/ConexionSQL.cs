@@ -10,7 +10,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= SURFACEPROPEDRO\\SQLEXPRESS; database= BASEACTUALIZADA; integrated security= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= localhost\\SQLEXPRESS02; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
         //SURFACEPROPEDRO\\SQLEXPRESS
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -233,16 +233,16 @@ namespace Datos
 
         public int InsertarPokemonAdministrador(string nombre_pokemon, string id_tipo, string cod_tipo, string total,
             string salud, string ataque, string defensa, string ataque_especial, string defensa_especial, string velocidad,
-            string generacion, string legendario)
+            string generacion, string legendario, byte[] foto)
         {
             int flag = 0;
 
             con.Open();
             string query = "INSERT INTO pokemon(nombre, id_tipo, cod_tipo, total, salud, ataque, defensa, ataque_especial, defensa_especial," +
-                "velocidad, generacion, legendario)" +
+                "velocidad, generacion, legendario,foto)" +
                 " VALUES ('"+ nombre_pokemon + "','"+id_tipo+"','"+cod_tipo+"','"+total+"'," +
                 "'"+salud+"','"+ataque+"','"+defensa+"'," +
-                "'"+ataque_especial+"','"+defensa_especial+"','"+velocidad+"','"+generacion+"','"+legendario+"')";
+                "'"+ataque_especial+"','"+defensa_especial+"','"+velocidad+"','"+generacion+"','"+legendario+ "','" + foto + "')";
             SqlCommand cmd = new SqlCommand(query, con);
             //cmd.Parameters.AddWithValue("cod_tipo",Convert.ToInt32(cod_tipo));
             flag = cmd.ExecuteNonQuery();

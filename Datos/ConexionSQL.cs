@@ -10,7 +10,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= localhost\\SQLEXPRESS02; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
         //SURFACEPROPEDRO\\SQLEXPRESS
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -423,7 +423,73 @@ namespace Datos
             return flag;
         }
 
+        /*
+        * 
+        * 
+        * ------------------------------CODIGO ADMINISTRADOR GESTION MOVIMIENTOS
+        * 
+        * 
+        */
 
+        public DataTable ConsultarMovimientosAdmin()
+        {
+            string query = "SELECT * FROM movimiento";
+
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+        
+            data.Fill(tabla);
+
+            return tabla;
+
+
+
+            return tabla;
+
+        }
+        public int InsertarMovimientoAdmin(string codigoMovimiento, string descripcionMovimiento, string nombreMovimiento, 
+            string tipoMovimiento)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "INSERT INTO movimiento VALUES('"+codigoMovimiento+"', '"+descripcionMovimiento+"'," +
+                " '"+nombreMovimiento+"', '"+tipoMovimiento+"') ";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+        public int ModificarMovimientoAdmin(string codigoMovimiento, string descripcionMovimiento, string nombreMovimiento,
+            string tipoMovimiento)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "UDPATE movimiento SET descripcion = '"+descripcionMovimiento+"', nombre = '"+nombreMovimiento+"', " +
+                " tipo = '' WHERE cod_movimiento = '"+codigoMovimiento+"'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+        public int EliminarMovimientoAdmin(string codigoMovimiento)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "DELETE FROM movimiento WHERE cod_movimiento = '"+codigoMovimiento+"'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
 
     }
 

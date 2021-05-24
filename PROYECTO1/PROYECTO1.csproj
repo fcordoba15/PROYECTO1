@@ -70,6 +70,12 @@
     <Compile Include="EresAdmin.Designer.cs">
       <DependentUpon>EresAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="G_Admin_Movimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_Admin_Movimiento.Designer.cs">
+      <DependentUpon>G_Admin_Movimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="G_Admin_Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,12 @@
     </Compile>
     <Compile Include="LoginCliente.Designer.cs">
       <DependentUpon>LoginCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloAdministrador.Designer.cs">
+      <DependentUpon>ModuloAdministrador.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -179,6 +191,9 @@
     <EmbeddedResource Include="EresAdmin.resx">
       <DependentUpon>EresAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="G_Admin_Movimiento.resx">
+      <DependentUpon>G_Admin_Movimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="G_Admin_Usuarios.resx">
       <DependentUpon>G_Admin_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginCliente.resx">
       <DependentUpon>LoginCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloAdministrador.resx">
+      <DependentUpon>ModuloAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModuloEntrenador.resx">
       <DependentUpon>ModuloEntrenador.cs</DependentUpon>

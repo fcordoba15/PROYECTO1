@@ -40,14 +40,38 @@ namespace PROYECTO1
             }
             else
             {
-                cn.Registrar_clienteUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
+                int a = 0;
+                while (a == 0)
+                {
+                    string p = "'";
+                    int validación_comilla = 0;
+                    foreach (char c in textBox1.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox5.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    if (validación_comilla > 0)
+                    {
+                        MessageBox.Show("¡Error! Los campos no deben tener comillas simples");
+                        break;
+                    }
 
-                cn.Registrar_cliente(textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text
-                    ,textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox12.Text,textBox1.Text);
-                MessageBox.Show("Se realizó el registro");
-                this.Hide();
-                VentanaInicio v2 = new VentanaInicio();
-                v2.Show();
+
+                    cn.Registrar_clienteUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
+
+                    cn.Registrar_cliente(textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text
+                        , textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox12.Text, textBox1.Text);
+                    MessageBox.Show("Se realizó el registro");
+                    this.Hide();
+                    VentanaInicio v2 = new VentanaInicio();
+                    v2.Show();
+                    a++;
+                }
 
             }
         }

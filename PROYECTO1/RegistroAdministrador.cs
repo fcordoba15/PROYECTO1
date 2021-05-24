@@ -24,18 +24,34 @@ namespace PROYECTO1
         private void Realizar_registro_cliente_Click(object sender, EventArgs e)
         {
 
+
             if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" )
             {
                 MessageBox.Show("Ingrese todos los datos");
             }
             else
             {
-                EresAdmin v1 = new EresAdmin();
-                cn.Registrar_administradorUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
-                this.Hide();
-                v1.Show();
-
-                
+                int a = 0;
+                while (a==0)
+                {
+                    string p = "'";
+                    int validación_comilla = 0;
+                    foreach (char c in textBox1.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    if (validación_comilla > 0)
+                    {
+                        MessageBox.Show("¡Error! El nombre no debe tener comillas simples");
+                        break;
+                    }
+                    EresAdmin v1 = new EresAdmin();
+                    cn.Registrar_administradorUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
+                    this.Hide();
+                    v1.Show();
+                    a++;
+                }    
             }
         }
     }

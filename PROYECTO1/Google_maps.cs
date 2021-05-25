@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Negocios;
 using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
@@ -16,7 +16,9 @@ using GMap.NET.WindowsForms.Markers;
 namespace PROYECTO1
 {
     public partial class Google_maps : Form
+
     {
+        conexionSQLN cn = new conexionSQLN();
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
         DataTable dt;
@@ -120,8 +122,11 @@ namespace PROYECTO1
         private void guardar_Click(object sender, EventArgs e)
         {
             dt.Rows.Add(txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);
-           /* cn.Resgistar_GMaps(,txtUbicacion, txtLatitud, txtLongitud);*/
-
+            cn.Registrar_GMap(Username.Text, txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);
+            MessageBox.Show("Se realizó el registro");
+            this.Hide();
+            VentanaInicio v2 = new VentanaInicio();
+            v2.Show();
         }
     }
 }

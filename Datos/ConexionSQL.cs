@@ -11,8 +11,8 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= localhost\\SQLEXPRESS01; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
-        //SURFACEPROPEDRO\\SQLEXPRESS    --localhost\\SQLEXPRESS01
+        static string conexionstring = "server= localhost\\SQLEXPRESS02; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
+        //SURFACEPROPEDRO\\SQLEXPRESS    --localhost\\SQLEXPRESS01 --localhost\\SQLEXPRESS02
 
         SqlConnection con = new SqlConnection(conexionstring);
 
@@ -143,7 +143,7 @@ namespace Datos
          */
         public void Resgistar_GMaps(string id_client, string Ubicacion, string Latitud, string Longitud )
         {
-            string cadena = "INSERT INTO Resgistar_GMaps values( '"+ id_client + "', '" + Ubicacion + "','" + Latitud + "',  '"+ Longitud +"')";
+            string cadena = "INSERT INTO Registrar_GMaps values( '" + id_client + "', '" + Ubicacion + "','" + Latitud + "',  '"+ Longitud +"')";
 
             con.Open();
 

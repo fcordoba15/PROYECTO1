@@ -41,7 +41,42 @@ namespace PROYECTO1
                         if (c == p[0])
                             validación_comilla++;
                     }
+                    foreach (char c in textBox2.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
                     foreach (char c in textBox5.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox7.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox8.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox9.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox10.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox11.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox12.Text)
                     {
                         if (c == p[0])
                             validación_comilla++;

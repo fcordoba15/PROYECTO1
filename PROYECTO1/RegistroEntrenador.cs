@@ -57,10 +57,10 @@ namespace PROYECTO1
                     cn.Registrar_entrenador(textBox4.Text, textBox5.Text, textBox13.Text, textBox6.Text, textBox7.Text
                         , textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox12.Text, textBox1.Text);
 
-                    MessageBox.Show("Se realizó el registro");
-                    this.Hide();
-                    VentanaInicio v2 = new VentanaInicio();
-                    v2.Show();
+                    Google_maps v1 = new Google_maps();
+
+                    v1.Show();
+                    
                     a++;
                 }
 

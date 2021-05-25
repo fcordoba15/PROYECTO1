@@ -54,7 +54,6 @@ namespace PROYECTO1
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.Realizar_registro_cliente = new System.Windows.Forms.Button();
-            this.Seleccionar_ubicación = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -310,25 +309,12 @@ namespace PROYECTO1
             this.Realizar_registro_cliente.UseVisualStyleBackColor = false;
             this.Realizar_registro_cliente.Click += new System.EventHandler(this.Realizar_registro_cliente_Click);
             // 
-            // Seleccionar_ubicación
-            // 
-            this.Seleccionar_ubicación.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.Seleccionar_ubicación.Location = new System.Drawing.Point(161, 630);
-            this.Seleccionar_ubicación.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Seleccionar_ubicación.Name = "Seleccionar_ubicación";
-            this.Seleccionar_ubicación.Size = new System.Drawing.Size(276, 30);
-            this.Seleccionar_ubicación.TabIndex = 26;
-            this.Seleccionar_ubicación.Text = "Seleccionar ubicación";
-            this.Seleccionar_ubicación.UseVisualStyleBackColor = false;
-            this.Seleccionar_ubicación.Click += new System.EventHandler(this.Seleccionar_ubicación_Click);
-            // 
             // RegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PROYECTO1.Properties.Resources.fondo_RegistroClientes1;
-            this.ClientSize = new System.Drawing.Size(542, 719);
-            this.Controls.Add(this.Seleccionar_ubicación);
+            this.ClientSize = new System.Drawing.Size(528, 673);
             this.Controls.Add(this.Realizar_registro_cliente);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -388,6 +374,5 @@ namespace PROYECTO1
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button Realizar_registro_cliente;
-        private System.Windows.Forms.Button Seleccionar_ubicación;
     }
 }

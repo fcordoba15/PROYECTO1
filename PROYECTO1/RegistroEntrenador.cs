@@ -87,6 +87,40 @@ namespace PROYECTO1
                         break;
                     }
 
+                    string m = "@";
+                    int validación_arroba = 0;
+                    foreach (char c in textBox7.Text)
+                    {
+                        if (c == m[0])
+                            validación_arroba++;
+                    }
+                    if (validación_arroba == 0)
+                    {
+                        MessageBox.Show("¡Error! El correo debe ser de formato usuario@.com");
+                        break;
+                    }
+
+                    if (textBox3.Text.All(char.IsDigit) == false)
+                    {
+                        MessageBox.Show("¡Error! La llave de encriptación debe ser numérica");
+                        break;
+                    }
+                    if (textBox13.Text.All(char.IsDigit) == false )
+                    {
+                        MessageBox.Show("¡Error! La calificación debe ser numérica");
+                        break;
+                    }
+                    if (textBox4.Text.All(char.IsDigit) == false)
+                    {
+                        MessageBox.Show("¡Error! La cédula debe ser numérica");
+                        break;
+                    }
+                    if (textBox6.Text.All(char.IsDigit) == false)
+                    {
+                        MessageBox.Show("¡Error! El teléfono debe ser numérico");
+                        break;
+                    }
+
                     cn.Registrar_entrenadorUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
 
                     cn.Registrar_entrenador(textBox4.Text, textBox5.Text, textBox13.Text, textBox6.Text, textBox7.Text

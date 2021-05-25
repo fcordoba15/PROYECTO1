@@ -17,7 +17,7 @@ namespace PROYECTO1
         public G_Admi_Pokemon_Agregar()
         {
             InitializeComponent();
-            
+
 
         }
 
@@ -38,19 +38,30 @@ namespace PROYECTO1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fotografia = new OpenFileDialog();
-            DialogResult rs = fotografia.ShowDialog();
-            if (rs == DialogResult.OK)
+            try
             {
-                picPokemon.Image = Image.FromFile(fotografia.FileName);
+                OpenFileDialog fotografia = new OpenFileDialog();
+                DialogResult rs = fotografia.ShowDialog();
+                if (rs == DialogResult.OK)
+                {
+                    picPokemon.Image = Image.FromFile(fotografia.FileName);
 
-                
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("¡Error! Vuelva a intentar " + ex.Message);
+                VentanaInicio m3 = new VentanaInicio();
+                m3.Show();
+
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
                 picPokemon.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
 
@@ -61,17 +72,14 @@ namespace PROYECTO1
                 this.Hide();
                 ConsultaPokEnt m2 = new ConsultaPokEnt();
                 m2.Show();
-                
-               
-
-
-
-            
-
-
-
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("¡Error! Vuelva a intentar" + ex.Message);
+                VentanaInicio m3 = new VentanaInicio();
+                m3.Show();
 
             }
+        }
     }
 }

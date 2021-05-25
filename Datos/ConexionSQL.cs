@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Drawing;
 using System.Data.SqlClient;
 
 namespace Datos
@@ -233,16 +234,16 @@ namespace Datos
 
         public int InsertarPokemonAdministrador(string nombre_pokemon, string id_tipo, string cod_tipo, string total,
             string salud, string ataque, string defensa, string ataque_especial, string defensa_especial, string velocidad,
-            string generacion, string legendario)
+            string generacion, string legendario, byte[] foto)
         {
             int flag = 0;
 
             con.Open();
             string query = "INSERT INTO pokemon(nombre, id_tipo, cod_tipo, total, salud, ataque, defensa, ataque_especial, defensa_especial," +
-                "velocidad, generacion, legendario)" +
+                "velocidad, generacion, legendario,foto)" +
                 " VALUES ('"+ nombre_pokemon + "','"+id_tipo+"','"+cod_tipo+"','"+total+"'," +
                 "'"+salud+"','"+ataque+"','"+defensa+"'," +
-                "'"+ataque_especial+"','"+defensa_especial+"','"+velocidad+"','"+generacion+"','"+legendario+"')";
+                "'"+ataque_especial+"','"+defensa_especial+"','"+velocidad+"','"+generacion+"','"+legendario+ "','" + foto + "')";
             SqlCommand cmd = new SqlCommand(query, con);
             //cmd.Parameters.AddWithValue("cod_tipo",Convert.ToInt32(cod_tipo));
             flag = cmd.ExecuteNonQuery();
@@ -253,7 +254,7 @@ namespace Datos
 
         public int ModificarPokemonAdministrador(int id, string nombre_pokemon, string id_tipo, string cod_tipo, string total,
             string salud, string ataque, string defensa, string ataque_especial, string defensa_especial, string velocidad,
-            string generacion, string legendario)
+            string generacion, string legendario, byte[] foto)
         {
             int flag = 0;
 
@@ -262,12 +263,23 @@ namespace Datos
                 + nombre_pokemon + "', id_tipo = '" + id_tipo + "', cod_tipo = '"+cod_tipo+"',total = '"+total+"', salud = '"+salud+"'" +
                 ", ataque = '"+ataque+"', defensa = '"+defensa+"', ataque_especial = '"+ataque_especial+"'" +
                 ", defensa_especial = '"+defensa_especial+"', velocidad = '"+velocidad+"'" +
-                ", generacion = '"+generacion+"', legendario = '"+legendario+"' WHERE id = '"+id+"'";
+                ", generacion = '"+generacion+"', legendario = '"+legendario+ "', foto = '" + foto + "'  WHERE id = '" + id+"'";
             SqlCommand cmd = new SqlCommand(query, con);
             flag = cmd.ExecuteNonQuery();
             con.Close();
 
             return flag;
+        }
+
+        public DataTable ConsultarPokEliminar()
+        {
+            string query = "SELECT * FROM pokemon";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
         }
 
         public int EliminarPokemonAdministrador(int id)
@@ -281,7 +293,83 @@ namespace Datos
             con.Close();
 
             return flag;
+
         }
+
+        public DataRow Imagen_Mostrar(int id)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT foto FROM pokemon where id = " + id, con);
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            ad.Fill(ds, "img");
+
+            byte[] datos = new byte[0];
+            DataRow dr = ds.Tables["img"].Rows[0];
+            con.Close();
+
+            return dr;
+
+
+
+            
+            
+            
+
+        }
+        /*
+       * 
+       * 
+       * -------------------------CONSULTAS ENTRENADORES MODULO ADMINISTRADOR
+       * 
+       * 
+       */
+        public DataTable ConsultarEntrenadorAdmi()
+        {
+            string query = "SELECT * FROM entrenador";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
+        }
+
+        public int ModificarEntrenadorAdmin(string id_entrenador_MA, string nombre_entrenador_MA, int calificacion
+            , int telefono, string correo_electronico, string sitio_web, string provincia, string canton, string distrito, 
+            string ubicacion)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "UPDATE entrenador SET nombre_entrenador = '"
+                + nombre_entrenador_MA + "', calificacion = '" + calificacion + "', telefono_entrenador = '" + telefono + "',correo_electrónico = '" + correo_electronico + "', " +
+                "sitio_web = '" + sitio_web + "'" +
+                ", provincia = '" + provincia + "', cantón = '" + canton + "', distrito = '" + distrito + "'" +
+                ", ubicación = '" + ubicacion + "' WHERE id_entrenador = '" + id_entrenador_MA + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+        }
+
+        public int EliminarEntrenadorAdministrador(int id_entrenador_MA)
+        {
+            int flag = 0;
+
+            con.Open();
+            string query = "DELETE FROM entrenador WHERE id_entrenador = '" + id_entrenador_MA + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            flag = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return flag;
+
+        }
+
+
+
         /*
          * 
          * ----------------------------CODIGO BITACORA ENTRENADOR
@@ -360,6 +448,8 @@ namespace Datos
 
             return flag;
         }
+
+       
         /*
          * 
          * 
@@ -443,9 +533,6 @@ namespace Datos
 
             return tabla;
 
-
-
-            return tabla;
 
         }
         public int InsertarMovimientoAdmin(string codigoMovimiento, string descripcionMovimiento, string nombreMovimiento, 

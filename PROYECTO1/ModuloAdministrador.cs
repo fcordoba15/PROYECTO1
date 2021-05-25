@@ -40,9 +40,9 @@ namespace PROYECTO1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //G_ m1 = new ConsultaPokEnt();
-            //m1.Show();
+            this.Hide();
+            G_Admin_Entrenadores m1 = new G_Admin_Entrenadores();
+            m1.Show();
         }
     }
 }

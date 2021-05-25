@@ -40,7 +40,7 @@ namespace PROYECTO1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(52, 76);
+            this.button1.Location = new System.Drawing.Point(120, 214);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(158, 76);
             this.button1.TabIndex = 1;
@@ -50,7 +50,7 @@ namespace PROYECTO1
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(281, 76);
+            this.button2.Location = new System.Drawing.Point(124, 76);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(154, 76);
             this.button2.TabIndex = 2;
@@ -60,7 +60,7 @@ namespace PROYECTO1
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(518, 76);
+            this.button3.Location = new System.Drawing.Point(687, 76);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(166, 76);
             this.button3.TabIndex = 3;
@@ -70,7 +70,7 @@ namespace PROYECTO1
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(786, 76);
+            this.button4.Location = new System.Drawing.Point(689, 214);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(164, 76);
             this.button4.TabIndex = 4;
@@ -83,7 +83,8 @@ namespace PROYECTO1
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-1, -4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1083, 889);
+            this.pictureBox1.Size = new System.Drawing.Size(1024, 1024);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 

@@ -98,25 +98,36 @@ namespace Negocios
         }
         public int InsertarPokemonAdministrador(string nombre_pokemon, string id_tipo, string cod_tipo, string total,
             string salud, string ataque, string defensa, string ataque_especial, string defensa_especial, string velocidad,
-            string generacion, string legendario)
+            string generacion, string legendario, byte[] foto)
         {
             return cn.InsertarPokemonAdministrador(nombre_pokemon, id_tipo, cod_tipo, total, salud, ataque, defensa,
-                ataque_especial, defensa_especial, velocidad, generacion, legendario);
+                ataque_especial, defensa_especial, velocidad, generacion, legendario,foto);
         }
 
         public int ModificarPokemonAdministrador(int id, string nombre_pokemon, string id_tipo, string cod_tipo, string total,
             string salud, string ataque, string defensa, string ataque_especial, string defensa_especial, string velocidad,
-            string generacion, string legendario)
+            string generacion, string legendario, byte[] foto)
         {
             return cn.ModificarPokemonAdministrador(id, nombre_pokemon, id_tipo, cod_tipo, total, salud, ataque, defensa,
-                ataque_especial, defensa_especial, velocidad, generacion, legendario);
+                ataque_especial, defensa_especial, velocidad, generacion, legendario,foto);
         }
 
         public int EliminarPokemonAdministrador(int id)
         {
             return cn.EliminarPokemonAdministrador(id);
+
+
         }
+
+       public DataRow Imagen_Mostrar(int id)
+        {
+            return cn.Imagen_Mostrar(id);
+        }
+
         /*
+         * 
+         * 
+         * 
         * 
         * ------------------------------->CONSULTAS ADMINISTRADOR GESTION USUARIOS
         * 
@@ -169,6 +180,33 @@ namespace Negocios
         public int EliminarMovimientoAdmin(string codigoMovimiento)
         {
             return cn.EliminarMovimientoAdmin(codigoMovimiento);
+        }
+
+        /*
+        * 
+        * 
+        * ------------------------------->CONSULTAS ADMINISTRADOR GESTION ENTRENADORES
+        * 
+        * 
+        */
+
+        public DataTable ConsultaEntrenadoresAdmin()
+        {
+            return cn.ConsultarEntrenadorAdmi();
+        }
+
+        public int ModificarEntrenadorAdmin(string id_entrenador_MA, string nombre_entrenador_MA, int calificacion
+           , int telefono, string correo_electronico, string sitio_web, string provincia, string canton, string distrito,
+           string ubicacion)
+        {
+            return cn.ModificarEntrenadorAdmin(id_entrenador_MA, nombre_entrenador_MA, calificacion, telefono, correo_electronico,
+                sitio_web, provincia, canton, distrito, ubicacion);
+        }
+
+        public int EliminarEntrenadorAdministrador(int id_entrenador_MA)
+        {
+            return cn.EliminarEntrenadorAdministrador(id_entrenador_MA);
+
         }
 
 

@@ -25,12 +25,9 @@ namespace PROYECTO1
 
         private void ModificarEntrenador_Click_1(object sender, EventArgs e)
         {
-            int i = Convert.ToInt32(txt_Calificacion_Entrenador.Text);
-            int i2 = Convert.ToInt32(txt_Telefono_Entrenador.Text);
-            cn.ModificarEntrenadorAdmin(txt_ID_Entrenador.Text, txt_Nombre_Entrenador.Text, i,
-                i2, txt_Correo_Entrenador.Text, txt_SitioWeb_Entrenador.Text, txt_Provincia_Entrenador.Text,
-                txt_Canton_Entrenador.Text, txt_Distrito_Entrenador.Text, txt_Ubicacion_Entrenador.Text);
-            GestionEntrenadoresAdminDG.DataSource = cn.ConsultaEntrenadoresAdmin();
+            this.Hide();
+            Modificar_Entrenador v1 = new Modificar_Entrenador();
+            v1.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -42,9 +39,21 @@ namespace PROYECTO1
 
         private void EliminarEntrenador_Click_1(object sender, EventArgs e)
         {
-            int i = Convert.ToInt32(txt_ID_Entrenador.Text);
-            cn.EliminarEntrenadorAdministrador(i);
-            GestionEntrenadoresAdminDG.DataSource = cn.ConsultaEntrenadoresAdmin();
+            this.Hide();
+            G_Admin_Entrenador_Eliminar v1 = new G_Admin_Entrenador_Eliminar();
+            v1.Show();
+        }
+
+        private void G_Admin_Entrenadores_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RegistroEntrenador v1 = new RegistroEntrenador();
+            this.Hide();
+            v1.Show();
         }
     }
 }

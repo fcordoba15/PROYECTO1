@@ -172,6 +172,7 @@ namespace PROYECTO1
             this.Controls.Add(this.gMapControl1);
             this.Name = "G_maps_Entrenador";
             this.Text = "G_maps_Entrenador";
+            this.Load += new System.EventHandler(this.G_maps_Entrenador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

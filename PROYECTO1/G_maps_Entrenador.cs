@@ -108,5 +108,10 @@ namespace PROYECTO1
             VentanaInicio v2 = new VentanaInicio();
             v2.Show();
         }
+
+        private void G_maps_Entrenador_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

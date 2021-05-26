@@ -129,7 +129,9 @@ namespace PROYECTO1
                     break;
                 }
 
-          
+                
+
+                   
                 cn.ModificarEntrenadorAdmin(txt_ID_Entrenador.Text, txt_Nombre_Entrenador.Text, txt_Calificacion_Entrenador.Text,
                 txt_Telefono_Entrenador.Text, txt_Correo_Entrenador.Text, txt_SitioWeb_Entrenador.Text, txt_Provincia_Entrenador.Text,
                 txt_Canton_Entrenador.Text, txt_Distrito_Entrenador.Text, txt_Ubicacion_Entrenador.Text);

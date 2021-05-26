@@ -11,7 +11,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= localhost\\SQLEXPRESS01; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
         //SURFACEPROPEDRO\\SQLEXPRESS
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -495,8 +495,8 @@ namespace Datos
             
         }
 
-        public int ModificarEntrenadorAdmin(string id_entrenador_MA, string nombre_entrenador_MA, int calificacion
-            , int telefono, string correo_electronico, string sitio_web, string provincia, string canton, string distrito, 
+        public int ModificarEntrenadorAdmin(string id_entrenador_MA, string nombre_entrenador_MA, string calificacion
+            , string telefono, string correo_electronico, string sitio_web, string provincia, string canton, string distrito, 
             string ubicacion)
         {
             int flag = 0;

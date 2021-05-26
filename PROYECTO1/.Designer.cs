@@ -307,7 +307,7 @@ namespace PROYECTO1
             this.PDF.TabIndex = 16;
             this.PDF.Text = "Crear PDF";
             this.PDF.UseVisualStyleBackColor = false;
-            this.PDF.Click += new System.EventHandler(this.PDF_Click);
+            //this.PDF.Click += new System.EventHandler(this.PDF_Click);
             // 
             // volver
             // 

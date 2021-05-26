@@ -196,8 +196,8 @@ namespace Negocios
             return cn.ConsultarEntrenadorAdmi();
         }
 
-        public int ModificarEntrenadorAdmin(string id_entrenador_MA, string nombre_entrenador_MA, int calificacion
-           , int telefono, string correo_electronico, string sitio_web, string provincia, string canton, string distrito,
+        public int ModificarEntrenadorAdmin(string id_entrenador_MA, string nombre_entrenador_MA, string calificacion
+           , string telefono, string correo_electronico, string sitio_web, string provincia, string canton, string distrito,
            string ubicacion)
         {
             return cn.ModificarEntrenadorAdmin(id_entrenador_MA, nombre_entrenador_MA, calificacion, telefono, correo_electronico,

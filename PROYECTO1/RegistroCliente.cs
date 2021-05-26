@@ -43,6 +43,7 @@ namespace PROYECTO1
                 int a = 0;
                 while (a == 0)
                 {
+                    //------------- VALIDACIONES DE COMILLAS -------------
                     string p = "'";
                     int validación_comilla = 0;
                     foreach (char c in textBox1.Text)
@@ -50,7 +51,37 @@ namespace PROYECTO1
                         if (c == p[0])
                             validación_comilla++;
                     }
+                    foreach (char c in textBox2.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
                     foreach (char c in textBox5.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox7.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox8.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox9.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox10.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox11.Text)
                     {
                         if (c == p[0])
                             validación_comilla++;
@@ -61,9 +92,39 @@ namespace PROYECTO1
                         break;
                     }
 
+                    //------------- VALIDACION DE ARROBA EN CORREO -------------
+                    string m = "@";
+                    int validación_arroba = 0;
+                    foreach (char c in textBox7.Text)
+                    {
+                        if (c == m[0])
+                            validación_arroba++;
+                    }
+                    if (validación_arroba == 0)
+                    {
+                        MessageBox.Show("¡Error! El correo debe ser de formato usuario@.com");
+                        break;
+                    }
+
+                    //------------- VALIDACIONES DE DATOS NUMERICOS -------------
+                    if (textBox3.Text.All(char.IsDigit) == false)
+                    {
+                        MessageBox.Show("¡Error! La llave de encriptación debe ser numérica");
+                        break;
+                    }
+                    if (textBox4.Text.All(char.IsDigit) == false)
+                    {
+                        MessageBox.Show("¡Error! La cédula debe ser numérica");
+                        break;
+                    }
+                    if (textBox6.Text.All(char.IsDigit) == false)
+                    {
+                        MessageBox.Show("¡Error! El teléfono debe ser numérico");
+                        break;
+                    }
+
 
                     cn.Registrar_clienteUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
-
                     cn.Registrar_cliente(textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text
                         , textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox1.Text);
                  
@@ -71,10 +132,8 @@ namespace PROYECTO1
 
                     v1.Show();
 
-                    
                     a++;
                 }
-
             }
         }
 

@@ -345,7 +345,7 @@ namespace Datos
         public DataTable ConsultarPok()
         {
             
-                string query = "SELECT * FROM pokemon";
+                string query = "SELECT id, nombre, id_tipo , cod_tipo , total, salud, ataque,defensa,ataque_especial,defensa_especial,velocidad, generacion, legendario FROM pokemon";
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
                 DataTable tabla = new DataTable();
@@ -419,7 +419,7 @@ namespace Datos
         public DataTable ConsultarPokEliminar()
         {
             
-                string query = "SELECT * FROM pokemon";
+                string query = "SELECT id, nombre, id_tipo, cod_tipo, total, salud, ataque, defensa, ataque_especial, defensa_especial, velocidad, generacion, legendario FROM pokemon";
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
                 DataTable tabla = new DataTable();
@@ -692,7 +692,7 @@ namespace Datos
         public DataTable ConsultarUsuariosAdmin()
         {
             
-                string query = "SELECT * FROM usuario";
+                string query = "SELECT Nombre_Usuario,llave, rol FROM usuario";
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
                 DataTable tabla = new DataTable();

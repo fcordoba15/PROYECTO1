@@ -66,7 +66,7 @@ namespace PROYECTO1
             "Electrico",
             "Roca"});
             this.Tipo_movimiento.Location = new System.Drawing.Point(9, 230);
-            this.Tipo_movimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tipo_movimiento.Margin = new System.Windows.Forms.Padding(2);
             this.Tipo_movimiento.Name = "Tipo_movimiento";
             this.Tipo_movimiento.Size = new System.Drawing.Size(92, 21);
             this.Tipo_movimiento.TabIndex = 0;
@@ -96,7 +96,7 @@ namespace PROYECTO1
             "T-017",
             "T-018"});
             this.Tipo_pokemon.Location = new System.Drawing.Point(154, 230);
-            this.Tipo_pokemon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tipo_pokemon.Margin = new System.Windows.Forms.Padding(2);
             this.Tipo_pokemon.Name = "Tipo_pokemon";
             this.Tipo_pokemon.Size = new System.Drawing.Size(92, 21);
             this.Tipo_pokemon.TabIndex = 1;
@@ -120,7 +120,7 @@ namespace PROYECTO1
             this.Fondo_ModuloCliente.BackColor = System.Drawing.Color.Cornsilk;
             this.Fondo_ModuloCliente.Image = global::PROYECTO1.Properties.Resources.Fondo_moduloCliente;
             this.Fondo_ModuloCliente.Location = new System.Drawing.Point(2, 0);
-            this.Fondo_ModuloCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Fondo_ModuloCliente.Margin = new System.Windows.Forms.Padding(2);
             this.Fondo_ModuloCliente.Name = "Fondo_ModuloCliente";
             this.Fondo_ModuloCliente.Size = new System.Drawing.Size(715, 440);
             this.Fondo_ModuloCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -137,7 +137,7 @@ namespace PROYECTO1
             "Entrenadores",
             "Pokémon"});
             this.Elemento.Location = new System.Drawing.Point(9, 95);
-            this.Elemento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Elemento.Margin = new System.Windows.Forms.Padding(2);
             this.Elemento.Name = "Elemento";
             this.Elemento.Size = new System.Drawing.Size(236, 28);
             this.Elemento.TabIndex = 4;
@@ -163,7 +163,7 @@ namespace PROYECTO1
             "T-013",
             "T-014"});
             this.Categoria_pokemon.Location = new System.Drawing.Point(9, 308);
-            this.Categoria_pokemon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Categoria_pokemon.Margin = new System.Windows.Forms.Padding(2);
             this.Categoria_pokemon.Name = "Categoria_pokemon";
             this.Categoria_pokemon.Size = new System.Drawing.Size(92, 21);
             this.Categoria_pokemon.TabIndex = 5;
@@ -176,7 +176,7 @@ namespace PROYECTO1
             "Todos",
             "<Escribir>"});
             this.Nombre_entrenador.Location = new System.Drawing.Point(154, 308);
-            this.Nombre_entrenador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Nombre_entrenador.Margin = new System.Windows.Forms.Padding(2);
             this.Nombre_entrenador.Name = "Nombre_entrenador";
             this.Nombre_entrenador.Size = new System.Drawing.Size(92, 21);
             this.Nombre_entrenador.TabIndex = 6;
@@ -189,7 +189,7 @@ namespace PROYECTO1
             "Todos",
             "<Escribala si puede>"});
             this.Ubicacion_entrenador.Location = new System.Drawing.Point(86, 382);
-            this.Ubicacion_entrenador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Ubicacion_entrenador.Margin = new System.Windows.Forms.Padding(2);
             this.Ubicacion_entrenador.Name = "Ubicacion_entrenador";
             this.Ubicacion_entrenador.Size = new System.Drawing.Size(92, 21);
             this.Ubicacion_entrenador.TabIndex = 7;
@@ -201,7 +201,7 @@ namespace PROYECTO1
             this.Actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.Actualizar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Actualizar.Location = new System.Drawing.Point(9, 128);
-            this.Actualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Actualizar.Margin = new System.Windows.Forms.Padding(2);
             this.Actualizar.Name = "Actualizar";
             this.Actualizar.Size = new System.Drawing.Size(236, 32);
             this.Actualizar.TabIndex = 8;
@@ -271,10 +271,11 @@ namespace PROYECTO1
             // 
             // Ver_datos
             // 
+            this.Ver_datos.AllowUserToAddRows = false;
             this.Ver_datos.BackgroundColor = System.Drawing.Color.Beige;
             this.Ver_datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Ver_datos.Location = new System.Drawing.Point(362, 128);
-            this.Ver_datos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Ver_datos.Margin = new System.Windows.Forms.Padding(2);
             this.Ver_datos.Name = "Ver_datos";
             this.Ver_datos.RowHeadersWidth = 51;
             this.Ver_datos.RowTemplate.Height = 24;
@@ -287,7 +288,7 @@ namespace PROYECTO1
             this.Busqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.Busqueda.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Busqueda.Location = new System.Drawing.Point(418, 90);
-            this.Busqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Busqueda.Margin = new System.Windows.Forms.Padding(2);
             this.Busqueda.Name = "Busqueda";
             this.Busqueda.Size = new System.Drawing.Size(236, 32);
             this.Busqueda.TabIndex = 15;
@@ -301,20 +302,20 @@ namespace PROYECTO1
             this.PDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.PDF.ForeColor = System.Drawing.SystemColors.ControlText;
             this.PDF.Location = new System.Drawing.Point(418, 394);
-            this.PDF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PDF.Margin = new System.Windows.Forms.Padding(2);
             this.PDF.Name = "PDF";
             this.PDF.Size = new System.Drawing.Size(236, 32);
             this.PDF.TabIndex = 16;
             this.PDF.Text = "Crear PDF";
             this.PDF.UseVisualStyleBackColor = false;
-            //this.PDF.Click += new System.EventHandler(this.PDF_Click);
+            this.PDF.Click += new System.EventHandler(this.PDF_Click);
             // 
             // volver
             // 
             this.volver.BackColor = System.Drawing.Color.LightCoral;
             this.volver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.volver.Location = new System.Drawing.Point(9, 7);
-            this.volver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.volver.Margin = new System.Windows.Forms.Padding(2);
             this.volver.Name = "volver";
             this.volver.Size = new System.Drawing.Size(62, 24);
             this.volver.TabIndex = 17;
@@ -345,7 +346,7 @@ namespace PROYECTO1
             this.Controls.Add(this.Tipo_pokemon);
             this.Controls.Add(this.Tipo_movimiento);
             this.Controls.Add(this.Fondo_ModuloCliente);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ModuloCliente";
             this.Text = "ModuloCliente";
             ((System.ComponentModel.ISupportInitialize)(this.Fondo_ModuloCliente)).EndInit();

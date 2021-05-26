@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocios;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+using System.Data.SqlClient;
 
 namespace PROYECTO1
 {
@@ -104,11 +108,11 @@ namespace PROYECTO1
 
         }
 
-        /*
+        
         private void PDF_Click(object sender, EventArgs e)
         {
             BaseFont fuente = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
-            PdfPTable Tabla_PDF = new PdfPTable(DGV_Ubicación.Columns.Count);
+            PdfPTable Tabla_PDF = new PdfPTable(Ver_datos.Columns.Count);
             Tabla_PDF.DefaultCell.Padding = 3;
             Tabla_PDF.WidthPercentage = 100;
             Tabla_PDF.HorizontalAlignment = Element.ALIGN_LEFT;
@@ -116,13 +120,13 @@ namespace PROYECTO1
 
             iTextSharp.text.Font texto = new iTextSharp.text.Font(fuente, 10, iTextSharp.text.Font.NORMAL);
 
-            foreach (DataGridViewColumn columna in DGV_Ubicación.Columns)
+            foreach (DataGridViewColumn columna in Ver_datos.Columns)
             {
                 PdfPCell celda = new PdfPCell(new Phrase(columna.HeaderText, texto));
                 Tabla_PDF.AddCell(celda);
             }
 
-            foreach (DataGridViewRow fila in DGV_Ubicación.Rows)
+            foreach (DataGridViewRow fila in Ver_datos.Rows)
             {
                 foreach (DataGridViewCell celda in fila.Cells)
                 {
@@ -131,7 +135,7 @@ namespace PROYECTO1
             }
 
             var Guardar_Archivo = new SaveFileDialog();
-            string nombre_archivo = DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
+            string nombre_archivo = DateTime.Now.ToString("dddd, dd MMMM yyyy HH-mm-ss");
             Guardar_Archivo.FileName = nombre_archivo;
             Guardar_Archivo.DefaultExt = ".pdf";
             if (Guardar_Archivo.ShowDialog() == DialogResult.OK)
@@ -147,7 +151,8 @@ namespace PROYECTO1
                 }
             }
         }
-        */
+
+  
     }
 }
 

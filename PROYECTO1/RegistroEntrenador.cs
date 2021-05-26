@@ -30,10 +30,11 @@ namespace PROYECTO1
             }
             else
             {
-
+                //--------------------------------- VALIDACIONES DE ESCRITURA EN CAMPOS ---------------------------------
                 int a = 0;
                 while (a == 0)
                 {
+                    //------------- VALIDACIONES DE COMILLAS -------------
                     string p = "'";
                     int validación_comilla = 0;
                     foreach (char c in textBox1.Text)
@@ -87,6 +88,7 @@ namespace PROYECTO1
                         break;
                     }
 
+                    //------------- VALIDACION DE ARROBA EN CORREO -------------
                     string m = "@";
                     int validación_arroba = 0;
                     foreach (char c in textBox7.Text)
@@ -100,6 +102,7 @@ namespace PROYECTO1
                         break;
                     }
 
+                    //------------- VALIDACIONES DE DATOS NUMERICOS -------------
                     if (textBox3.Text.All(char.IsDigit) == false)
                     {
                         MessageBox.Show("¡Error! La llave de encriptación debe ser numérica");
@@ -121,8 +124,16 @@ namespace PROYECTO1
                         break;
                     }
 
-                    cn.Registrar_entrenadorUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
+                    //------------- VALIDACIONES DE VALOR DE CALIFICACION -------------
+                    double calificacion = Double.Parse(textBox13.Text);
+                    if (calificacion > 100 || calificacion < 0)
+                    {
+                        MessageBox.Show("¡Error! La calificación debe ser un valor entre 0 y 100");
+                        break;
+                    }
 
+                    //------------- REGISTRO EN LA BASE DE DATOS -------------
+                    cn.Registrar_entrenadorUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
                     cn.Registrar_entrenador(textBox4.Text, textBox5.Text, textBox13.Text, textBox6.Text, textBox7.Text
                         , textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox12.Text, textBox1.Text);
 
@@ -132,7 +143,6 @@ namespace PROYECTO1
                     
                     a++;
                 }
-
             }
         }
     }

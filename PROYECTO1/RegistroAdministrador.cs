@@ -34,6 +34,7 @@ namespace PROYECTO1
                 int a = 0;
                 while (a==0)
                 {
+                    //------------- VALIDACIONES DE COMILLAS -------------
                     string p = "'";
                     int validación_comilla = 0;
                     foreach (char c in textBox1.Text)
@@ -41,9 +42,21 @@ namespace PROYECTO1
                         if (c == p[0])
                             validación_comilla++;
                     }
+                    foreach (char c in textBox2.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
                     if (validación_comilla > 0)
                     {
-                        MessageBox.Show("¡Error! El nombre no debe tener comillas simples");
+                        MessageBox.Show("¡Error! Los campos no debe tener comillas simples");
+                        break;
+                    }
+
+                    //------------- VALIDACIONES DE DATOS NUMERICOS -------------
+                    if (textBox3.Text.All(char.IsDigit) == false)
+                    {
+                        MessageBox.Show("¡Error! La llave de encriptación debe ser numérica");
                         break;
                     }
                     EresAdmin v1 = new EresAdmin();

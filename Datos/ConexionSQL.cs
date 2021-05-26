@@ -11,7 +11,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= localhost\\SQLEXPRESS02; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= localhost\\SQLEXPRESS01; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
         //SURFACEPROPEDRO\\SQLEXPRESS
 
         SqlConnection con = new SqlConnection(conexionstring);

@@ -43,5 +43,12 @@ namespace PROYECTO1
 
             v1.Show();
         }
+
+        private void volver_Click(object sender, EventArgs e)
+        {
+            VentanaInicio v1 = new VentanaInicio();
+            this.Hide();
+            v1.Show();
+        }
     }
 }

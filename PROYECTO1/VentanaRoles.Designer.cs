@@ -36,6 +36,7 @@ namespace PROYECTO1
             this.iniciar_administrador = new System.Windows.Forms.Button();
             this.iniciar_cliente = new System.Windows.Forms.Button();
             this.iniciar_entrenador = new System.Windows.Forms.Button();
+            this.volver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -122,6 +123,18 @@ namespace PROYECTO1
             this.iniciar_entrenador.UseVisualStyleBackColor = false;
             this.iniciar_entrenador.Click += new System.EventHandler(this.iniciar_entrenador_Click);
             // 
+            // volver
+            // 
+            this.volver.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.volver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.volver.Location = new System.Drawing.Point(12, 12);
+            this.volver.Name = "volver";
+            this.volver.Size = new System.Drawing.Size(82, 29);
+            this.volver.TabIndex = 19;
+            this.volver.Text = "Volver";
+            this.volver.UseVisualStyleBackColor = false;
+            this.volver.Click += new System.EventHandler(this.volver_Click);
+            // 
             // VentanaRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -130,6 +143,7 @@ namespace PROYECTO1
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(964, 621);
+            this.Controls.Add(this.volver);
             this.Controls.Add(this.iniciar_entrenador);
             this.Controls.Add(this.iniciar_cliente);
             this.Controls.Add(this.iniciar_administrador);
@@ -156,5 +170,6 @@ namespace PROYECTO1
         private System.Windows.Forms.Button iniciar_administrador;
         private System.Windows.Forms.Button iniciar_cliente;
         private System.Windows.Forms.Button iniciar_entrenador;
+        private System.Windows.Forms.Button volver;
     }
 }

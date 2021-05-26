@@ -24,7 +24,7 @@ namespace PROYECTO1
         {
             if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox13.Text == "" && textBox4.Text == ""
                  && textBox5.Text == "" && textBox6.Text == "" && textBox7.Text == "" && textBox8.Text == ""
-                  && textBox9.Text == "" && textBox10.Text == "" && textBox11.Text == "" && textBox12.Text == "")
+                  && textBox9.Text == "" && textBox10.Text == "" && textBox11.Text == "")
             {
                 MessageBox.Show("Ingrese todos los datos");
             }
@@ -73,11 +73,6 @@ namespace PROYECTO1
                             validación_comilla++;
                     }
                     foreach (char c in textBox11.Text)
-                    {
-                        if (c == p[0])
-                            validación_comilla++;
-                    }
-                    foreach (char c in textBox12.Text)
                     {
                         if (c == p[0])
                             validación_comilla++;
@@ -135,15 +130,24 @@ namespace PROYECTO1
                     //------------- REGISTRO EN LA BASE DE DATOS -------------
                     cn.Registrar_entrenadorUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
                     cn.Registrar_entrenador(textBox4.Text, textBox5.Text, textBox13.Text, textBox6.Text, textBox7.Text
-                        , textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox12.Text, textBox1.Text);
+                        , textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox1.Text);
 
                     Google_maps v1 = new Google_maps();
 
                     v1.Show();
-                    
+
+                    this.Hide();
+
                     a++;
                 }
             }
+        }
+
+        private void volver_Click(object sender, EventArgs e)
+        {
+            VentanaRegistro v1 = new VentanaRegistro();
+            this.Hide();
+            v1.Show();
         }
     }
 }

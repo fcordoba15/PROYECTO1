@@ -54,5 +54,12 @@ namespace PROYECTO1
                 }    
             }
         }
+
+        private void volver_Click(object sender, EventArgs e)
+        {
+            VentanaRegistro v1 = new VentanaRegistro();
+            this.Hide();
+            v1.Show();
+        }
     }
 }

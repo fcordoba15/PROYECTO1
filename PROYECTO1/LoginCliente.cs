@@ -29,7 +29,7 @@ namespace PROYECTO1
 
                 this.Hide();
 
-                ModuloEntrenador m1 = new ModuloEntrenador();
+                ModuloCliente m1 = new ModuloCliente();
                 m1.Show();
             }
             else

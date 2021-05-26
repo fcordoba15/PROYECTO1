@@ -36,6 +36,7 @@ namespace PROYECTO1
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.volver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -122,11 +123,24 @@ namespace PROYECTO1
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
             // 
+            // volver
+            // 
+            this.volver.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.volver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.volver.Location = new System.Drawing.Point(12, 9);
+            this.volver.Name = "volver";
+            this.volver.Size = new System.Drawing.Size(82, 29);
+            this.volver.TabIndex = 18;
+            this.volver.Text = "Volver";
+            this.volver.UseVisualStyleBackColor = false;
+            this.volver.Click += new System.EventHandler(this.volver_Click);
+            // 
             // VentanaRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 621);
+            this.Controls.Add(this.volver);
             this.Controls.Add(this.Registrar_entrenador);
             this.Controls.Add(this.Registrar_cliente);
             this.Controls.Add(this.Registrar_administrador);
@@ -153,5 +167,6 @@ namespace PROYECTO1
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button Registrar_entrenador;
+        private System.Windows.Forms.Button volver;
     }
 }

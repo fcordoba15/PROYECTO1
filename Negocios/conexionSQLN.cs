@@ -38,9 +38,9 @@ namespace Negocios
         }
 
         public void Registrar_cliente(string cedula, string nombre, string telefono, string correo, string sitio_web,
-            string provincia, string canton, string distrito, string ubicacion, string usuario)
+            string provincia, string canton, string distrito, string usuario)
         {
-            cn.Resgistar_Cliente(cedula,nombre,telefono, correo,sitio_web,provincia,canton,distrito,ubicacion,usuario);
+            cn.Resgistar_Cliente(cedula,nombre,telefono, correo,sitio_web,provincia,canton,distrito,usuario);
         }
 
         public void Registrar_GMap(string id_client, string Ubicacion, string Latitud, string Longitud)
@@ -54,9 +54,9 @@ namespace Negocios
         }
 
         public void Registrar_entrenador(string cedula, string nombre,string calificacion, string telefono, string correo, string sitio_web,
-            string provincia, string canton, string distrito, string ubicacion, string usuario)
+            string provincia, string canton, string distrito, string usuario)
         {
-            cn.Resgistar_Entrenador(cedula, nombre, calificacion, telefono, correo, sitio_web, provincia, canton, distrito, ubicacion, usuario);
+            cn.Resgistar_Entrenador(cedula, nombre, calificacion, telefono, correo, sitio_web, provincia, canton, distrito, usuario);
         }
 
 
@@ -241,7 +241,30 @@ namespace Negocios
             int i = Convert.ToInt32(id_pokemon_entrenador);
             return cn.EliminarPokemonEntrenador(id_entrenador_pokemon, i);
         }
+
+
+
+        /*
+        *---------------------->CODIGO PARA CONSULTAS MODULO CLIENTE
+        * 
+        */
+        public DataTable Cliente_pokemon(string categoria, string tipo)
+        {
+            return cn.Cliente_Pokemon(categoria,tipo);
+        }
+
+        public DataTable Cliente_movimiento(string tipo)
+        {
+            return cn.Cliente_Movimiento(tipo);
+        }
+
+        public DataTable Cliente_entrenador(string ubicacion, string nombre)
+        {
+            return cn.Cliente_Entrenador(ubicacion,nombre);
+        }
     }
+
+
 
 
 

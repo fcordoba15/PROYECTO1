@@ -55,6 +55,7 @@ namespace PROYECTO1
             this.pass.Name = "pass";
             this.pass.Size = new System.Drawing.Size(286, 22);
             this.pass.TabIndex = 13;
+            this.pass.UseSystemPasswordChar = true;
             // 
             // usuario
             // 

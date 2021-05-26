@@ -121,12 +121,19 @@ namespace PROYECTO1
 
         private void guardar_Click(object sender, EventArgs e)
         {
-            dt.Rows.Add(txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);
-            cn.Registrar_GMap(Username.Text, txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);
-            MessageBox.Show("Se realizó el registro");
-            this.Hide();
-            VentanaInicio v2 = new VentanaInicio();
-            v2.Show();
+
+            if (Username.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un usuario válido");
+            }
+            else {
+                dt.Rows.Add(txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);
+                cn.Registrar_GMap(Username.Text, txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);
+                MessageBox.Show("Se realizó el registro");
+                this.Hide();
+                VentanaInicio v2 = new VentanaInicio();
+                v2.Show();
+            }
         }
     }
 }

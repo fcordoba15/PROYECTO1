@@ -34,7 +34,7 @@ namespace PROYECTO1
         {
             if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox4.Text == ""
                  && textBox5.Text == "" && textBox6.Text == "" && textBox7.Text == "" && textBox8.Text == ""
-                  && textBox9.Text == "" && textBox10.Text == "" && textBox11.Text == "" && textBox12.Text == "")
+                  && textBox9.Text == "" && textBox10.Text == "" && textBox11.Text == "")
             {
                 MessageBox.Show("Ingrese todos los datos");
             }
@@ -65,7 +65,7 @@ namespace PROYECTO1
                     cn.Registrar_clienteUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
 
                     cn.Registrar_cliente(textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text
-                        , textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox12.Text, textBox1.Text);
+                        , textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox1.Text);
                  
                     Google_maps v1 = new Google_maps();
 
@@ -76,6 +76,13 @@ namespace PROYECTO1
                 }
 
             }
+        }
+
+        private void volver_Click(object sender, EventArgs e)
+        {
+            VentanaRegistro v1 = new VentanaRegistro();
+            this.Hide();
+            v1.Show();
         }
     }
 }

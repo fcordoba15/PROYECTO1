@@ -154,6 +154,13 @@
     <Compile Include="ModuloAdministrador.Designer.cs">
       <DependentUpon>ModuloAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModuloCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>ModuloCliente.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -266,6 +273,9 @@
     <EmbeddedResource Include="ModuloAdministrador.resx">
       <DependentUpon>ModuloAdministrador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModuloCliente.resx">
+      <DependentUpon>ModuloCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModuloEntrenador.resx">
       <DependentUpon>ModuloEntrenador.cs</DependentUpon>
     </EmbeddedResource>
@@ -356,6 +366,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\EresAdmin.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo_moduloCliente.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

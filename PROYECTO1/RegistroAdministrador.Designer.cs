@@ -36,6 +36,7 @@ namespace PROYECTO1
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.volver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Realizar_registro_cliente
@@ -104,12 +105,25 @@ namespace PROYECTO1
             this.textBox1.Size = new System.Drawing.Size(368, 22);
             this.textBox1.TabIndex = 26;
             // 
+            // volver
+            // 
+            this.volver.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.volver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.volver.Location = new System.Drawing.Point(21, 12);
+            this.volver.Name = "volver";
+            this.volver.Size = new System.Drawing.Size(82, 29);
+            this.volver.TabIndex = 33;
+            this.volver.Text = "Volver";
+            this.volver.UseVisualStyleBackColor = false;
+            this.volver.Click += new System.EventHandler(this.volver_Click);
+            // 
             // RegistroAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PROYECTO1.Properties.Resources.fondo_RegistroAdministratores;
             this.ClientSize = new System.Drawing.Size(876, 511);
+            this.Controls.Add(this.volver);
             this.Controls.Add(this.Realizar_registro_cliente);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -133,5 +147,6 @@ namespace PROYECTO1
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button volver;
     }
 }

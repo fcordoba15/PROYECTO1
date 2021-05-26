@@ -11,7 +11,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= localhost\\SQLEXPRESS02; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true"; //Cambiar server segun SQL
         //SURFACEPROPEDRO\\SQLEXPRESS
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -50,6 +50,7 @@ namespace Datos
             string dato;
             try
             {
+                con.Open();
                
                 string query = "EXEC [LoginUsuario] '" + usuario + "', 'Entrenador', '" + contrasena + "'";
 
@@ -119,12 +120,12 @@ namespace Datos
         }
 
         public void Resgistar_Cliente(string cedula, string nombre, string telefono, string correo, string sitio_web,
-            string provincia, string canton, string distrito, string ubicacion, string usuario)
+            string provincia, string canton, string distrito, string usuario)
         {
             try
             {
                 string cadena = "INSERT INTO cliente VALUES('" + cedula + "', '" + nombre + "','" + telefono + "', '" + correo + "','" + sitio_web + "'," +
-                        "'" + provincia + "', '" + canton + "', '" + distrito + "', '" + ubicacion + "', '" + usuario + "')";
+                        "'" + provincia + "', '" + canton + "', '" + distrito + "', 'NULL', '" + usuario + "')";
 
                 con.Open();
 
@@ -168,12 +169,12 @@ namespace Datos
         }
 
         public void Resgistar_Entrenador(string cedula, string nombre, string calificacion, string telefono, string correo, 
-            string sitio_web, string provincia, string canton, string distrito, string ubicacion, string usuario)
+            string sitio_web, string provincia, string canton, string distrito, string usuario)
         {
             try
             {
                 string cadena = "INSERT INTO entrenador VALUES('" + cedula + "', '" + nombre + "','" + calificacion + "','" + telefono + "', '" + correo + "','" + sitio_web + "'," +
-                       "'" + provincia + "', '" + canton + "', '" + distrito + "', '" + ubicacion + "', '" + usuario + "')";
+                       "'" + provincia + "', '" + canton + "', '" + distrito + "', 'NULL', '" + usuario + "')";
 
                 con.Open();
 
@@ -351,7 +352,6 @@ namespace Datos
                 data.Fill(tabla);
 
                 return tabla;
-            
             
         }
 
@@ -881,6 +881,97 @@ namespace Datos
             }
         }
 
+
+        /*
+        * 
+        * 
+        * ------------------------------CODIGO ADMINISTRADOR GESTION MOVIMIENTOS
+        * 
+        * 
+        */
+
+        public DataTable Cliente_Pokemon(string categoria, string tipo)
+        {
+            string query;
+            if (tipo == "Todos" && categoria == "Todas")
+            {
+                query = "SELECT id,nombre,total FROM pokemon;";
+            }
+            else if (tipo != "Todos" && categoria == "Todas")
+            {
+                query = "SELECT id,nombre,total FROM pokemon where id_tipo= '" + tipo + "';";
+            }
+            else if (tipo == "Todos" && categoria != "Todas")
+            {
+                query = "SELECT id,nombre,total FROM pokemon where cod_tipo= '" + categoria + "';";
+            }
+            else
+            {
+                query = "SELECT id,nombre,total FROM pokemon where id_tipo= '" + tipo + "' and cod_tipo= '" + categoria + "';";
+            }
+
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
+        }
+
+
+        public DataTable Cliente_Movimiento(string tipo)
+        {
+            string query;
+            if (tipo == "Todos")
+            {
+                query = "SELECT nombre,tipo,descripcion FROM movimiento;";
+            }
+            else
+            {
+                query = "SELECT nombre,tipo,descripcion FROM movimiento where tipo= '" + tipo + "';";
+            }
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
+        }
+
+
+
+        public DataTable Cliente_Entrenador(string ubicacion,string nombre)
+        {
+            string query;
+            if (ubicacion == "Todas" && nombre == "Todos")
+            {
+                query = "SELECT id_entrenador,nombre_entrenador,ubicacion FROM entrenador;";
+            }
+            else if (ubicacion == "Todas" && nombre != "Todos")
+            {
+                query = "SELECT id_entrenador,nombre_entrenador,ubicacion FROM entrenador where nombre_entrenador= '"+nombre+"';";
+            }
+            else if (ubicacion!= "Todas" && nombre == "Todos")
+            {
+                query = "SELECT id_entrenador,nombre_entrenador,ubicacion FROM entrenador where ubicacion='" + ubicacion+"';";
+            }
+            else
+            {
+                query = "SELECT id_entrenador,nombre_entrenador,ubicacion FROM entrenador where ubicacion = '"+ubicacion+"' and nombre_entrenador= '"+nombre+"';";
+            }
+
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
+        }
+
+
     }
 
 }
+
+
+

@@ -11,7 +11,7 @@ namespace Negocios
     public class conexionSQLN
     {
         // ---------------------->CODIGO PARA CONECTAR A LA BASE DE DATOS 
-
+        
         ConexionSQL cn = new ConexionSQL();
         public string conSQL_cliente(string usuario, string contrasena)
         {
@@ -43,9 +43,9 @@ namespace Negocios
             cn.Resgistar_Cliente(cedula,nombre,telefono, correo,sitio_web,provincia,canton,distrito,ubicacion,usuario);
         }
 
-        public void Registrar_GMap(string id, string Ubicacion, string Latitud, string Longitud)
+        public void Registrar_GMap(string id_client, string Ubicacion, string Latitud, string Longitud)
         { 
-            cn.Resgistar_GMaps(id, Ubicacion, Latitud, Longitud);
+            cn.Resgistar_GMaps(id_client, Ubicacion, Latitud, Longitud);
         }
 
         public void Registrar_entrenadorUsuario(string usuario, string contrasena, string llave)

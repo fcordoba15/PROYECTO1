@@ -30,10 +30,11 @@ namespace PROYECTO1
             }
             else
             {
-
+                //--------------------------------- VALIDACIONES DE ESCRITURA EN CAMPOS ---------------------------------
                 int a = 0;
                 while (a == 0)
                 {
+                    //------------- VALIDACIONES DE COMILLAS -------------
                     string p = "'";
                     int validación_comilla = 0;
                     foreach (char c in textBox1.Text)
@@ -41,7 +42,42 @@ namespace PROYECTO1
                         if (c == p[0])
                             validación_comilla++;
                     }
+                    foreach (char c in textBox2.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
                     foreach (char c in textBox5.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox7.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox8.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox9.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox10.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox11.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in textBox12.Text)
                     {
                         if (c == p[0])
                             validación_comilla++;
@@ -52,18 +88,61 @@ namespace PROYECTO1
                         break;
                     }
 
-                    cn.Registrar_entrenadorUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
+                    //------------- VALIDACION DE ARROBA EN CORREO -------------
+                    string m = "@";
+                    int validación_arroba = 0;
+                    foreach (char c in textBox7.Text)
+                    {
+                        if (c == m[0])
+                            validación_arroba++;
+                    }
+                    if (validación_arroba == 0)
+                    {
+                        MessageBox.Show("¡Error! El correo debe ser de formato usuario@.com");
+                        break;
+                    }
 
+                    //------------- VALIDACIONES DE DATOS NUMERICOS -------------
+                    if (textBox3.Text.All(char.IsDigit) == false)
+                    {
+                        MessageBox.Show("¡Error! La llave de encriptación debe ser numérica");
+                        break;
+                    }
+                    if (textBox13.Text.All(char.IsDigit) == false )
+                    {
+                        MessageBox.Show("¡Error! La calificación debe ser numérica");
+                        break;
+                    }
+                    if (textBox4.Text.All(char.IsDigit) == false)
+                    {
+                        MessageBox.Show("¡Error! La cédula debe ser numérica");
+                        break;
+                    }
+                    if (textBox6.Text.All(char.IsDigit) == false)
+                    {
+                        MessageBox.Show("¡Error! El teléfono debe ser numérico");
+                        break;
+                    }
+
+                    //------------- VALIDACIONES DE VALOR DE CALIFICACION -------------
+                    double calificacion = Double.Parse(textBox13.Text);
+                    if (calificacion > 100 || calificacion < 0)
+                    {
+                        MessageBox.Show("¡Error! La calificación debe ser un valor entre 0 y 100");
+                        break;
+                    }
+
+                    //------------- REGISTRO EN LA BASE DE DATOS -------------
+                    cn.Registrar_entrenadorUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
                     cn.Registrar_entrenador(textBox4.Text, textBox5.Text, textBox13.Text, textBox6.Text, textBox7.Text
                         , textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox12.Text, textBox1.Text);
 
-                    MessageBox.Show("Se realizó el registro");
-                    this.Hide();
-                    VentanaInicio v2 = new VentanaInicio();
-                    v2.Show();
+                    Google_maps v1 = new Google_maps();
+
+                    v1.Show();
+                    
                     a++;
                 }
-
             }
         }
     }

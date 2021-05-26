@@ -13,10 +13,10 @@ using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 
+
 namespace PROYECTO1
 {
-    public partial class Google_maps : Form
-
+    public partial class G_maps_Entrenador : Form
     {
         conexionSQLN cn = new conexionSQLN();
         GMarkerGoogle marker;
@@ -26,22 +26,13 @@ namespace PROYECTO1
         int filaSeleccionada = 0;
         double LatInicial = 20.96881328132813906;
         double LngInicial = -89.6250915527344;
-
-        public Google_maps()
+        public G_maps_Entrenador()
         {
             InitializeComponent();
         }
 
-        
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void gMapControl1_Load(object sender, EventArgs e)
         {
-
             dt = new DataTable();
             dt.Columns.Add(new DataColumn("Ubicación", typeof(string)));
             dt.Columns.Add(new DataColumn("Lat", typeof(double)));
@@ -74,14 +65,8 @@ namespace PROYECTO1
             marker.ToolTipText = string.Format("Ubicación: \n Latitud: {0} Longitud: {1}", LatInicial, LngInicial);
 
             gMapControl1.Overlays.Add(markerOverlay);
-            
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
-
         private void SeleccionarRegistro(object sender, DataGridViewCellMouseEventArgs e)
         {
             filaSeleccionada = e.RowIndex; //Fila seleccionada
@@ -98,7 +83,6 @@ namespace PROYECTO1
 
 
         }
-
         private void gMapControl1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             //Obtener datos lat y log del cursor
@@ -114,11 +98,7 @@ namespace PROYECTO1
             //mensaje
             marker.ToolTipText = string.Format("Ubicación: \n Latitud: {0} \n Longitud: {1}", lat, lng);
 
-
-
-
         }
-
         private void guardar_Click(object sender, EventArgs e)
         {
             dt.Rows.Add(txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);

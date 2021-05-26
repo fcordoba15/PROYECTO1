@@ -39,6 +39,8 @@ namespace PROYECTO1
             this.txtLongitud = new System.Windows.Forms.TextBox();
             this.guardar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Username = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +74,7 @@ namespace PROYECTO1
             // 
             // txtUbicacion
             // 
-            this.txtUbicacion.Location = new System.Drawing.Point(437, 28);
+            this.txtUbicacion.Location = new System.Drawing.Point(437, 88);
             this.txtUbicacion.Name = "txtUbicacion";
             this.txtUbicacion.Size = new System.Drawing.Size(126, 20);
             this.txtUbicacion.TabIndex = 2;
@@ -80,7 +82,7 @@ namespace PROYECTO1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(434, 12);
+            this.label1.Location = new System.Drawing.Point(434, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 3;
@@ -90,7 +92,7 @@ namespace PROYECTO1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(434, 60);
+            this.label2.Location = new System.Drawing.Point(434, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 4;
@@ -98,7 +100,7 @@ namespace PROYECTO1
             // 
             // txtLatitud
             // 
-            this.txtLatitud.Location = new System.Drawing.Point(437, 76);
+            this.txtLatitud.Location = new System.Drawing.Point(437, 127);
             this.txtLatitud.Name = "txtLatitud";
             this.txtLatitud.Size = new System.Drawing.Size(126, 20);
             this.txtLatitud.TabIndex = 5;
@@ -106,7 +108,7 @@ namespace PROYECTO1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(434, 108);
+            this.label3.Location = new System.Drawing.Point(434, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 6;
@@ -114,19 +116,20 @@ namespace PROYECTO1
             // 
             // txtLongitud
             // 
-            this.txtLongitud.Location = new System.Drawing.Point(437, 124);
+            this.txtLongitud.Location = new System.Drawing.Point(437, 166);
             this.txtLongitud.Name = "txtLongitud";
             this.txtLongitud.Size = new System.Drawing.Size(126, 20);
             this.txtLongitud.TabIndex = 7;
             // 
             // guardar
             // 
-            this.guardar.Location = new System.Drawing.Point(456, 150);
+            this.guardar.BackColor = System.Drawing.Color.Lime;
+            this.guardar.Location = new System.Drawing.Point(456, 192);
             this.guardar.Name = "guardar";
             this.guardar.Size = new System.Drawing.Size(75, 23);
             this.guardar.TabIndex = 8;
             this.guardar.Text = "Guardar";
-            this.guardar.UseVisualStyleBackColor = true;
+            this.guardar.UseVisualStyleBackColor = false;
             this.guardar.Click += new System.EventHandler(this.guardar_Click);
             // 
             // dataGridView1
@@ -141,11 +144,29 @@ namespace PROYECTO1
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SeleccionarRegistro);
             // 
+            // Username
+            // 
+            this.Username.Location = new System.Drawing.Point(437, 49);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(126, 20);
+            this.Username.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(434, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Nombre Usuario";
+            // 
             // Google_maps
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(588, 375);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Username);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.guardar);
             this.Controls.Add(this.txtLongitud);
@@ -175,5 +196,7 @@ namespace PROYECTO1
         private System.Windows.Forms.TextBox txtLongitud;
         private System.Windows.Forms.Button guardar;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox Username;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -38,5 +38,18 @@ namespace PROYECTO1
         {
             cn.EliminarMovimientoAdmin(txt_CodigoMovAdmi.Text);
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ModuloAdministrador v1 = new ModuloAdministrador();
+            v1.Show();
+            
+        }
     }
 }

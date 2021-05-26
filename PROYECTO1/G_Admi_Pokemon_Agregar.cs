@@ -81,5 +81,10 @@ namespace PROYECTO1
 
             }
         }
+
+        private void G_Admi_Pokemon_Agregar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

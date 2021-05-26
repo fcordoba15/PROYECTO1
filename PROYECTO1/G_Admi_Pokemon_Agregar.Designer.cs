@@ -359,6 +359,7 @@ namespace PROYECTO1
             this.Controls.Add(this.label1);
             this.Name = "G_Admi_Pokemon_Agregar";
             this.Text = "G_Admi_Pokemon_Agregar";
+            this.Load += new System.EventHandler(this.G_Admi_Pokemon_Agregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picPokemon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

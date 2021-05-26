@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Datos;
 using System.Data;
 
+
 namespace Negocios
 {
     public class conexionSQLN

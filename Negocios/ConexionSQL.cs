@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Drawing;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Datos
 {

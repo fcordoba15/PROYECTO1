@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PROYECTO1", "PROYECTO1\PROYECTO1.csproj", "{16356D9F-35FF-4DA9-87F6-CE7398E0FF1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{A2272E55-75AA-473E-840E-84CB04B92702}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocios", "Datos\Negocios.csproj", "{A2272E55-75AA-473E-840E-84CB04B92702}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocios", "Negocios\Negocios.csproj", "{7FC32F60-2D8A-4CBF-A0DA-489D2C93E66F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Negocios\Datos.csproj", "{7FC32F60-2D8A-4CBF-A0DA-489D2C93E66F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

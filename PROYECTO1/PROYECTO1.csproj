@@ -407,12 +407,6 @@
     <None Include="Resources\Fondo_Login.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Negocios\Negocios.csproj">
-      <Project>{7fc32f60-2d8a-4cbf-a0da-489d2c93e66f}</Project>
-      <Name>Negocios</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\fondo_RegistroClientes.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -429,6 +423,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Fondo_moduloCliente.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Negocios.csproj">
+      <Project>{a2272e55-75aa-473e-840e-84cb04b92702}</Project>
+      <Name>Negocios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

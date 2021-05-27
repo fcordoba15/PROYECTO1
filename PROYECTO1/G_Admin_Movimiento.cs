@@ -37,11 +37,7 @@ namespace PROYECTO1
         private void Eliminar_Click(object sender, EventArgs e)
         {
             cn.EliminarMovimientoAdmin(txt_CodigoMovAdmi.Text);
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
+            AdminConsultaMovDG.DataSource = cn.ConsultaMovimientosAdmin();
         }
 
         private void Regresar_Click(object sender, EventArgs e)

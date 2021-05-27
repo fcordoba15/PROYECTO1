@@ -116,8 +116,6 @@ namespace Negocios
         public int EliminarPokemonAdministrador(int id)
         {
             return cn.EliminarPokemonAdministrador(id);
-
-
         }
 
        public DataRow Imagen_Mostrar(int id)

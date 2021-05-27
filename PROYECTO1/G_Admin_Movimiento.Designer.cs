@@ -197,7 +197,6 @@ namespace PROYECTO1
             this.label6.Size = new System.Drawing.Size(504, 17);
             this.label6.TabIndex = 15;
             this.label6.Text = "______________________________________________________________";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 

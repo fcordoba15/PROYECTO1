@@ -46,18 +46,20 @@ namespace PROYECTO1
             // PokemonesEntrenadorDG
             // 
             this.PokemonesEntrenadorDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PokemonesEntrenadorDG.Location = new System.Drawing.Point(0, 4);
+            this.PokemonesEntrenadorDG.Location = new System.Drawing.Point(0, 2);
+            this.PokemonesEntrenadorDG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PokemonesEntrenadorDG.Name = "PokemonesEntrenadorDG";
             this.PokemonesEntrenadorDG.RowHeadersWidth = 82;
             this.PokemonesEntrenadorDG.RowTemplate.Height = 33;
-            this.PokemonesEntrenadorDG.Size = new System.Drawing.Size(1190, 329);
+            this.PokemonesEntrenadorDG.Size = new System.Drawing.Size(595, 171);
             this.PokemonesEntrenadorDG.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(39, 594);
+            this.button1.Location = new System.Drawing.Point(20, 309);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 42);
+            this.button1.Size = new System.Drawing.Size(58, 22);
             this.button1.TabIndex = 1;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
@@ -65,9 +67,10 @@ namespace PROYECTO1
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(229, 594);
+            this.button2.Location = new System.Drawing.Point(114, 309);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 42);
+            this.button2.Size = new System.Drawing.Size(58, 22);
             this.button2.TabIndex = 2;
             this.button2.Text = "Modificar";
             this.button2.UseVisualStyleBackColor = true;
@@ -75,9 +78,10 @@ namespace PROYECTO1
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(430, 594);
+            this.button3.Location = new System.Drawing.Point(215, 309);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 42);
+            this.button3.Size = new System.Drawing.Size(60, 22);
             this.button3.TabIndex = 3;
             this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
@@ -85,9 +89,10 @@ namespace PROYECTO1
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1016, 594);
+            this.button4.Location = new System.Drawing.Point(508, 309);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(151, 42);
+            this.button4.Size = new System.Drawing.Size(76, 22);
             this.button4.TabIndex = 4;
             this.button4.Text = "Regresar";
             this.button4.UseVisualStyleBackColor = true;
@@ -95,42 +100,47 @@ namespace PROYECTO1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 400);
+            this.label1.Location = new System.Drawing.Point(20, 208);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 25);
+            this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "ID Entrenador";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(229, 399);
+            this.label2.Location = new System.Drawing.Point(114, 207);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 25);
+            this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "ID Pokemon";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(430, 399);
+            this.label3.Location = new System.Drawing.Point(215, 207);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 25);
+            this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Estado";
             // 
             // txt_id_entrenador_pokemon
             // 
-            this.txt_id_entrenador_pokemon.Location = new System.Drawing.Point(44, 486);
+            this.txt_id_entrenador_pokemon.Location = new System.Drawing.Point(22, 253);
+            this.txt_id_entrenador_pokemon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_id_entrenador_pokemon.Name = "txt_id_entrenador_pokemon";
-            this.txt_id_entrenador_pokemon.Size = new System.Drawing.Size(100, 31);
+            this.txt_id_entrenador_pokemon.Size = new System.Drawing.Size(52, 20);
             this.txt_id_entrenador_pokemon.TabIndex = 8;
             // 
             // txt_id_pokemon_entrenador
             // 
-            this.txt_id_pokemon_entrenador.Location = new System.Drawing.Point(234, 485);
+            this.txt_id_pokemon_entrenador.Location = new System.Drawing.Point(117, 252);
+            this.txt_id_pokemon_entrenador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_id_pokemon_entrenador.Name = "txt_id_pokemon_entrenador";
-            this.txt_id_pokemon_entrenador.Size = new System.Drawing.Size(100, 31);
+            this.txt_id_pokemon_entrenador.Size = new System.Drawing.Size(52, 20);
             this.txt_id_pokemon_entrenador.TabIndex = 9;
             // 
             // Estado
@@ -140,16 +150,17 @@ namespace PROYECTO1
             "En equipo",
             "En reserva",
             "Liberado"});
-            this.Estado.Location = new System.Drawing.Point(430, 483);
+            this.Estado.Location = new System.Drawing.Point(215, 251);
+            this.Estado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Estado.Name = "Estado";
-            this.Estado.Size = new System.Drawing.Size(155, 33);
+            this.Estado.Size = new System.Drawing.Size(80, 21);
             this.Estado.TabIndex = 11;
             // 
             // GestionPokemonesEntrenador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1192, 675);
+            this.ClientSize = new System.Drawing.Size(596, 351);
             this.Controls.Add(this.Estado);
             this.Controls.Add(this.txt_id_pokemon_entrenador);
             this.Controls.Add(this.txt_id_entrenador_pokemon);
@@ -161,8 +172,10 @@ namespace PROYECTO1
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PokemonesEntrenadorDG);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GestionPokemonesEntrenador";
             this.Text = "Gestion Pokemones Entrenador";
+            this.Load += new System.EventHandler(this.GestionPokemonesEntrenador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PokemonesEntrenadorDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

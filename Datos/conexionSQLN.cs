@@ -118,7 +118,15 @@ namespace Negocios
         {
             return cn.EliminarPokemonAdministrador(id);
         }
-
+        public void Cm_IdPokemon(ComboBox cb)
+        {
+      
+            cn.cm_IdPokemon(cb);
+        }
+        public string[] Info_pokemon(int id)
+        {
+            return cn.info_pokemon(id);
+        }
        public DataRow Imagen_Mostrar(int id)
         {
             return cn.Imagen_Mostrar(id);

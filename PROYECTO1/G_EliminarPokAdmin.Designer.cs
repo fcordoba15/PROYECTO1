@@ -32,10 +32,10 @@ namespace PROYECTO1
             this.EliminarPok = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_EliminarPok = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Fotografia = new System.Windows.Forms.PictureBox();
+            this.txt_EliminarPok = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Fotografia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +44,7 @@ namespace PROYECTO1
             this.EliminarPok.BackColor = System.Drawing.Color.Red;
             this.EliminarPok.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EliminarPok.Location = new System.Drawing.Point(11, 338);
-            this.EliminarPok.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EliminarPok.Margin = new System.Windows.Forms.Padding(2);
             this.EliminarPok.Name = "EliminarPok";
             this.EliminarPok.Size = new System.Drawing.Size(122, 25);
             this.EliminarPok.TabIndex = 0;
@@ -55,7 +55,7 @@ namespace PROYECTO1
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(330, 338);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(69, 25);
             this.button1.TabIndex = 2;
@@ -73,15 +73,6 @@ namespace PROYECTO1
             this.label1.Size = new System.Drawing.Size(73, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "ID Pokemon";
-            // 
-            // txt_EliminarPok
-            // 
-            this.txt_EliminarPok.Location = new System.Drawing.Point(98, 64);
-            this.txt_EliminarPok.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_EliminarPok.Name = "txt_EliminarPok";
-            this.txt_EliminarPok.Size = new System.Drawing.Size(130, 20);
-            this.txt_EliminarPok.TabIndex = 4;
-            this.txt_EliminarPok.TextChanged += new System.EventHandler(this.txt_EliminarPok_TextChanged);
             // 
             // label2
             // 
@@ -113,21 +104,31 @@ namespace PROYECTO1
             this.Fotografia.TabIndex = 9;
             this.Fotografia.TabStop = false;
             // 
+            // txt_EliminarPok
+            // 
+            this.txt_EliminarPok.FormattingEnabled = true;
+            this.txt_EliminarPok.Location = new System.Drawing.Point(99, 67);
+            this.txt_EliminarPok.Name = "txt_EliminarPok";
+            this.txt_EliminarPok.Size = new System.Drawing.Size(121, 21);
+            this.txt_EliminarPok.TabIndex = 10;
+            this.txt_EliminarPok.SelectedIndexChanged += new System.EventHandler(this.txt_EliminarPok_SelectedIndexChanged);
+            // 
             // G_EliminarPokAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 372);
+            this.Controls.Add(this.txt_EliminarPok);
             this.Controls.Add(this.Fotografia);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_EliminarPok);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.EliminarPok);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "G_EliminarPokAdmin";
             this.Text = "G_EliminarPokAdmin";
+            this.Load += new System.EventHandler(this.G_EliminarPokAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Fotografia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -139,9 +140,9 @@ namespace PROYECTO1
         private System.Windows.Forms.Button EliminarPok;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_EliminarPok;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox Fotografia;
+        private System.Windows.Forms.ComboBox txt_EliminarPok;
     }
 }

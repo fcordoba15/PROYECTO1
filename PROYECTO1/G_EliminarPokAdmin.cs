@@ -18,7 +18,8 @@ namespace PROYECTO1
         public G_EliminarPokAdmin()
         {
             InitializeComponent();
-            
+            cn.Cm_IdPokemon(txt_EliminarPok);
+
 
         }
 
@@ -65,6 +66,16 @@ namespace PROYECTO1
             this.Hide();
             ConsultaPokEnt m2 = new ConsultaPokEnt();
             m2.Show();
+        }
+
+        private void G_EliminarPokAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_EliminarPok_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

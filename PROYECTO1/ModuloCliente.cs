@@ -212,7 +212,10 @@ namespace PROYECTO1
             }
         }
 
-  
+        private void ModuloCliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -12,7 +12,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true; MultipleActiveResultSets= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= localhost\\SQLEXPRESS02; database= Proyecto; integrated security= true; MultipleActiveResultSets= true"; //Cambiar server segun SQL
         //SURFACEPROPEDRO\\SQLEXPRESS     //localhost\\SQLEXPRESS01   FABY  ---  LAPTOP-OC2ENCL7 RAN
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -41,6 +41,7 @@ namespace Datos
             {
                 dato = "Error";
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 return dato;
 
             }
@@ -67,6 +68,7 @@ namespace Datos
                 string dat;
                 dat = "Error";
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 return dat;
 
             }
@@ -92,6 +94,7 @@ namespace Datos
                 string dat;
                 dat = "Error";
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 return dat;
             }
         }
@@ -116,7 +119,8 @@ namespace Datos
             {
                
                 Console.WriteLine("Error: " + ex.Message);
-                
+                MessageBox.Show("Error: " + ex.Message);
+
             }
         }
 
@@ -140,7 +144,8 @@ namespace Datos
             {
                 
                 Console.WriteLine("Error: " + ex.Message);
-                
+                MessageBox.Show("Error: " + ex.Message);
+
 
             }
         }
@@ -165,7 +170,8 @@ namespace Datos
 
                 
                 Console.WriteLine("Error: " + ex.Message);
-                
+                MessageBox.Show("Error: " + ex.Message);
+
             }
         }
 
@@ -188,6 +194,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -210,6 +217,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -237,6 +245,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -282,6 +291,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -307,6 +317,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -332,7 +343,9 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 flag = 1;
+                MessageBox.Show("Error: " + ex.Message);
                 return flag;
+                
             }
         }
 
@@ -383,7 +396,9 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 flag = 1;
+                MessageBox.Show("Error: " + ex.Message);
                 return flag;
+
             }
         }
 
@@ -431,6 +446,7 @@ namespace Datos
             
         }
 
+
         public int EliminarPokemonAdministrador(int id)
         {
             int flag = 0;
@@ -450,12 +466,61 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
-                 flag = 1;
+                MessageBox.Show("Error: " + ex.Message);
+                flag = 1;
                 return flag;
             }
 
         }
 
+        public void cm_IdPokemon(ComboBox cb)
+        {
+            cb.Items.Clear();
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from pokemon", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while(dr.Read())
+            {
+                cb.Items.Add(dr[0].ToString());
+
+            }
+            con.Close();
+            cb.Items.Insert(0, "---Seleccione ID--");
+            cb.SelectedIndex = 0;
+        }
+
+        public string[] info_pokemon(int id)
+        {
+            
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from pokemon where id='"+id+"'", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            string[] resultado = null;
+            while (dr.Read())
+            {
+                string[] valores =
+                {
+                    dr[0].ToString(),
+                    dr[1].ToString(),
+                    dr[2].ToString(),
+                    dr[3].ToString(),
+                    dr[4].ToString(),
+                    dr[5].ToString(),
+                    dr[6].ToString(),
+                    dr[7].ToString(),
+                    dr[8].ToString(),
+                    dr[9].ToString(),
+                    dr[10].ToString(),
+                    dr[11].ToString()
+
+                  
+                };
+                resultado = valores;
+            }
+            con.Close();
+            return resultado;
+
+            }
         public DataRow Imagen_Mostrar(int id)
         {
             
@@ -546,6 +611,7 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 flag = 1;
+                MessageBox.Show("Error: " + ex.Message);
                 return flag;
             }
 
@@ -578,6 +644,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -622,6 +689,8 @@ namespace Datos
             catch (SqlException ex)
             {
 
+
+                MessageBox.Show("Error: " + ex.Message); 
                 Console.WriteLine("Error: " + ex.Message);
                 flag = 1;
                 return flag;
@@ -649,6 +718,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -674,6 +744,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -724,6 +795,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -750,6 +822,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -774,6 +847,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -826,6 +900,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -852,6 +927,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
 
@@ -877,6 +953,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }

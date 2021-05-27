@@ -45,9 +45,10 @@ namespace PROYECTO1
             // 
             // CrearUsuario
             // 
-            this.CrearUsuario.Location = new System.Drawing.Point(32, 561);
+            this.CrearUsuario.Location = new System.Drawing.Point(16, 292);
+            this.CrearUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CrearUsuario.Name = "CrearUsuario";
-            this.CrearUsuario.Size = new System.Drawing.Size(104, 41);
+            this.CrearUsuario.Size = new System.Drawing.Size(52, 21);
             this.CrearUsuario.TabIndex = 0;
             this.CrearUsuario.Text = "Crear";
             this.CrearUsuario.UseVisualStyleBackColor = true;
@@ -55,9 +56,10 @@ namespace PROYECTO1
             // 
             // ModificarUsuario
             // 
-            this.ModificarUsuario.Location = new System.Drawing.Point(259, 560);
+            this.ModificarUsuario.Location = new System.Drawing.Point(130, 291);
+            this.ModificarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ModificarUsuario.Name = "ModificarUsuario";
-            this.ModificarUsuario.Size = new System.Drawing.Size(112, 42);
+            this.ModificarUsuario.Size = new System.Drawing.Size(56, 22);
             this.ModificarUsuario.TabIndex = 1;
             this.ModificarUsuario.Text = "Modificar";
             this.ModificarUsuario.UseVisualStyleBackColor = true;
@@ -65,9 +67,10 @@ namespace PROYECTO1
             // 
             // EliminarUsuario
             // 
-            this.EliminarUsuario.Location = new System.Drawing.Point(473, 560);
+            this.EliminarUsuario.Location = new System.Drawing.Point(236, 291);
+            this.EliminarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EliminarUsuario.Name = "EliminarUsuario";
-            this.EliminarUsuario.Size = new System.Drawing.Size(117, 42);
+            this.EliminarUsuario.Size = new System.Drawing.Size(58, 22);
             this.EliminarUsuario.TabIndex = 2;
             this.EliminarUsuario.Text = "Eliminar";
             this.EliminarUsuario.UseVisualStyleBackColor = true;
@@ -75,9 +78,10 @@ namespace PROYECTO1
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(993, 561);
+            this.button4.Location = new System.Drawing.Point(496, 292);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 44);
+            this.button4.Size = new System.Drawing.Size(64, 23);
             this.button4.TabIndex = 3;
             this.button4.Text = "Regresar";
             this.button4.UseVisualStyleBackColor = true;
@@ -86,42 +90,47 @@ namespace PROYECTO1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 396);
+            this.label1.Location = new System.Drawing.Point(14, 206);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 25);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Usuario";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(254, 396);
+            this.label2.Location = new System.Drawing.Point(127, 206);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 25);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Password";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(473, 396);
+            this.label3.Location = new System.Drawing.Point(236, 206);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 25);
+            this.label3.Size = new System.Drawing.Size(23, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Rol";
             // 
             // txt_Usuario
             // 
-            this.txt_Usuario.Location = new System.Drawing.Point(32, 462);
+            this.txt_Usuario.Location = new System.Drawing.Point(16, 240);
+            this.txt_Usuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_Usuario.Name = "txt_Usuario";
-            this.txt_Usuario.Size = new System.Drawing.Size(100, 31);
+            this.txt_Usuario.Size = new System.Drawing.Size(52, 20);
             this.txt_Usuario.TabIndex = 7;
             // 
             // txt_Password
             // 
-            this.txt_Password.Location = new System.Drawing.Point(259, 462);
+            this.txt_Password.Location = new System.Drawing.Point(130, 240);
+            this.txt_Password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_Password.Name = "txt_Password";
-            this.txt_Password.Size = new System.Drawing.Size(100, 31);
+            this.txt_Password.Size = new System.Drawing.Size(52, 20);
             this.txt_Password.TabIndex = 8;
             // 
             // combo_Rol
@@ -131,26 +140,28 @@ namespace PROYECTO1
             "Administrador",
             "Entrenador",
             "Cliente"});
-            this.combo_Rol.Location = new System.Drawing.Point(469, 460);
+            this.combo_Rol.Location = new System.Drawing.Point(234, 239);
+            this.combo_Rol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.combo_Rol.Name = "combo_Rol";
-            this.combo_Rol.Size = new System.Drawing.Size(180, 33);
+            this.combo_Rol.Size = new System.Drawing.Size(92, 21);
             this.combo_Rol.TabIndex = 9;
             // 
             // AdminUsuariosDG
             // 
             this.AdminUsuariosDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AdminUsuariosDG.Location = new System.Drawing.Point(2, 4);
+            this.AdminUsuariosDG.Location = new System.Drawing.Point(1, 2);
+            this.AdminUsuariosDG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AdminUsuariosDG.Name = "AdminUsuariosDG";
             this.AdminUsuariosDG.RowHeadersWidth = 82;
             this.AdminUsuariosDG.RowTemplate.Height = 33;
-            this.AdminUsuariosDG.Size = new System.Drawing.Size(1159, 377);
+            this.AdminUsuariosDG.Size = new System.Drawing.Size(580, 196);
             this.AdminUsuariosDG.TabIndex = 10;
             // 
             // G_Admin_Usuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1162, 645);
+            this.ClientSize = new System.Drawing.Size(581, 335);
             this.Controls.Add(this.AdminUsuariosDG);
             this.Controls.Add(this.combo_Rol);
             this.Controls.Add(this.txt_Password);
@@ -162,8 +173,10 @@ namespace PROYECTO1
             this.Controls.Add(this.EliminarUsuario);
             this.Controls.Add(this.ModificarUsuario);
             this.Controls.Add(this.CrearUsuario);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "G_Admin_Usuarios";
             this.Text = "G_Admin_Usuarios";
+            this.Load += new System.EventHandler(this.G_Admin_Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AdminUsuariosDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -46,5 +46,10 @@ namespace PROYECTO1
         {
             this.Hide();
         }
+
+        private void G_Admin_Usuarios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

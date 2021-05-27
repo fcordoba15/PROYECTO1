@@ -47,9 +47,10 @@ namespace PROYECTO1
             // 
             // Regresar
             // 
-            this.Regresar.Location = new System.Drawing.Point(929, 687);
+            this.Regresar.Location = new System.Drawing.Point(464, 357);
+            this.Regresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Regresar.Name = "Regresar";
-            this.Regresar.Size = new System.Drawing.Size(123, 59);
+            this.Regresar.Size = new System.Drawing.Size(62, 31);
             this.Regresar.TabIndex = 0;
             this.Regresar.Text = "Regresar";
             this.Regresar.UseVisualStyleBackColor = true;
@@ -58,19 +59,20 @@ namespace PROYECTO1
             // ConsultaMovDG
             // 
             this.ConsultaMovDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ConsultaMovDG.Location = new System.Drawing.Point(2, 28);
+            this.ConsultaMovDG.Location = new System.Drawing.Point(1, 15);
+            this.ConsultaMovDG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ConsultaMovDG.Name = "ConsultaMovDG";
             this.ConsultaMovDG.RowHeadersWidth = 82;
             this.ConsultaMovDG.RowTemplate.Height = 33;
-            this.ConsultaMovDG.Size = new System.Drawing.Size(1050, 381);
+            this.ConsultaMovDG.Size = new System.Drawing.Size(525, 198);
             this.ConsultaMovDG.TabIndex = 1;
-           
             // 
             // Nuevo
             // 
-            this.Nuevo.Location = new System.Drawing.Point(12, 647);
+            this.Nuevo.Location = new System.Drawing.Point(6, 336);
+            this.Nuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Nuevo.Name = "Nuevo";
-            this.Nuevo.Size = new System.Drawing.Size(140, 63);
+            this.Nuevo.Size = new System.Drawing.Size(70, 33);
             this.Nuevo.TabIndex = 2;
             this.Nuevo.Text = "Crear";
             this.Nuevo.UseVisualStyleBackColor = true;
@@ -78,9 +80,10 @@ namespace PROYECTO1
             // 
             // Modificar
             // 
-            this.Modificar.Location = new System.Drawing.Point(197, 647);
+            this.Modificar.Location = new System.Drawing.Point(98, 336);
+            this.Modificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Modificar.Name = "Modificar";
-            this.Modificar.Size = new System.Drawing.Size(117, 63);
+            this.Modificar.Size = new System.Drawing.Size(58, 33);
             this.Modificar.TabIndex = 3;
             this.Modificar.Text = "Modificar";
             this.Modificar.UseVisualStyleBackColor = true;
@@ -88,9 +91,10 @@ namespace PROYECTO1
             // 
             // Eliminar
             // 
-            this.Eliminar.Location = new System.Drawing.Point(355, 647);
+            this.Eliminar.Location = new System.Drawing.Point(178, 336);
+            this.Eliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Size = new System.Drawing.Size(115, 63);
+            this.Eliminar.Size = new System.Drawing.Size(58, 33);
             this.Eliminar.TabIndex = 4;
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseVisualStyleBackColor = true;
@@ -98,73 +102,81 @@ namespace PROYECTO1
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 562);
+            this.textBox1.Location = new System.Drawing.Point(6, 292);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 31);
+            this.textBox1.Size = new System.Drawing.Size(78, 20);
             this.textBox1.TabIndex = 5;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(197, 562);
+            this.textBox2.Location = new System.Drawing.Point(98, 292);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(142, 31);
+            this.textBox2.Size = new System.Drawing.Size(73, 20);
             this.textBox2.TabIndex = 6;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(392, 562);
+            this.textBox3.Location = new System.Drawing.Point(196, 292);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(158, 31);
+            this.textBox3.Size = new System.Drawing.Size(81, 20);
             this.textBox3.TabIndex = 7;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(579, 678);
+            this.textBox5.Location = new System.Drawing.Point(290, 353);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(196, 31);
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(579, 647);
+            this.label1.Location = new System.Drawing.Point(290, 336);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 25);
+            this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Filtrar";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 530);
+            this.label2.Location = new System.Drawing.Point(6, 276);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 25);
+            this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 11;
             this.label2.Text = "ID Entrenador";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(192, 530);
+            this.label3.Location = new System.Drawing.Point(96, 276);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 25);
+            this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "ID Pokemon";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(392, 531);
+            this.label4.Location = new System.Drawing.Point(196, 276);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 25);
+            this.label4.Size = new System.Drawing.Size(95, 13);
             this.label4.TabIndex = 13;
             this.label4.Text = "Codigo Movimento";
             // 
             // GestionMov
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1058, 752);
+            this.ClientSize = new System.Drawing.Size(529, 391);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -178,8 +190,10 @@ namespace PROYECTO1
             this.Controls.Add(this.Nuevo);
             this.Controls.Add(this.ConsultaMovDG);
             this.Controls.Add(this.Regresar);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GestionMov";
             this.Text = "Movimientos";
+            this.Load += new System.EventHandler(this.GestionMov_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaMovDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

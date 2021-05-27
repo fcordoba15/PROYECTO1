@@ -47,7 +47,9 @@ namespace PROYECTO1
 
         }
 
+        private void GestionMov_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

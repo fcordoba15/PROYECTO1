@@ -41,6 +41,11 @@ namespace PROYECTO1
             PokemonesEntrenadorDG.DataSource = cn.ConsultaPokemonesEntrenador();
 
         }
+
+        private void GestionPokemonesEntrenador_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

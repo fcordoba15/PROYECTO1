@@ -71,5 +71,10 @@ namespace PROYECTO1
         {
 
         }
+
+        private void ConsultaPokEnt_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -34,6 +34,9 @@ namespace PROYECTO1
 
         }
 
+        private void LoginEntrenador_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

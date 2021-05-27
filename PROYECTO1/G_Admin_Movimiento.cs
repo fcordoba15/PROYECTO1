@@ -47,5 +47,10 @@ namespace PROYECTO1
             v1.Show();
             
         }
+
+        private void G_Admin_Movimiento_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

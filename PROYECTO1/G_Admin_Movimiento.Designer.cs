@@ -52,7 +52,7 @@ namespace PROYECTO1
             // 
             this.Crear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.Crear.Location = new System.Drawing.Point(11, 431);
-            this.Crear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Crear.Margin = new System.Windows.Forms.Padding(2);
             this.Crear.Name = "Crear";
             this.Crear.Size = new System.Drawing.Size(62, 23);
             this.Crear.TabIndex = 0;
@@ -63,7 +63,7 @@ namespace PROYECTO1
             // Modificar
             // 
             this.Modificar.Location = new System.Drawing.Point(88, 431);
-            this.Modificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Modificar.Margin = new System.Windows.Forms.Padding(2);
             this.Modificar.Name = "Modificar";
             this.Modificar.Size = new System.Drawing.Size(64, 23);
             this.Modificar.TabIndex = 1;
@@ -75,7 +75,7 @@ namespace PROYECTO1
             // 
             this.Eliminar.BackColor = System.Drawing.Color.Red;
             this.Eliminar.Location = new System.Drawing.Point(167, 431);
-            this.Eliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Eliminar.Margin = new System.Windows.Forms.Padding(2);
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Size = new System.Drawing.Size(68, 23);
             this.Eliminar.TabIndex = 2;
@@ -86,7 +86,7 @@ namespace PROYECTO1
             // Regresar
             // 
             this.Regresar.Location = new System.Drawing.Point(449, 431);
-            this.Regresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Regresar.Margin = new System.Windows.Forms.Padding(2);
             this.Regresar.Name = "Regresar";
             this.Regresar.Size = new System.Drawing.Size(78, 23);
             this.Regresar.TabIndex = 3;
@@ -98,7 +98,7 @@ namespace PROYECTO1
             // 
             this.AdminConsultaMovDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AdminConsultaMovDG.Location = new System.Drawing.Point(55, 65);
-            this.AdminConsultaMovDG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AdminConsultaMovDG.Margin = new System.Windows.Forms.Padding(2);
             this.AdminConsultaMovDG.Name = "AdminConsultaMovDG";
             this.AdminConsultaMovDG.RowHeadersWidth = 82;
             this.AdminConsultaMovDG.RowTemplate.Height = 33;
@@ -108,7 +108,7 @@ namespace PROYECTO1
             // txt_CodigoMovAdmi
             // 
             this.txt_CodigoMovAdmi.Location = new System.Drawing.Point(70, 381);
-            this.txt_CodigoMovAdmi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_CodigoMovAdmi.Margin = new System.Windows.Forms.Padding(2);
             this.txt_CodigoMovAdmi.Name = "txt_CodigoMovAdmi";
             this.txt_CodigoMovAdmi.Size = new System.Drawing.Size(64, 20);
             this.txt_CodigoMovAdmi.TabIndex = 5;
@@ -116,7 +116,7 @@ namespace PROYECTO1
             // txt_DescripcionMovAdmi
             // 
             this.txt_DescripcionMovAdmi.Location = new System.Drawing.Point(172, 381);
-            this.txt_DescripcionMovAdmi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_DescripcionMovAdmi.Margin = new System.Windows.Forms.Padding(2);
             this.txt_DescripcionMovAdmi.Name = "txt_DescripcionMovAdmi";
             this.txt_DescripcionMovAdmi.Size = new System.Drawing.Size(72, 20);
             this.txt_DescripcionMovAdmi.TabIndex = 6;
@@ -124,7 +124,7 @@ namespace PROYECTO1
             // txt_NombreMovAdmi
             // 
             this.txt_NombreMovAdmi.Location = new System.Drawing.Point(272, 381);
-            this.txt_NombreMovAdmi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_NombreMovAdmi.Margin = new System.Windows.Forms.Padding(2);
             this.txt_NombreMovAdmi.Name = "txt_NombreMovAdmi";
             this.txt_NombreMovAdmi.Size = new System.Drawing.Size(68, 20);
             this.txt_NombreMovAdmi.TabIndex = 7;
@@ -132,7 +132,7 @@ namespace PROYECTO1
             // txt_TipoMovAdmi
             // 
             this.txt_TipoMovAdmi.Location = new System.Drawing.Point(357, 381);
-            this.txt_TipoMovAdmi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_TipoMovAdmi.Margin = new System.Windows.Forms.Padding(2);
             this.txt_TipoMovAdmi.Name = "txt_TipoMovAdmi";
             this.txt_TipoMovAdmi.Size = new System.Drawing.Size(66, 20);
             this.txt_TipoMovAdmi.TabIndex = 8;
@@ -231,9 +231,10 @@ namespace PROYECTO1
             this.Controls.Add(this.Eliminar);
             this.Controls.Add(this.Modificar);
             this.Controls.Add(this.Crear);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "G_Admin_Movimiento";
             this.Text = "Gestion de Movimientos";
+            this.Load += new System.EventHandler(this.G_Admin_Movimiento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AdminConsultaMovDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

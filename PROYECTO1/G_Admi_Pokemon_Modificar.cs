@@ -85,5 +85,10 @@ namespace PROYECTO1
             
 
         }
+
+        private void picPokemon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

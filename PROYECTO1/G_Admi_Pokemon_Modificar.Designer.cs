@@ -92,6 +92,7 @@ namespace PROYECTO1
             this.picPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPokemon.TabIndex = 62;
             this.picPokemon.TabStop = false;
+            this.picPokemon.Click += new System.EventHandler(this.picPokemon_Click);
             // 
             // comboBox1
             // 

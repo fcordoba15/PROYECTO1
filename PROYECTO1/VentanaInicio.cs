@@ -38,5 +38,11 @@ namespace PROYECTO1
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ModuloCliente v1 = new ModuloCliente();
+            v1.Show();
+        }
     }
 }

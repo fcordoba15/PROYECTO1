@@ -29,52 +29,112 @@ namespace PROYECTO1
         {
             if (Elemento.Text == "Entrenadores")
             {
-                Tipo_movimiento.Text = "NULL";
+                Tipo_movimiento.Hide();
 
-                Categoria_pokemon.Text = "NULL";
+                Categoria_pokemon.Hide();
 
-                Tipo_pokemon.Text = "NULL";
+                Tipo_pokemon.Hide();
+
+                label1.Hide();
+
+                label2.Hide();
+
+                label5.Hide();
 
                 Ubicacion_entrenador.Text = "Todas";
 
+                Ubicacion_entrenador.Show();
+
                 Nombre_entrenador.Text = "Todos";
+
+                Nombre_entrenador.Show();
+
+                label3.Show();
+
+                label4.Show();
+
             }
             else if (Elemento.Text == "Movimientos")
             {
-                Ubicacion_entrenador.Text = "NULL";
+                Ubicacion_entrenador.Hide();
 
-                Nombre_entrenador.Text = "NULL";
+                Nombre_entrenador.Hide();
 
-                Tipo_pokemon.Text = "NULL";
+                Tipo_pokemon.Hide();
 
-                Categoria_pokemon.Text = "NULL";
+                Categoria_pokemon.Hide();
+
+                label1.Hide();
+
+                label2.Hide();
+
+                label3.Hide();
+
+                label4.Hide();
 
                 Tipo_movimiento.Text = "Todos";
+
+                Tipo_movimiento.Show();
+
+                label5.Show();
             }
             else if (Elemento.Text == "Pokémon")
             {
-                Ubicacion_entrenador.Text = "NULL";
+                Ubicacion_entrenador.Hide();
 
-                Nombre_entrenador.Text = "NULL";
+                Nombre_entrenador.Hide();
 
-                Tipo_movimiento.Text = "NULL";
+                Tipo_movimiento.Hide();
+
+                label3.Hide();
+
+                label4.Hide();
+
+                label5.Hide();
 
                 Tipo_pokemon.Text = "Todos";
 
+                Tipo_pokemon.Show();
+
                 Categoria_pokemon.Text = "Todas";
 
+                Categoria_pokemon.Show();
+
+                label1.Show();
+
+                label2.Show();
             }
             else
             {
                 Ubicacion_entrenador.Text = "Todas";
 
+                Ubicacion_entrenador.Show();
+
                 Nombre_entrenador.Text = "Todos";
+
+                Nombre_entrenador.Show();
 
                 Tipo_movimiento.Text = "Todos";
 
+                Tipo_movimiento.Show();
+
                 Tipo_pokemon.Text = "Todos";
 
+                Tipo_pokemon.Show();
+
                 Categoria_pokemon.Text = "Todas";
+
+                Categoria_pokemon.Show();
+
+                label1.Show();
+
+                label2.Show();
+
+                label3.Show();
+
+                label4.Show();
+
+                label5.Show();
 
             }
 

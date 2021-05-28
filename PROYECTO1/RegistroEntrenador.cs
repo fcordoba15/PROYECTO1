@@ -127,6 +127,38 @@ namespace PROYECTO1
                         break;
                     }
 
+                    //------------- VALIDACION SITIO WEB -------------
+                    string w = ".";
+                    string x = "c";
+                    string y = "o";
+                    string z = "m";
+                    int validación_SitioWeb = 0;
+                    foreach (char c in textBox8.Text)
+                    {
+                        if (c == w[0])
+                            validación_SitioWeb++;
+                    }
+                    foreach (char c in textBox8.Text)
+                    {
+                        if (c == x[0])
+                            validación_SitioWeb++;
+                    }
+                    foreach (char c in textBox8.Text)
+                    {
+                        if (c == y[0])
+                            validación_SitioWeb++;
+                    }
+                    foreach (char c in textBox8.Text)
+                    {
+                        if (c == z[0])
+                            validación_SitioWeb++;
+                    }
+                    if (validación_SitioWeb < 4)
+                    {
+                        MessageBox.Show("¡Error! El sitio web debe ser de formato texto.com");
+                        break;
+                    }
+
                     //------------- REGISTRO EN LA BASE DE DATOS -------------
                     cn.Registrar_entrenadorUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
                     cn.Registrar_entrenador(textBox4.Text, textBox5.Text, textBox13.Text, textBox6.Text, textBox7.Text

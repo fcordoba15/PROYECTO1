@@ -18,6 +18,7 @@ namespace PROYECTO1
         public BitacoraEntrenador()
         {
             InitializeComponent();
+           cn. Cm_Identrenador(ID_Ent_Bitacora);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,6 +26,11 @@ namespace PROYECTO1
             //int i = Convert.ToInt32(dateTimePicker1.Value.ToString());
             int i2 = Convert.ToInt32(ID_Ent_Bitacora.Text);
             cn.InsertarBitacora(dateTimePicker1.Value.ToString(), Texto_Bitacora.Text, i2);
+        }
+
+        private void BitacoraEntrenador_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

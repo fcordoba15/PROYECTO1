@@ -61,7 +61,9 @@ namespace PROYECTO1
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            ModuloEntrenador v1 = new ModuloEntrenador();
+            v1.Show();
         }
     }
 }

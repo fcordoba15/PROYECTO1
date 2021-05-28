@@ -86,5 +86,12 @@ namespace PROYECTO1
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ModuloAdministrador v1 = new ModuloAdministrador();
+            v1.Show();
+        }
     }
 }

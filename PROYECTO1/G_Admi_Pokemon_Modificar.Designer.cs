@@ -60,6 +60,7 @@ namespace PROYECTO1
             this.label1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.ID_pokemon = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picPokemon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -345,11 +346,22 @@ namespace PROYECTO1
             this.ID_pokemon.TabIndex = 67;
             this.ID_pokemon.SelectedIndexChanged += new System.EventHandler(this.ID_pokemon_SelectedIndexChanged);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(473, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(71, 26);
+            this.button3.TabIndex = 68;
+            this.button3.Text = "Regresar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // G_Admi_Pokemon_Modificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(556, 331);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.ID_pokemon);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.button2);
@@ -423,5 +435,6 @@ namespace PROYECTO1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox ID_pokemon;
+        private System.Windows.Forms.Button button3;
     }
 }

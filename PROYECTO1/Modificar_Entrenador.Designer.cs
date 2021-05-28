@@ -30,7 +30,6 @@ namespace PROYECTO1
         private void InitializeComponent()
         {
             this.label15 = new System.Windows.Forms.Label();
-            this.txt_ID_Entrenador = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -58,6 +57,8 @@ namespace PROYECTO1
             this.label3 = new System.Windows.Forms.Label();
             this.txt_Ubicacion_Entrenador = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.txt_ID_Entrenador = new System.Windows.Forms.ComboBox();
+            this.regresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label15
@@ -69,13 +70,6 @@ namespace PROYECTO1
             this.label15.Size = new System.Drawing.Size(75, 14);
             this.label15.TabIndex = 97;
             this.label15.Text = "ID Entrenador";
-            // 
-            // txt_ID_Entrenador
-            // 
-            this.txt_ID_Entrenador.Location = new System.Drawing.Point(93, 59);
-            this.txt_ID_Entrenador.Name = "txt_ID_Entrenador";
-            this.txt_ID_Entrenador.Size = new System.Drawing.Size(235, 20);
-            this.txt_ID_Entrenador.TabIndex = 96;
             // 
             // button2
             // 
@@ -268,6 +262,7 @@ namespace PROYECTO1
             this.label2.Size = new System.Drawing.Size(296, 17);
             this.label2.TabIndex = 68;
             this.label2.Text = "____________________________________";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -314,17 +309,38 @@ namespace PROYECTO1
             this.label14.TabIndex = 101;
             this.label14.Text = "Ubicación";
             // 
+            // txt_ID_Entrenador
+            // 
+            this.txt_ID_Entrenador.FormattingEnabled = true;
+            this.txt_ID_Entrenador.Location = new System.Drawing.Point(93, 59);
+            this.txt_ID_Entrenador.Name = "txt_ID_Entrenador";
+            this.txt_ID_Entrenador.Size = new System.Drawing.Size(235, 21);
+            this.txt_ID_Entrenador.TabIndex = 102;
+            this.txt_ID_Entrenador.SelectedIndexChanged += new System.EventHandler(this.txt_ID_Entrenador_SelectedIndexChanged);
+            // 
+            // regresar
+            // 
+            this.regresar.BackColor = System.Drawing.Color.LightGray;
+            this.regresar.Location = new System.Drawing.Point(320, 6);
+            this.regresar.Name = "regresar";
+            this.regresar.Size = new System.Drawing.Size(55, 26);
+            this.regresar.TabIndex = 103;
+            this.regresar.Text = "regresar";
+            this.regresar.UseVisualStyleBackColor = false;
+            this.regresar.Click += new System.EventHandler(this.regresar_Click);
+            // 
             // Modificar_Entrenador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 319);
+            this.Controls.Add(this.regresar);
+            this.Controls.Add(this.txt_ID_Entrenador);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txt_Ubicacion_Entrenador);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_Provincia_Entrenador);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.txt_ID_Entrenador);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -358,7 +374,6 @@ namespace PROYECTO1
         #endregion
 
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txt_ID_Entrenador;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -386,5 +401,7 @@ namespace PROYECTO1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_Ubicacion_Entrenador;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox txt_ID_Entrenador;
+        private System.Windows.Forms.Button regresar;
     }
 }

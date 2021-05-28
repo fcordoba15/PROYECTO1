@@ -30,10 +30,11 @@ namespace PROYECTO1
         private void InitializeComponent()
         {
             this.label15 = new System.Windows.Forms.Label();
-            this.txt_ID_Entrenador = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.EliminarEntrenador = new System.Windows.Forms.Button();
+            this.txt_ID_Entrenador = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label15
@@ -45,13 +46,6 @@ namespace PROYECTO1
             this.label15.Size = new System.Drawing.Size(75, 14);
             this.label15.TabIndex = 101;
             this.label15.Text = "ID Entrenador";
-            // 
-            // txt_ID_Entrenador
-            // 
-            this.txt_ID_Entrenador.Location = new System.Drawing.Point(93, 66);
-            this.txt_ID_Entrenador.Name = "txt_ID_Entrenador";
-            this.txt_ID_Entrenador.Size = new System.Drawing.Size(235, 20);
-            this.txt_ID_Entrenador.TabIndex = 100;
             // 
             // label2
             // 
@@ -87,14 +81,33 @@ namespace PROYECTO1
             this.EliminarEntrenador.UseVisualStyleBackColor = false;
             this.EliminarEntrenador.Click += new System.EventHandler(this.EliminarEntrenador_Click);
             // 
+            // txt_ID_Entrenador
+            // 
+            this.txt_ID_Entrenador.FormattingEnabled = true;
+            this.txt_ID_Entrenador.Location = new System.Drawing.Point(93, 66);
+            this.txt_ID_Entrenador.Name = "txt_ID_Entrenador";
+            this.txt_ID_Entrenador.Size = new System.Drawing.Size(227, 21);
+            this.txt_ID_Entrenador.TabIndex = 103;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(282, 133);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(58, 26);
+            this.button3.TabIndex = 104;
+            this.button3.Text = "Regresar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // G_Admin_Entrenador_Eliminar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 161);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.txt_ID_Entrenador);
             this.Controls.Add(this.EliminarEntrenador);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.txt_ID_Entrenador);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "G_Admin_Entrenador_Eliminar";
@@ -108,9 +121,10 @@ namespace PROYECTO1
         #endregion
 
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txt_ID_Entrenador;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button EliminarEntrenador;
+        private System.Windows.Forms.ComboBox txt_ID_Entrenador;
+        private System.Windows.Forms.Button button3;
     }
 }

@@ -250,6 +250,33 @@ namespace Datos
             }
         }
 
+        public string[] info_usuarios(string id)
+        {
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from usuario where Nombre_Usuario='" + id + "'", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            string[] resultado = null;
+            while (dr.Read())
+            {
+                string[] valores =
+                {
+                    dr[0].ToString(),
+                    dr[1].ToString(),
+                    dr[2].ToString(),
+                    dr[3].ToString(),
+                   
+
+
+
+                };
+                resultado = valores;
+            }
+            con.Close();
+            return resultado;
+
+        }
+
         /* 
          * 
          * 
@@ -656,7 +683,54 @@ namespace Datos
 
         }
 
+        public void cm_Identrenador(ComboBox cb)
+        {
+            cb.Items.Clear();
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from entrenador", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cb.Items.Add(dr[0].ToString());
 
+            }
+            con.Close();
+            cb.Items.Insert(0, "---Seleccione ID--");
+            cb.SelectedIndex = 0;
+        }
+
+        public string[] info_Entrenador(string id)
+        {
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from entrenador where id_entrenador='" + id + "'", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            string[] resultado = null;
+            while (dr.Read())
+            {
+                string[] valores =
+                {
+                    dr[0].ToString(),
+                    dr[1].ToString(),
+                    dr[2].ToString(),
+                    dr[3].ToString(),
+                    dr[4].ToString(),
+                    dr[5].ToString(),
+                    dr[6].ToString(),
+                    dr[7].ToString(),
+                    dr[8].ToString(),
+                    dr[9].ToString(),
+                    dr[10].ToString(),
+                    
+
+
+                };
+                resultado = valores;
+            }
+            con.Close();
+            return resultado;
+
+        }
 
         /*
          * 
@@ -849,7 +923,7 @@ namespace Datos
 
                 con.Open();
                 string query = "UPDATE usuario SET nombre_usuario = '" + nombre_usuario_MA + "'," +
-                    " contraseña = '" + password_usuario_MA + "', rol = '" + rol_usuario_MA + "'" +
+                    " llave = '" + password_usuario_MA + "', rol = '" + rol_usuario_MA + "'" +
                     " WHERE nombre_usuario = '" + nombre_usuario_MA + "'";
                 SqlCommand cmd = new SqlCommand(query, con);
                 flag = cmd.ExecuteNonQuery();
@@ -890,6 +964,22 @@ namespace Datos
                 flag = 1;
                 return flag;
             }
+        }
+
+        public void cm_Usuarios(ComboBox cb)
+        {
+            cb.Items.Clear();
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from usuario", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cb.Items.Add(dr[0].ToString());
+
+            }
+            con.Close();
+            cb.Items.Insert(0, "---Seleccione ID--");
+            cb.SelectedIndex = 0;
         }
 
         /*

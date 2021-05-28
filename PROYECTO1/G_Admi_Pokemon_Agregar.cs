@@ -90,6 +90,7 @@ namespace PROYECTO1
                         break;
                     }
 
+                    //------------- REGISTRO EN LA BASE DE DATOS -------------
                     System.IO.MemoryStream ms = new System.IO.MemoryStream();
                     picPokemon.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
 

@@ -23,25 +23,100 @@ namespace PROYECTO1
 
         private void Crear_Click(object sender, EventArgs e)
         {
-            cn.InsertarMovimientoAdmin(txt_CodigoMovAdmi.Text, txt_DescripcionMovAdmi.Text, txt_NombreMovAdmi.Text,
-             txt_TipoMovAdmi.Text);
-            AdminConsultaMovDG.DataSource = cn.ConsultaMovimientosAdmin();
-            MessageBox.Show("¡Movimiento creado!");
-            this.Hide();
-            ModuloAdministrador v1 = new ModuloAdministrador();
-            v1.Show();
+            //--------------------------------- VALIDACIONES DE ESCRITURA EN CAMPOS ---------------------------------
+            int a = 0;
+            while (a == 0)
+            {
+                //------------- VALIDACIONES DE COMILLAS -------------
+                string p = "'";
+                int validación_comilla = 0;
+                foreach (char c in txt_CodigoMovAdmi.Text)
+                {
+                    if (c == p[0])
+                        validación_comilla++;
+                }
+                foreach (char c in txt_DescripcionMovAdmi.Text)
+                {
+                    if (c == p[0])
+                        validación_comilla++;
+                }
+                foreach (char c in txt_NombreMovAdmi.Text)
+                {
+                    if (c == p[0])
+                        validación_comilla++;
+                }
+                foreach (char c in txt_TipoMovAdmi.Text)
+                {
+                    if (c == p[0])
+                        validación_comilla++;
+                }
+                if (validación_comilla > 0)
+                {
+                    MessageBox.Show("¡Error! No debe ingresar información con comillas simples");
+                    break;
+                }
 
+                //------------- REGISTRO EN LA BASE DE DATOS -------------
+                cn.InsertarMovimientoAdmin(txt_CodigoMovAdmi.Text, txt_DescripcionMovAdmi.Text, txt_NombreMovAdmi.Text,
+                txt_TipoMovAdmi.Text);
+                AdminConsultaMovDG.DataSource = cn.ConsultaMovimientosAdmin();
 
-            
+                MessageBox.Show("¡Movimiento creado!");
+
+                this.Hide();
+                ModuloAdministrador v1 = new ModuloAdministrador();
+                v1.Show();
+
+                a++;
+            }
         }
 
         private void Modificar_Click(object sender, EventArgs e)
-        {cn.ModificarMovimientoAdmin(Id_Movimiento.Text, txt_DescripcionMovAdmi.Text, txt_NombreMovAdmi.Text, txt_TipoMovAdmi.Text);
-            AdminConsultaMovDG.DataSource = cn.ConsultaMovimientosAdmin();
-            MessageBox.Show("¡Movimiento creado con éxtio!");
-            this.Hide();
-            ModuloAdministrador v1 = new ModuloAdministrador();
-            v1.Show();
+        {
+            //--------------------------------- VALIDACIONES DE ESCRITURA EN CAMPOS ---------------------------------
+            int a = 0;
+            while (a == 0)
+            {
+                //------------- VALIDACIONES DE COMILLAS -------------
+                string p = "'";
+                int validación_comilla = 0;
+                foreach (char c in txt_CodigoMovAdmi.Text)
+                {
+                    if (c == p[0])
+                        validación_comilla++;
+                }
+                foreach (char c in txt_DescripcionMovAdmi.Text)
+                {
+                    if (c == p[0])
+                        validación_comilla++;
+                }
+                foreach (char c in txt_NombreMovAdmi.Text)
+                {
+                    if (c == p[0])
+                        validación_comilla++;
+                }
+                foreach (char c in txt_TipoMovAdmi.Text)
+                {
+                    if (c == p[0])
+                        validación_comilla++;
+                }
+                if (validación_comilla > 0)
+                {
+                    MessageBox.Show("¡Error! No debe ingresar información con comillas simples");
+                    break;
+                }
+
+                //------------- REGISTRO EN LA BASE DE DATOS -------------
+                cn.ModificarMovimientoAdmin(Id_Movimiento.Text, txt_DescripcionMovAdmi.Text, txt_NombreMovAdmi.Text, txt_TipoMovAdmi.Text);
+                AdminConsultaMovDG.DataSource = cn.ConsultaMovimientosAdmin();
+
+                MessageBox.Show("¡Movimiento creado con éxtio!");
+
+                this.Hide();
+                ModuloAdministrador v1 = new ModuloAdministrador();
+                v1.Show();
+                a++;
+            }
         }
 
         private void Eliminar_Click(object sender, EventArgs e)

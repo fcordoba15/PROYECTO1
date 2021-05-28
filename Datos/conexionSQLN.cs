@@ -13,7 +13,7 @@ namespace Negocios
     public class conexionSQLN
     {
         // ---------------------->CODIGO PARA CONECTAR A LA BASE DE DATOS 
-        
+
         ConexionSQL cn = new ConexionSQL();
         public string conSQL_cliente(string usuario, string contrasena)
         {
@@ -42,11 +42,11 @@ namespace Negocios
         public void Registrar_cliente(string cedula, string nombre, string telefono, string correo, string sitio_web,
             string provincia, string canton, string distrito, string usuario)
         {
-            cn.Resgistar_Cliente(cedula,nombre,telefono, correo,sitio_web,provincia,canton,distrito,usuario);
+            cn.Resgistar_Cliente(cedula, nombre, telefono, correo, sitio_web, provincia, canton, distrito, usuario);
         }
 
         public void Registrar_GMap(string id_client, string Ubicacion, string Latitud, string Longitud)
-        { 
+        {
             cn.Resgistar_GMaps(id_client, Ubicacion, Latitud, Longitud);
         }
 
@@ -55,7 +55,7 @@ namespace Negocios
             cn.Resgistar_entrenador_usuario(usuario, contrasena, llave);
         }
 
-        public void Registrar_entrenador(string cedula, string nombre,string calificacion, string telefono, string correo, string sitio_web,
+        public void Registrar_entrenador(string cedula, string nombre, string calificacion, string telefono, string correo, string sitio_web,
             string provincia, string canton, string distrito, string usuario)
         {
             cn.Resgistar_Entrenador(cedula, nombre, calificacion, telefono, correo, sitio_web, provincia, canton, distrito, usuario);
@@ -67,11 +67,11 @@ namespace Negocios
             cn.Resgistar_administrador_usuario(usuario, contrasena, llave);
         }
 
-            /*
-             *---------------------->CODIGO PARA CONSULTAS TABLA INTERMEDIA_MOV_POK_ENTRENADOR
-             * 
-             */
-            public DataTable ConsultaDT()
+        /*
+         *---------------------->CODIGO PARA CONSULTAS TABLA INTERMEDIA_MOV_POK_ENTRENADOR
+         * 
+         */
+        public DataTable ConsultaDT()
         {
             return cn.ConsultarMov();
         }
@@ -103,7 +103,7 @@ namespace Negocios
             string generacion, string legendario, byte[] foto)
         {
             return cn.InsertarPokemonAdministrador(nombre_pokemon, id_tipo, cod_tipo, total, salud, ataque, defensa,
-                ataque_especial, defensa_especial, velocidad, generacion, legendario,foto);
+                ataque_especial, defensa_especial, velocidad, generacion, legendario, foto);
         }
 
         public int ModificarPokemonAdministrador(int id, string nombre_pokemon, string id_tipo, string cod_tipo, string total,
@@ -111,18 +111,23 @@ namespace Negocios
             string generacion, string legendario, byte[] foto)
         {
             return cn.ModificarPokemonAdministrador(id, nombre_pokemon, id_tipo, cod_tipo, total, salud, ataque, defensa,
-                ataque_especial, defensa_especial, velocidad, generacion, legendario,foto);
+                ataque_especial, defensa_especial, velocidad, generacion, legendario, foto);
         }
 
         public int EliminarPokemonAdministrador(int id)
         {
             return cn.EliminarPokemonAdministrador(id);
         }
-
-       public DataRow Imagen_Mostrar(int id)
+        public void Cm_IdPokemon(ComboBox cb)
         {
-            return cn.Imagen_Mostrar(id);
+
+            cn.cm_IdPokemon(cb);
         }
+        public string[] Info_pokemon(int id)
+        {
+            return cn.info_pokemon(id);
+        }
+
 
         /*
          * 
@@ -153,6 +158,14 @@ namespace Negocios
             return cn.EliminarUsuarioAdmin(nombre_usuario_MA);
         }
 
+        public void cm_Usuarios(ComboBox cb)
+        {
+            cn.cm_Usuarios(cb);
+        }
+        public string[] Info_usuarios(string id)
+            {
+                return cn.info_usuarios(id);
+            }
         /*
         * 
         * ------------------------------->CONSULTAS ADMINISTRADOR GESTION MOVIMIENTOS
@@ -180,6 +193,17 @@ namespace Negocios
         public int EliminarMovimientoAdmin(string codigoMovimiento)
         {
             return cn.EliminarMovimientoAdmin(codigoMovimiento);
+
+        }
+
+        public void Cm_IdMovimiento(ComboBox cb)
+        {
+            cn.cm_IdMovimiento(cb);
+        }
+         
+         public string[] Info_movimiento(string id)
+        {
+            return cn.info_movimiento(id);
         }
 
         /*
@@ -242,13 +266,27 @@ namespace Negocios
             return cn.EliminarPokemonEntrenador(id_entrenador_pokemon, i);
         }
 
+        public void Imagen_Mostrar( PictureBox pb,int id)
+        {
+           cn.Imagen_Mostrar( pb,id);
+           
+        }
 
+        public void Cm_Identrenador(ComboBox cb)
+        {
+            cn.cm_Identrenador(cb);
 
-        /*
-        *---------------------->CODIGO PARA CONSULTAS MODULO CLIENTE
-        * 
-        */
-        public DataTable Cliente_pokemon(string categoria, string tipo)
+        }
+
+        public string[] Info_Entrenador(string id)
+        {
+            return cn.info_Entrenador(id);
+        }
+            /*
+            *---------------------->CODIGO PARA CONSULTAS MODULO CLIENTE
+            * 
+            */
+            public DataTable Cliente_pokemon(string categoria, string tipo)
         {
             return cn.Cliente_Pokemon(categoria,tipo);
         }

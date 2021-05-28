@@ -149,5 +149,10 @@ namespace PROYECTO1
             this.Hide();
             v1.Show();
         }
+
+        private void RegistroEntrenador_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

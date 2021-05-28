@@ -74,5 +74,10 @@ namespace PROYECTO1
             this.Hide();
             v1.Show();
         }
+
+        private void RegistroAdministrador_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

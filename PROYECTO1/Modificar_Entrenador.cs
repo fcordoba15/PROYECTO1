@@ -17,6 +17,7 @@ namespace PROYECTO1
         public Modificar_Entrenador()
         {
             InitializeComponent();
+            cn.Cm_Identrenador(txt_ID_Entrenador);
         }
 
         private void Modificar_Entrenador_Load(object sender, EventArgs e)
@@ -142,6 +143,46 @@ namespace PROYECTO1
 
                 a++;
             }
+        }
+
+        private void txt_ID_Entrenador_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+                if (txt_ID_Entrenador.SelectedIndex > 0)
+                {
+
+
+                    //cn.Imagen_Mostrar(picPokemon, i);
+                    string[] valores = cn.Info_Entrenador(txt_ID_Entrenador.Text);
+
+                    txt_Nombre_Entrenador.Text = valores[1];
+                    txt_Calificacion_Entrenador.Text = valores[2];
+                    txt_Telefono_Entrenador.Text = valores[3];
+                    txt_Correo_Entrenador.Text = valores[4];
+                    txt_SitioWeb_Entrenador.Text = valores[5];
+                    txt_Provincia_Entrenador.Text = valores[6];
+                    txt_Canton_Entrenador.Text = valores[7];
+                    txt_Distrito_Entrenador.Text = valores[8];
+                    txt_Ubicacion_Entrenador.Text = valores[9];
+                                            //.Text = valores[10];
+
+
+
+
+            }
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void regresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ModuloAdministrador v1 = new ModuloAdministrador();
+            v1.Show();
         }
     }
 }

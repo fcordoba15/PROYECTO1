@@ -7,12 +7,13 @@ using System.Data;
 using System.Drawing;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true; MultipleActiveResultSets= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= localhost\\SQLEXPRESS02; database= Proyecto; integrated security= true; MultipleActiveResultSets= true"; //Cambiar server segun SQL
         //SURFACEPROPEDRO\\SQLEXPRESS     //localhost\\SQLEXPRESS01   FABY  ---  LAPTOP-OC2ENCL7 RAN
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -41,6 +42,7 @@ namespace Datos
             {
                 dato = "Error";
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 return dato;
 
             }
@@ -67,6 +69,7 @@ namespace Datos
                 string dat;
                 dat = "Error";
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 return dat;
 
             }
@@ -92,6 +95,7 @@ namespace Datos
                 string dat;
                 dat = "Error";
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 return dat;
             }
         }
@@ -116,7 +120,8 @@ namespace Datos
             {
                
                 Console.WriteLine("Error: " + ex.Message);
-                
+                MessageBox.Show("Error: " + ex.Message);
+
             }
         }
 
@@ -140,7 +145,8 @@ namespace Datos
             {
                 
                 Console.WriteLine("Error: " + ex.Message);
-                
+                MessageBox.Show("Error: " + ex.Message);
+
 
             }
         }
@@ -165,7 +171,8 @@ namespace Datos
 
                 
                 Console.WriteLine("Error: " + ex.Message);
-                
+                MessageBox.Show("Error: " + ex.Message);
+
             }
         }
 
@@ -188,6 +195,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -210,6 +218,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -237,7 +246,35 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        public string[] info_usuarios(string id)
+        {
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from usuario where Nombre_Usuario='" + id + "'", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            string[] resultado = null;
+            while (dr.Read())
+            {
+                string[] valores =
+                {
+                    dr[0].ToString(),
+                    dr[1].ToString(),
+                    dr[2].ToString(),
+                    dr[3].ToString(),
+                   
+
+
+
+                };
+                resultado = valores;
+            }
+            con.Close();
+            return resultado;
+
         }
 
         /* 
@@ -282,6 +319,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -307,6 +345,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -332,8 +371,49 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 flag = 1;
+                MessageBox.Show("Error: " + ex.Message);
                 return flag;
+                
             }
+        }
+
+        public void cm_IdMovimiento(ComboBox cb)
+        {
+            cb.Items.Clear();
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from movimiento", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cb.Items.Add(dr[0].ToString());
+
+            }
+            con.Close();
+            cb.Items.Insert(0, "---Seleccione ID--");
+            cb.SelectedIndex = 0;
+        }
+
+        public string[] info_movimiento(string id)
+        {
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from movimiento where cod_movimiento='" + id+ "'", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            string[] resultado = null;
+            while (dr.Read())
+            {
+                string[] valores =
+                {
+                    dr[0].ToString(),
+                    dr[1].ToString(),
+                    dr[2].ToString(),
+                    dr[3].ToString()
+                };
+                resultado = valores;
+            }
+            con.Close();
+            return resultado;
+
         }
 
         /*
@@ -383,7 +463,9 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 flag = 1;
+                MessageBox.Show("Error: " + ex.Message);
                 return flag;
+
             }
         }
 
@@ -431,6 +513,7 @@ namespace Datos
             
         }
 
+
         public int EliminarPokemonAdministrador(int id)
         {
             int flag = 0;
@@ -450,29 +533,77 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
-                 flag = 1;
+                MessageBox.Show("Error: " + ex.Message);
+                flag = 1;
                 return flag;
             }
 
         }
 
-        public DataRow Imagen_Mostrar(int id)
+        public void cm_IdPokemon(ComboBox cb)
+        {
+            cb.Items.Clear();
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from pokemon", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while(dr.Read())
+            {
+                cb.Items.Add(dr[0].ToString());
+
+            }
+            con.Close();
+            cb.Items.Insert(0, "---Seleccione ID--");
+            cb.SelectedIndex = 0;
+        }
+
+        public string[] info_pokemon(int id)
+        {
+            
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from pokemon where id='"+id+"'", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            string[] resultado = null;
+            while (dr.Read())
+            {
+                string[] valores =
+                {
+                    dr[0].ToString(),
+                    dr[1].ToString(),
+                    dr[2].ToString(),
+                    dr[3].ToString(),
+                    dr[4].ToString(),
+                    dr[5].ToString(),
+                    dr[6].ToString(),
+                    dr[7].ToString(),
+                    dr[8].ToString(),
+                    dr[9].ToString(),
+                    dr[10].ToString(),
+                    dr[11].ToString()
+
+                  
+                };
+                resultado = valores;
+            }
+            con.Close();
+            return resultado;
+
+            }
+        public void Imagen_Mostrar(PictureBox pb, int id)
         {
             
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT foto FROM pokemon where id = " + id, con);
-                SqlDataAdapter ad = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                ad.Fill(ds, "img");
+                SqlCommand cmd = new SqlCommand("SELECT foto FROM pokemon where id = '" + id + "'", con);
+                SqlDataAdapter dp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet("pokemon");
+                byte[] MisDatos = new byte[0];
 
-                byte[] datos = new byte[0];
-                DataRow dr = ds.Tables["img"].Rows[0];
+                dp.Fill(ds, "pokemon");
+                DataRow myRow = ds.Tables["pokemon"].Rows[0];
+                MisDatos = (byte[])myRow["foto"];
+                MemoryStream ms = new MemoryStream(MisDatos);
+                Bitmap bmp = new Bitmap(ms);
+                pb.Image = bmp;
                 con.Close();
-
-                return dr;
-            
-            
-
         }
         /*
        * 
@@ -546,12 +677,60 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 flag = 1;
+                MessageBox.Show("Error: " + ex.Message);
                 return flag;
             }
 
         }
 
+        public void cm_Identrenador(ComboBox cb)
+        {
+            cb.Items.Clear();
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from entrenador", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cb.Items.Add(dr[0].ToString());
 
+            }
+            con.Close();
+            cb.Items.Insert(0, "---Seleccione ID--");
+            cb.SelectedIndex = 0;
+        }
+
+        public string[] info_Entrenador(string id)
+        {
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from entrenador where id_entrenador='" + id + "'", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            string[] resultado = null;
+            while (dr.Read())
+            {
+                string[] valores =
+                {
+                    dr[0].ToString(),
+                    dr[1].ToString(),
+                    dr[2].ToString(),
+                    dr[3].ToString(),
+                    dr[4].ToString(),
+                    dr[5].ToString(),
+                    dr[6].ToString(),
+                    dr[7].ToString(),
+                    dr[8].ToString(),
+                    dr[9].ToString(),
+                    dr[10].ToString(),
+                    
+
+
+                };
+                resultado = valores;
+            }
+            con.Close();
+            return resultado;
+
+        }
 
         /*
          * 
@@ -578,6 +757,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -622,6 +802,8 @@ namespace Datos
             catch (SqlException ex)
             {
 
+
+                MessageBox.Show("Error: " + ex.Message); 
                 Console.WriteLine("Error: " + ex.Message);
                 flag = 1;
                 return flag;
@@ -649,6 +831,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -674,6 +857,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -724,6 +908,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -738,7 +923,7 @@ namespace Datos
 
                 con.Open();
                 string query = "UPDATE usuario SET nombre_usuario = '" + nombre_usuario_MA + "'," +
-                    " contraseña = '" + password_usuario_MA + "', rol = '" + rol_usuario_MA + "'" +
+                    " llave = '" + password_usuario_MA + "', rol = '" + rol_usuario_MA + "'" +
                     " WHERE nombre_usuario = '" + nombre_usuario_MA + "'";
                 SqlCommand cmd = new SqlCommand(query, con);
                 flag = cmd.ExecuteNonQuery();
@@ -750,6 +935,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -774,9 +960,26 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
+        }
+
+        public void cm_Usuarios(ComboBox cb)
+        {
+            cb.Items.Clear();
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from usuario", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cb.Items.Add(dr[0].ToString());
+
+            }
+            con.Close();
+            cb.Items.Insert(0, "---Seleccione ID--");
+            cb.SelectedIndex = 0;
         }
 
         /*
@@ -826,6 +1029,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }
@@ -840,8 +1044,8 @@ namespace Datos
 
 
                 con.Open();
-                string query = "UDPATE movimiento SET descripcion = '" + descripcionMovimiento + "', nombre = '" + nombreMovimiento + "', " +
-                    " tipo = '' WHERE cod_movimiento = '" + codigoMovimiento + "'";
+                string query = "UPDATE movimiento SET descripcion = '" + descripcionMovimiento + "', nombre = '" + nombreMovimiento + "', tipo ='" +
+                     tipoMovimiento + "' WHERE cod_movimiento = '" + codigoMovimiento + "'";
                 SqlCommand cmd = new SqlCommand(query, con);
                 flag = cmd.ExecuteNonQuery();
                 con.Close();
@@ -852,6 +1056,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
 
@@ -877,6 +1082,7 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
                 return flag;
             }

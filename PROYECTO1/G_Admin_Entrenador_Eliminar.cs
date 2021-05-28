@@ -17,6 +17,7 @@ namespace PROYECTO1
         public G_Admin_Entrenador_Eliminar()
         {
             InitializeComponent();
+            cn.Cm_Identrenador(txt_ID_Entrenador);
         }
 
         private void G_Admin_Entrenador_Eliminar_Load(object sender, EventArgs e)
@@ -34,6 +35,13 @@ namespace PROYECTO1
             v1.Show();
 
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ModuloAdministrador v1 = new ModuloAdministrador();
+            v1.Show();
         }
     }
 }

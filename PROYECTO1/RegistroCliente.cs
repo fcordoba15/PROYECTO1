@@ -143,5 +143,10 @@ namespace PROYECTO1
             this.Hide();
             v1.Show();
         }
+
+        private void RegistroCliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

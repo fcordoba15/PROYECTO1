@@ -41,9 +41,10 @@ namespace PROYECTO1
             // 
             this.Entrar.BackColor = System.Drawing.Color.Red;
             this.Entrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.Entrar.Location = new System.Drawing.Point(43, 229);
+            this.Entrar.Location = new System.Drawing.Point(32, 186);
+            this.Entrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Entrar.Name = "Entrar";
-            this.Entrar.Size = new System.Drawing.Size(129, 42);
+            this.Entrar.Size = new System.Drawing.Size(97, 34);
             this.Entrar.TabIndex = 14;
             this.Entrar.Text = "Ingresar";
             this.Entrar.UseVisualStyleBackColor = false;
@@ -51,17 +52,19 @@ namespace PROYECTO1
             // 
             // pass
             // 
-            this.pass.Location = new System.Drawing.Point(41, 174);
+            this.pass.Location = new System.Drawing.Point(31, 141);
+            this.pass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pass.Name = "pass";
-            this.pass.Size = new System.Drawing.Size(286, 22);
+            this.pass.Size = new System.Drawing.Size(216, 20);
             this.pass.TabIndex = 13;
             this.pass.UseSystemPasswordChar = true;
             // 
             // usuario
             // 
-            this.usuario.Location = new System.Drawing.Point(41, 99);
+            this.usuario.Location = new System.Drawing.Point(31, 80);
+            this.usuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.usuario.Name = "usuario";
-            this.usuario.Size = new System.Drawing.Size(286, 22);
+            this.usuario.Size = new System.Drawing.Size(216, 20);
             this.usuario.TabIndex = 12;
             // 
             // texto_contraseña
@@ -70,9 +73,10 @@ namespace PROYECTO1
             this.texto_contraseña.BackColor = System.Drawing.Color.Transparent;
             this.texto_contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.texto_contraseña.ForeColor = System.Drawing.Color.Red;
-            this.texto_contraseña.Location = new System.Drawing.Point(38, 142);
+            this.texto_contraseña.Location = new System.Drawing.Point(28, 115);
+            this.texto_contraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.texto_contraseña.Name = "texto_contraseña";
-            this.texto_contraseña.Size = new System.Drawing.Size(114, 25);
+            this.texto_contraseña.Size = new System.Drawing.Size(92, 20);
             this.texto_contraseña.TabIndex = 11;
             this.texto_contraseña.Text = "Contraseña";
             // 
@@ -82,9 +86,10 @@ namespace PROYECTO1
             this.texto_usuario.BackColor = System.Drawing.Color.Transparent;
             this.texto_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.texto_usuario.ForeColor = System.Drawing.Color.Red;
-            this.texto_usuario.Location = new System.Drawing.Point(38, 63);
+            this.texto_usuario.Location = new System.Drawing.Point(28, 51);
+            this.texto_usuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.texto_usuario.Name = "texto_usuario";
-            this.texto_usuario.Size = new System.Drawing.Size(79, 25);
+            this.texto_usuario.Size = new System.Drawing.Size(64, 20);
             this.texto_usuario.TabIndex = 10;
             this.texto_usuario.Text = "Usuario";
             // 
@@ -94,26 +99,29 @@ namespace PROYECTO1
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(161, 9);
+            this.label1.Location = new System.Drawing.Point(121, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(286, 29);
+            this.label1.Size = new System.Drawing.Size(222, 24);
             this.label1.TabIndex = 15;
             this.label1.Text = "Se necesita iniciar sesión";
             // 
             // LoginAdministrador2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PROYECTO1.Properties.Resources.Fondo_Login;
-            this.ClientSize = new System.Drawing.Size(583, 290);
+            this.ClientSize = new System.Drawing.Size(437, 236);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Entrar);
             this.Controls.Add(this.pass);
             this.Controls.Add(this.usuario);
             this.Controls.Add(this.texto_contraseña);
             this.Controls.Add(this.texto_usuario);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LoginAdministrador2";
             this.Text = "LoginAdministrador2";
+            this.Load += new System.EventHandler(this.LoginAdministrador2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

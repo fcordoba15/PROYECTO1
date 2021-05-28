@@ -117,6 +117,7 @@ namespace PROYECTO1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(709, 365);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.EliminarPokEnt);
@@ -127,6 +128,7 @@ namespace PROYECTO1
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ConsultaPokEnt";
             this.Text = "Gestion Pokemon Administrador";
+            this.Load += new System.EventHandler(this.ConsultaPokEnt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaPokDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -18,13 +18,18 @@ namespace PROYECTO1
         {
             InitializeComponent();
             AdminUsuariosDG.DataSource = cn.ConsultaUsuariosMADT();
+            cn.cm_Usuarios(comboBox1);
         }
 
         private void CrearUsuario_Click(object sender, EventArgs e)
         {
             cn.InsertarUsuarioAdmin(txt_Usuario.Text, txt_Password.Text, combo_Rol.Text);
             AdminUsuariosDG.DataSource = cn.ConsultaUsuariosMADT();
-            
+            MessageBox.Show("¡Usuario creado!");
+            this.Hide();
+            ModuloAdministrador v1 = new ModuloAdministrador();
+            v1.Show();
+
 
         }
 
@@ -33,6 +38,10 @@ namespace PROYECTO1
         {
             cn.ModificarUsuarioAdmin(txt_Usuario.Text, txt_Password.Text, combo_Rol.Text);
             AdminUsuariosDG.DataSource = cn.ConsultaUsuariosMADT();
+            MessageBox.Show("¡Usuario modificado!");
+            this.Hide();
+            ModuloAdministrador v1 = new ModuloAdministrador();
+            v1.Show();
 
         }
 
@@ -40,11 +49,34 @@ namespace PROYECTO1
         {
             cn.EliminarUsuarioAdmin(txt_Usuario.Text);
             AdminUsuariosDG.DataSource = cn.ConsultaUsuariosMADT();
-
+            MessageBox.Show("¡Eliminado con éxito!");
+            this.Hide();
+            ModuloAdministrador v1 = new ModuloAdministrador();
+            v1.Show();
         }
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void G_Admin_Usuarios_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedIndex > 0)
+            {
+                
+
+                //cn.Imagen_Mostrar(picPokemon, i);
+                string[] valores = cn.Info_usuarios(comboBox1.Text);
+                txt_Usuario.Text = valores[0];
+                txt_Password.Text = valores[2];
+                
+                
+            }
         }
     }
 }

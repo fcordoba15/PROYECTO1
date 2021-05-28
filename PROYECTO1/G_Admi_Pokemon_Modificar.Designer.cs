@@ -58,8 +58,9 @@ namespace PROYECTO1
             this.Nombre_Pokemon = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ID_Pokemon = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.ID_pokemon = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picPokemon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +93,7 @@ namespace PROYECTO1
             this.picPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPokemon.TabIndex = 62;
             this.picPokemon.TabStop = false;
+            this.picPokemon.Click += new System.EventHandler(this.picPokemon_Click);
             // 
             // comboBox1
             // 
@@ -251,6 +253,7 @@ namespace PROYECTO1
             this.Ataque_Especial.Name = "Ataque_Especial";
             this.Ataque_Especial.Size = new System.Drawing.Size(48, 20);
             this.Ataque_Especial.TabIndex = 45;
+            this.Ataque_Especial.TextChanged += new System.EventHandler(this.Ataque_Especial_TextChanged);
             // 
             // Defensa
             // 
@@ -282,7 +285,7 @@ namespace PROYECTO1
             // 
             // Codigo_Tipo
             // 
-            this.Codigo_Tipo.Location = new System.Drawing.Point(64, 131);
+            this.Codigo_Tipo.Location = new System.Drawing.Point(64, 132);
             this.Codigo_Tipo.Name = "Codigo_Tipo";
             this.Codigo_Tipo.Size = new System.Drawing.Size(48, 20);
             this.Codigo_Tipo.TabIndex = 40;
@@ -323,13 +326,6 @@ namespace PROYECTO1
             this.label1.TabIndex = 36;
             this.label1.Text = "Modificar  Pokemon";
             // 
-            // ID_Pokemon
-            // 
-            this.ID_Pokemon.Location = new System.Drawing.Point(75, 62);
-            this.ID_Pokemon.Name = "ID_Pokemon";
-            this.ID_Pokemon.Size = new System.Drawing.Size(211, 20);
-            this.ID_Pokemon.TabIndex = 65;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -341,13 +337,33 @@ namespace PROYECTO1
             this.label15.Text = "ID Pokemon";
             this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
+            // ID_pokemon
+            // 
+            this.ID_pokemon.FormattingEnabled = true;
+            this.ID_pokemon.Location = new System.Drawing.Point(76, 65);
+            this.ID_pokemon.Name = "ID_pokemon";
+            this.ID_pokemon.Size = new System.Drawing.Size(199, 21);
+            this.ID_pokemon.TabIndex = 67;
+            this.ID_pokemon.SelectedIndexChanged += new System.EventHandler(this.ID_pokemon_SelectedIndexChanged);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(473, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(71, 26);
+            this.button3.TabIndex = 68;
+            this.button3.Text = "Regresar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // G_Admi_Pokemon_Modificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(556, 331);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.ID_pokemon);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.ID_Pokemon);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.picPokemon);
@@ -417,7 +433,8 @@ namespace PROYECTO1
         private System.Windows.Forms.TextBox Nombre_Pokemon;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox ID_Pokemon;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox ID_pokemon;
+        private System.Windows.Forms.Button button3;
     }
 }

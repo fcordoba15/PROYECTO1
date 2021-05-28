@@ -37,5 +37,10 @@ namespace PROYECTO1
                 MessageBox.Show("Error");
             }
         }
+
+        private void LoginCliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

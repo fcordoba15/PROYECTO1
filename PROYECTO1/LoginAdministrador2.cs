@@ -39,5 +39,10 @@ namespace PROYECTO1
                 MessageBox.Show("Error");
             }
         }
+
+        private void LoginAdministrador2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

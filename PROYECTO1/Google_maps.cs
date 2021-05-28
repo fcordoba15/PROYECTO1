@@ -127,12 +127,43 @@ namespace PROYECTO1
                 MessageBox.Show("Debe ingresar un usuario válido");
             }
             else {
-                dt.Rows.Add(txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);
-                cn.Registrar_GMap(Username.Text, txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);
-                MessageBox.Show("Se realizó el registro");
-                this.Hide();
-                VentanaInicio v2 = new VentanaInicio();
-                v2.Show();
+
+                //--------------------------------- VALIDACIONES DE ESCRITURA EN CAMPOS ---------------------------------
+                int a = 0;
+                while (a == 0)
+                {
+                    //------------- VALIDACIONES DE COMILLAS -------------
+                    string p = "'";
+                    int validación_comilla = 0;
+                    foreach (char c in Username.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    foreach (char c in txtUbicacion.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
+                    if (validación_comilla > 0)
+                    {
+                        MessageBox.Show("¡Error! Los campos no deben tener comillas simples");
+                        break;
+                    }
+
+
+                    //------------- REGISTRO EN LA BASE DE DATOS -------------
+                    dt.Rows.Add(txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);
+                    cn.Registrar_GMap(Username.Text, txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);
+                    
+                    MessageBox.Show("Se realizó el registro");
+                    
+                    this.Hide();
+                    VentanaInicio v2 = new VentanaInicio();
+                    v2.Show();
+
+                    a++;
+                }
             }
         }
     }

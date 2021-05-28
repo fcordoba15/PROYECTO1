@@ -127,10 +127,7 @@ namespace Negocios
         {
             return cn.info_pokemon(id);
         }
-       public DataRow Imagen_Mostrar(int id)
-        {
-            return cn.Imagen_Mostrar(id);
-        }
+      
 
         /*
          * 
@@ -188,6 +185,17 @@ namespace Negocios
         public int EliminarMovimientoAdmin(string codigoMovimiento)
         {
             return cn.EliminarMovimientoAdmin(codigoMovimiento);
+
+        }
+
+        public void Cm_IdMovimiento(ComboBox cb)
+        {
+            cn.cm_IdMovimiento(cb);
+        }
+         
+         public string[] Info_movimiento(string id)
+        {
+            return cn.info_movimiento(id);
         }
 
         /*
@@ -250,7 +258,11 @@ namespace Negocios
             return cn.EliminarPokemonEntrenador(id_entrenador_pokemon, i);
         }
 
-
+        public void Imagen_Mostrar( PictureBox pb,int id)
+        {
+           cn.Imagen_Mostrar( pb,id);
+           
+        }
 
         /*
         *---------------------->CODIGO PARA CONSULTAS MODULO CLIENTE

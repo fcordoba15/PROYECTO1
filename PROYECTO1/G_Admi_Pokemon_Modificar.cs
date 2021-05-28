@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,6 +63,8 @@ namespace PROYECTO1
             if (ID_pokemon.SelectedIndex>0)
             {
                 int i = Convert.ToInt32(ID_pokemon.Text);
+
+                //cn.Imagen_Mostrar(picPokemon, i);
                 string[] valores = cn.Info_pokemon(i);
                 Nombre_Pokemon.Text = valores[1];
                 ID_Tipo.Text = valores[2];
@@ -74,10 +77,15 @@ namespace PROYECTO1
                 Defensa_Especial.Text = valores[9];
                 Velocidad.Text = valores[10];
                 Generacion.Text = valores[11];
+  
                 
-
-
             }
+            
+            
+             
+            
+           
+
         }
 
         private void Ataque_Especial_TextChanged(object sender, EventArgs e)

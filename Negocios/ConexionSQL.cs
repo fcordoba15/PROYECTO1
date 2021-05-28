@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Datos
 {
@@ -349,6 +350,45 @@ namespace Datos
             }
         }
 
+        public void cm_IdMovimiento(ComboBox cb)
+        {
+            cb.Items.Clear();
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from movimiento", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cb.Items.Add(dr[0].ToString());
+
+            }
+            con.Close();
+            cb.Items.Insert(0, "---Seleccione ID--");
+            cb.SelectedIndex = 0;
+        }
+
+        public string[] info_movimiento(string id)
+        {
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select *from movimiento where cod_movimiento='" + id+ "'", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            string[] resultado = null;
+            while (dr.Read())
+            {
+                string[] valores =
+                {
+                    dr[0].ToString(),
+                    dr[1].ToString(),
+                    dr[2].ToString(),
+                    dr[3].ToString()
+                };
+                resultado = valores;
+            }
+            con.Close();
+            return resultado;
+
+        }
+
         /*
         * 
         * 
@@ -521,23 +561,22 @@ namespace Datos
             return resultado;
 
             }
-        public DataRow Imagen_Mostrar(int id)
+        public void Imagen_Mostrar(PictureBox pb, int id)
         {
             
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT foto FROM pokemon where id = " + id, con);
-                SqlDataAdapter ad = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                ad.Fill(ds, "img");
+                SqlCommand cmd = new SqlCommand("SELECT foto FROM pokemon where id = '" + id + "'", con);
+                SqlDataAdapter dp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet("pokemon");
+                byte[] MisDatos = new byte[0];
 
-                byte[] datos = new byte[0];
-                DataRow dr = ds.Tables["img"].Rows[0];
+                dp.Fill(ds, "pokemon");
+                DataRow myRow = ds.Tables["pokemon"].Rows[0];
+                MisDatos = (byte[])myRow["foto"];
+                MemoryStream ms = new MemoryStream(MisDatos);
+                Bitmap bmp = new Bitmap(ms);
+                pb.Image = bmp;
                 con.Close();
-
-                return dr;
-            
-            
-
         }
         /*
        * 
@@ -915,8 +954,8 @@ namespace Datos
 
 
                 con.Open();
-                string query = "UDPATE movimiento SET descripcion = '" + descripcionMovimiento + "', nombre = '" + nombreMovimiento + "', " +
-                    " tipo = '' WHERE cod_movimiento = '" + codigoMovimiento + "'";
+                string query = "UPDATE movimiento SET descripcion = '" + descripcionMovimiento + "', nombre = '" + nombreMovimiento + "', tipo ='" +
+                     tipoMovimiento + "' WHERE cod_movimiento = '" + codigoMovimiento + "'";
                 SqlCommand cmd = new SqlCommand(query, con);
                 flag = cmd.ExecuteNonQuery();
                 con.Close();

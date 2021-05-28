@@ -13,7 +13,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= localhost\\SQLEXPRESS01; database= Proyecto; integrated security= true; MultipleActiveResultSets= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= localhost\\SQLEXPRESS02; database= Proyecto; integrated security= true; MultipleActiveResultSets= true"; //Cambiar server segun SQL
         //SURFACEPROPEDRO\\SQLEXPRESS     //localhost\\SQLEXPRESS01   FABY  ---  LAPTOP-OC2ENCL7 RAN
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -43,8 +43,9 @@ namespace Datos
                 dato = "Error";
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
                 return dato;
-
+               
             }
         }
 
@@ -70,6 +71,7 @@ namespace Datos
                 dat = "Error";
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
                 return dat;
 
             }
@@ -96,6 +98,7 @@ namespace Datos
                 dat = "Error";
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
                 return dat;
             }
         }
@@ -120,7 +123,9 @@ namespace Datos
             {
                
                 Console.WriteLine("Error: " + ex.Message);
+
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
 
             }
         }
@@ -146,6 +151,7 @@ namespace Datos
                 
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
 
 
             }
@@ -172,6 +178,7 @@ namespace Datos
                 
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
 
             }
         }
@@ -196,6 +203,7 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
             }
         }
 
@@ -219,6 +227,7 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
             }
         }
 
@@ -247,6 +256,7 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
             }
         }
 
@@ -320,6 +330,7 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
                 flag = 1;
                 return flag;
             }
@@ -347,6 +358,7 @@ namespace Datos
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
+                con.Close();
                 return flag;
             }
         }
@@ -372,6 +384,7 @@ namespace Datos
                 Console.WriteLine("Error: " + ex.Message);
                 flag = 1;
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
                 return flag;
                 
             }
@@ -463,8 +476,10 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 flag = 1;
+                con.Close();
                 MessageBox.Show("Error: " + ex.Message);
                 return flag;
+                con.Close();
 
             }
         }
@@ -494,7 +509,9 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
-                 flag = 1;
+                MessageBox.Show("Error: " + ex.Message);
+                con.Close();
+                flag = 1;
                 return flag;
             }
         }
@@ -535,6 +552,7 @@ namespace Datos
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
+                con.Close();
                 return flag;
             }
 
@@ -652,7 +670,9 @@ namespace Datos
             {
 
                 Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Erro" + ex.Message);
                 flag = 1;
+                con.Close();
                 return flag;
             }
         }
@@ -678,6 +698,7 @@ namespace Datos
                 Console.WriteLine("Error: " + ex.Message);
                 flag = 1;
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
                 return flag;
             }
 
@@ -808,6 +829,7 @@ namespace Datos
                 MessageBox.Show("Error: " + ex.Message); 
                 Console.WriteLine("Error: " + ex.Message);
                 flag = 1;
+                con.Close();
                 return flag;
             }
         }
@@ -835,6 +857,7 @@ namespace Datos
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
+                con.Close();
                 return flag;
             }
         }
@@ -861,6 +884,7 @@ namespace Datos
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
+                con.Close();
                 return flag;
             }
         }
@@ -911,6 +935,7 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
                 flag = 1;
                 return flag;
             }
@@ -938,6 +963,7 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
                 flag = 1;
                 return flag;
             }
@@ -963,6 +989,7 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
                 flag = 1;
                 return flag;
             }
@@ -1032,6 +1059,7 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
                 flag = 1;
                 return flag;
             }
@@ -1059,6 +1087,7 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
                 flag = 1;
                 return flag;
 
@@ -1085,6 +1114,7 @@ namespace Datos
 
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
+                con.Close();
                 flag = 1;
                 return flag;
             }
@@ -1100,7 +1130,9 @@ namespace Datos
         */
 
         public DataTable Cliente_Pokemon(string categoria, string tipo)
-        {
+        {   
+           
+
             string query;
             if (tipo == "Todos" && categoria == "Todas")
             {

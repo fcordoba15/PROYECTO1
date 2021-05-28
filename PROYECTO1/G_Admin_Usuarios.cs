@@ -23,26 +23,81 @@ namespace PROYECTO1
 
         private void CrearUsuario_Click(object sender, EventArgs e)
         {
-            cn.InsertarUsuarioAdmin(txt_Usuario.Text, txt_Password.Text, combo_Rol.Text);
-            AdminUsuariosDG.DataSource = cn.ConsultaUsuariosMADT();
-            MessageBox.Show("¡Usuario creado!");
-            this.Hide();
-            ModuloAdministrador v1 = new ModuloAdministrador();
-            v1.Show();
+            //--------------------------------- VALIDACIONES DE ESCRITURA EN CAMPOS ---------------------------------
+            int a = 0;
+            while (a == 0)
+            {
+                //------------- VALIDACIONES DE COMILLAS -------------
+                string p = "'";
+                int validación_comilla = 0;
+                foreach (char c in txt_Usuario.Text)
+                {
+                    if (c == p[0])
+                        validación_comilla++;
+                }
+                foreach (char c in txt_Password.Text)
+                {
+                    if (c == p[0])
+                        validación_comilla++;
+                }
+                if (validación_comilla > 0)
+                {
+                    MessageBox.Show("¡Error! No debe ingresar información con comillas simples");
+                    break;
+                }
 
+                //------------- REGISTRO EN LA BASE DE DATOS -------------
+                cn.InsertarUsuarioAdmin(txt_Usuario.Text, txt_Password.Text, combo_Rol.Text);
+                AdminUsuariosDG.DataSource = cn.ConsultaUsuariosMADT();
+                
+                MessageBox.Show("¡Usuario creado!");
+                
+                this.Hide();
+                ModuloAdministrador v1 = new ModuloAdministrador();
+                v1.Show();
 
+                a++;
+            }
         }
 
 
         private void ModificarUsuario_Click(object sender, EventArgs e)
         {
-            cn.ModificarUsuarioAdmin(txt_Usuario.Text, txt_Password.Text, combo_Rol.Text);
-            AdminUsuariosDG.DataSource = cn.ConsultaUsuariosMADT();
-            MessageBox.Show("¡Usuario modificado!");
-            this.Hide();
-            ModuloAdministrador v1 = new ModuloAdministrador();
-            v1.Show();
+            //--------------------------------- VALIDACIONES DE ESCRITURA EN CAMPOS ---------------------------------
+            int a = 0;
+            while (a == 0)
+            {
+                //------------- VALIDACIONES DE COMILLAS -------------
+                string p = "'";
+                int validación_comilla = 0;
+                foreach (char c in txt_Usuario.Text)
+                {
+                    if (c == p[0])
+                        validación_comilla++;
+                }
+                foreach (char c in txt_Password.Text)
+                {
+                    if (c == p[0])
+                        validación_comilla++;
+                }
+                if (validación_comilla > 0)
+                {
+                    MessageBox.Show("¡Error! No debe ingresar información con comillas simples");
+                    break;
+                }
 
+                //------------- REGISTRO EN LA BASE DE DATOS -------------
+                cn.ModificarUsuarioAdmin(txt_Usuario.Text, txt_Password.Text, combo_Rol.Text);
+                AdminUsuariosDG.DataSource = cn.ConsultaUsuariosMADT();
+                
+                MessageBox.Show("¡Usuario modificado!");
+                
+                this.Hide();
+                ModuloAdministrador v1 = new ModuloAdministrador();
+                v1.Show();
+
+                a++;
+            }
         }
 
         private void EliminarUsuario_Click(object sender, EventArgs e)

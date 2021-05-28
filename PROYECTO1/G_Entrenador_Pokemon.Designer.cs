@@ -49,12 +49,12 @@ namespace PROYECTO1
             // PokemonesEntrenadorDG
             // 
             this.PokemonesEntrenadorDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PokemonesEntrenadorDG.Location = new System.Drawing.Point(6, 81);
+            this.PokemonesEntrenadorDG.Location = new System.Drawing.Point(56, 77);
             this.PokemonesEntrenadorDG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PokemonesEntrenadorDG.Name = "PokemonesEntrenadorDG";
             this.PokemonesEntrenadorDG.RowHeadersWidth = 82;
             this.PokemonesEntrenadorDG.RowTemplate.Height = 33;
-            this.PokemonesEntrenadorDG.Size = new System.Drawing.Size(595, 171);
+            this.PokemonesEntrenadorDG.Size = new System.Drawing.Size(388, 171);
             this.PokemonesEntrenadorDG.TabIndex = 0;
             // 
             // button1
@@ -94,13 +94,14 @@ namespace PROYECTO1
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(525, 386);
+            this.button4.Location = new System.Drawing.Point(424, 386);
             this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(76, 22);
             this.button4.TabIndex = 4;
             this.button4.Text = "Regresar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label1
             // 
@@ -168,9 +169,9 @@ namespace PROYECTO1
             this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(7, 283);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(504, 17);
+            this.label6.Size = new System.Drawing.Size(296, 17);
             this.label6.TabIndex = 19;
-            this.label6.Text = "______________________________________________________________";
+            this.label6.Text = "____________________________________";
             // 
             // label7
             // 
@@ -198,7 +199,7 @@ namespace PROYECTO1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(612, 419);
+            this.ClientSize = new System.Drawing.Size(522, 419);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);

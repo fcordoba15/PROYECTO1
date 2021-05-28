@@ -175,7 +175,6 @@ namespace PROYECTO1
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BitacoraEntrenador";
             this.Text = "Bitacora Entrenador";
-            this.Load += new System.EventHandler(this.BitacoraEntrenador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

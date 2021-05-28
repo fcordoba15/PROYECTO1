@@ -20,7 +20,9 @@ namespace PROYECTO1
 
         private void Cerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            VentanaRoles v4 = new VentanaRoles();
+            v4.Show();
+            this.Hide();
         }
 
         private void movimientosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -28,46 +30,39 @@ namespace PROYECTO1
 
             GestionMov m1 = new GestionMov();
             this.Hide();
-            m1.ShowDialog();
-            this.Show();
+            m1.Show();
         }
 
         private void pokemonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultaPokEnt m1 = new ConsultaPokEnt();
             this.Hide();
-            m1.ShowDialog();
-            this.Show();
+            m1.Show();
         }
 
         private void bitacora_Click(object sender, EventArgs e)
         {
             BitacoraEntrenador m1 = new BitacoraEntrenador();
             this.Hide();
-            m1.ShowDialog();
-            this.Show();
+            m1.Show();
         }
 
         private void pokemonesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GestionPokemonesEntrenador m1 = new GestionPokemonesEntrenador();
             this.Hide();
-            m1.ShowDialog();
-            this.Show();
+            m1.Show();
         }
 
         private void usuariosAdminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             G_Admin_Usuarios m1 = new G_Admin_Usuarios();
             this.Hide();
-            m1.ShowDialog();
-            this.Show();
+            m1.Show();
 
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
 
-        }
+
     }
 }

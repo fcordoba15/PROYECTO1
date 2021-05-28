@@ -13,7 +13,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= localhost\\SQLEXPRESS02; database= Proyecto; integrated security= true; MultipleActiveResultSets= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true; MultipleActiveResultSets= true"; //Cambiar server segun SQL
         //SURFACEPROPEDRO\\SQLEXPRESS     //localhost\\SQLEXPRESS01   FABY  ---  LAPTOP-OC2ENCL7 RAN
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -752,13 +752,15 @@ namespace Datos
                 con.Close();
 
                 return flag;
-            }
+           }
+          
             catch (SqlException ex)
             {
 
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
                 flag = 1;
+                con.Close();
                 return flag;
             }
         }

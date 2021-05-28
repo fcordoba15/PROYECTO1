@@ -47,10 +47,10 @@ namespace PROYECTO1
             // Cerrar
             // 
             this.Cerrar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Cerrar.Location = new System.Drawing.Point(308, 216);
-            this.Cerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Cerrar.Location = new System.Drawing.Point(411, 266);
+            this.Cerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Cerrar.Name = "Cerrar";
-            this.Cerrar.Size = new System.Drawing.Size(50, 21);
+            this.Cerrar.Size = new System.Drawing.Size(67, 26);
             this.Cerrar.TabIndex = 0;
             this.Cerrar.Text = "Cerrar";
             this.Cerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -60,13 +60,12 @@ namespace PROYECTO1
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 24);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 26);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(373, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(497, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // menuStrip2
             // 
@@ -75,8 +74,8 @@ namespace PROYECTO1
             this.GestionEntrenador});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
-            this.menuStrip2.Size = new System.Drawing.Size(373, 24);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip2.Size = new System.Drawing.Size(497, 26);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -89,65 +88,66 @@ namespace PROYECTO1
             this.pokemonesToolStripMenuItem,
             this.usuariosAdminToolStripMenuItem});
             this.GestionEntrenador.Name = "GestionEntrenador";
-            this.GestionEntrenador.Size = new System.Drawing.Size(70, 22);
+            this.GestionEntrenador.Size = new System.Drawing.Size(87, 24);
             this.GestionEntrenador.Text = "Gestiones";
             // 
             // movimientosToolStripMenuItem
             // 
             this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
-            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.movimientosToolStripMenuItem.Text = "Movimientos";
             this.movimientosToolStripMenuItem.Click += new System.EventHandler(this.movimientosToolStripMenuItem_Click);
             // 
             // pokemonToolStripMenuItem
             // 
             this.pokemonToolStripMenuItem.Name = "pokemonToolStripMenuItem";
-            this.pokemonToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.pokemonToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.pokemonToolStripMenuItem.Text = "Pokemon";
             this.pokemonToolStripMenuItem.Click += new System.EventHandler(this.pokemonToolStripMenuItem_Click);
             // 
             // bitacora
             // 
             this.bitacora.Name = "bitacora";
-            this.bitacora.Size = new System.Drawing.Size(158, 22);
+            this.bitacora.Size = new System.Drawing.Size(196, 26);
             this.bitacora.Text = "Bitacora";
             this.bitacora.Click += new System.EventHandler(this.bitacora_Click);
             // 
             // pokemonesToolStripMenuItem
             // 
             this.pokemonesToolStripMenuItem.Name = "pokemonesToolStripMenuItem";
-            this.pokemonesToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.pokemonesToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.pokemonesToolStripMenuItem.Text = "Pokemones";
             this.pokemonesToolStripMenuItem.Click += new System.EventHandler(this.pokemonesToolStripMenuItem_Click);
             // 
             // usuariosAdminToolStripMenuItem
             // 
             this.usuariosAdminToolStripMenuItem.Name = "usuariosAdminToolStripMenuItem";
-            this.usuariosAdminToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.usuariosAdminToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.usuariosAdminToolStripMenuItem.Text = "Usuarios Admin";
             this.usuariosAdminToolStripMenuItem.Click += new System.EventHandler(this.usuariosAdminToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 35);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 32);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(378, 214);
+            this.pictureBox1.Size = new System.Drawing.Size(504, 263);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
             // ModuloEntrenador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 242);
+            this.ClientSize = new System.Drawing.Size(497, 298);
             this.Controls.Add(this.Cerrar);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.pictureBox1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ModuloEntrenador";
             this.Text = "Modulo Entrenador";
             this.menuStrip2.ResumeLayout(false);

@@ -27,10 +27,5 @@ namespace PROYECTO1
             int i2 = Convert.ToInt32(ID_Ent_Bitacora.Text);
             cn.InsertarBitacora(dateTimePicker1.Value.ToString(), Texto_Bitacora.Text, i2);
         }
-
-        private void BitacoraEntrenador_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

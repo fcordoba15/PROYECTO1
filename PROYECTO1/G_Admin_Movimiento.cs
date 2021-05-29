@@ -11,10 +11,10 @@ using Negocios;
 
 namespace PROYECTO1
 {
-    public partial class G_Admin_Movimiento : Form
+    public partial class TipoMovAdmin : Form
     {
         conexionSQLN cn = new conexionSQLN();
-        public G_Admin_Movimiento()
+        public TipoMovAdmin()
         {
             InitializeComponent();
             AdminConsultaMovDG.DataSource = cn.ConsultaMovimientosAdmin();

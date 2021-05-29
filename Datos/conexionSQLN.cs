@@ -55,6 +55,11 @@ namespace Negocios
             cn.Resgistar_entrenador_usuario(usuario, contrasena, llave);
         }
 
+        public void Registrar_entrenador_red_social(string red_social, string usuario_red, string id)
+        {
+            cn.Resgistar_entrenador_red_social(red_social, usuario_red, id);
+        }
+
         public void Registrar_entrenador(string cedula, string nombre, string calificacion, string telefono, string correo, string sitio_web,
             string provincia, string canton, string distrito, string usuario)
         {

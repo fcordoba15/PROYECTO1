@@ -35,7 +35,6 @@ namespace PROYECTO1
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.GestionEntrenador = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pokemonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bitacora = new System.Windows.Forms.ToolStripMenuItem();
             this.pokemonesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosAdminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,7 +82,6 @@ namespace PROYECTO1
             // 
             this.GestionEntrenador.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.movimientosToolStripMenuItem,
-            this.pokemonToolStripMenuItem,
             this.bitacora,
             this.pokemonesToolStripMenuItem,
             this.usuariosAdminToolStripMenuItem});
@@ -94,37 +92,28 @@ namespace PROYECTO1
             // movimientosToolStripMenuItem
             // 
             this.movimientosToolStripMenuItem.Name = "movimientosToolStripMenuItem";
-            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.movimientosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.movimientosToolStripMenuItem.Text = "Movimientos";
             this.movimientosToolStripMenuItem.Click += new System.EventHandler(this.movimientosToolStripMenuItem_Click);
-            // 
-            // pokemonToolStripMenuItem
-            // 
-            this.pokemonToolStripMenuItem.Name = "pokemonToolStripMenuItem";
-            this.pokemonToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
-            this.pokemonToolStripMenuItem.Text = "Pokemon";
-            this.pokemonToolStripMenuItem.Click += new System.EventHandler(this.pokemonToolStripMenuItem_Click);
             // 
             // bitacora
             // 
             this.bitacora.Name = "bitacora";
-            this.bitacora.Size = new System.Drawing.Size(196, 26);
+            this.bitacora.Size = new System.Drawing.Size(224, 26);
             this.bitacora.Text = "Bitacora";
             this.bitacora.Click += new System.EventHandler(this.bitacora_Click);
             // 
             // pokemonesToolStripMenuItem
             // 
             this.pokemonesToolStripMenuItem.Name = "pokemonesToolStripMenuItem";
-            this.pokemonesToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.pokemonesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.pokemonesToolStripMenuItem.Text = "Pokemones";
             this.pokemonesToolStripMenuItem.Click += new System.EventHandler(this.pokemonesToolStripMenuItem_Click);
             // 
             // usuariosAdminToolStripMenuItem
             // 
             this.usuariosAdminToolStripMenuItem.Name = "usuariosAdminToolStripMenuItem";
-            this.usuariosAdminToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
-            this.usuariosAdminToolStripMenuItem.Text = "Usuarios Admin";
-            this.usuariosAdminToolStripMenuItem.Click += new System.EventHandler(this.usuariosAdminToolStripMenuItem_Click);
+            this.usuariosAdminToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             // 
             // pictureBox1
             // 
@@ -165,7 +154,6 @@ namespace PROYECTO1
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem GestionEntrenador;
         private System.Windows.Forms.ToolStripMenuItem movimientosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pokemonToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem bitacora;
         private System.Windows.Forms.ToolStripMenuItem pokemonesToolStripMenuItem;

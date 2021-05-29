@@ -49,5 +49,12 @@ namespace PROYECTO1
                 a++;
             }
         }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ModuloEntrenador m1 = new ModuloEntrenador();
+            m1.Show();
+        }
     }
 }

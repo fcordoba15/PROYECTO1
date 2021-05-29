@@ -33,13 +33,6 @@ namespace PROYECTO1
             m1.Show();
         }
 
-        private void pokemonToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ConsultaPokEnt m1 = new ConsultaPokEnt();
-            this.Hide();
-            m1.Show();
-        }
-
         private void bitacora_Click(object sender, EventArgs e)
         {
             BitacoraEntrenador m1 = new BitacoraEntrenador();
@@ -53,15 +46,6 @@ namespace PROYECTO1
             this.Hide();
             m1.Show();
         }
-
-        private void usuariosAdminToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            G_Admin_Usuarios m1 = new G_Admin_Usuarios();
-            this.Hide();
-            m1.Show();
-
-        }
-
 
 
     }

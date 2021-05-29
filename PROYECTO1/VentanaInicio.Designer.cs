@@ -31,6 +31,7 @@ namespace PROYECTO1
         {
             this.boton_empezar = new System.Windows.Forms.Button();
             this.boton_registrarse = new System.Windows.Forms.Button();
+            this.Salir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // boton_empezar
@@ -63,12 +64,28 @@ namespace PROYECTO1
             this.boton_registrarse.UseVisualStyleBackColor = false;
             this.boton_registrarse.Click += new System.EventHandler(this.boton_registrarse_Click);
             // 
+            // Salir
+            // 
+            this.Salir.BackColor = System.Drawing.Color.DeepPink;
+            this.Salir.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.Salir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.Salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.Salir.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.Salir.Location = new System.Drawing.Point(238, 254);
+            this.Salir.Name = "Salir";
+            this.Salir.Size = new System.Drawing.Size(258, 63);
+            this.Salir.TabIndex = 2;
+            this.Salir.Text = "Salir";
+            this.Salir.UseVisualStyleBackColor = false;
+            this.Salir.Click += new System.EventHandler(this.Salir_Click);
+            // 
             // VentanaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PROYECTO1.Properties.Resources.Fondo_inicial;
             this.ClientSize = new System.Drawing.Size(723, 409);
+            this.Controls.Add(this.Salir);
             this.Controls.Add(this.boton_registrarse);
             this.Controls.Add(this.boton_empezar);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -82,6 +99,7 @@ namespace PROYECTO1
 
         private System.Windows.Forms.Button boton_empezar;
         private System.Windows.Forms.Button boton_registrarse;
+        private System.Windows.Forms.Button Salir;
     }
 }
 

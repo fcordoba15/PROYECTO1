@@ -22,8 +22,9 @@ namespace PROYECTO1
 
         private void Regresar_Click(object sender, EventArgs e)
         {
+            ModuloEntrenador v1 = new ModuloEntrenador();
             this.Hide();
-            
+            v1.Show();            
         }
 
         private void Nuevo_Click(object sender, EventArgs e)

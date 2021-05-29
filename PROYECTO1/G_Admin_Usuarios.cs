@@ -111,7 +111,7 @@ namespace PROYECTO1
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            ModuloEntrenador v4 = new ModuloEntrenador();
+            ModuloAdministrador v4 = new ModuloAdministrador();
             v4.Show();
             this.Hide();
         }

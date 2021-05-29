@@ -37,5 +37,10 @@ namespace PROYECTO1
             v1.Show();
 
         }
+
+        private void Salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

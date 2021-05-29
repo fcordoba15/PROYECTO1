@@ -13,7 +13,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= localhost\\SQLEXPRESS01; database= Proyecto; integrated security= true; MultipleActiveResultSets= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true; MultipleActiveResultSets= true"; //Cambiar server segun SQL
         //SURFACEPROPEDRO\\SQLEXPRESS     //localhost\\SQLEXPRESS01   FABY  ---  LAPTOP-OC2ENCL7 RAN
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -176,6 +176,33 @@ namespace Datos
             {
 
                 
+                Console.WriteLine("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
+                con.Close();
+
+            }
+        }
+
+
+        public void Resgistar_entrenador_red_social(string red_social, string usuario_red, string id)
+        {
+            try
+            {
+                string cadena = "  Insert into red_social values ('"+red_social+"','"+usuario_red+"','"+id+"');";
+
+                con.Open();
+
+                SqlCommand comando = new SqlCommand(cadena, con);
+
+                comando.ExecuteNonQuery();
+
+                con.Close();
+
+            }
+            catch (SqlException ex)
+            {
+
+
                 Console.WriteLine("Error: " + ex.Message);
                 MessageBox.Show("Error: " + ex.Message);
                 con.Close();
@@ -1136,19 +1163,19 @@ namespace Datos
             string query;
             if (tipo == "Todos" && categoria == "Todas")
             {
-                query = "SELECT id,nombre,total FROM pokemon;";
+                query = "SELECT id,nombre,id_tipo,cod_tipo,total,ataque, defensa, salud,  ataque_especial ,defensa_especial, velocidad,generacion ,legendario FROM pokemon;"; 
             }
-            else if (tipo != "Todos" && categoria == "Todas")
+            else if (tipo != "Todos" && categoria == "Todas") 
             {
-                query = "SELECT id,nombre,total FROM pokemon where id_tipo= '" + tipo + "';";
+                query = "SELECT id,nombre,,id_tipo,cod_tipo,total,ataque, defensa, salud,  ataque_especial ,defensa_especial, velocidad, generacion,legendario  FROM pokemon where id_tipo= '" + tipo + "';";
             }
             else if (tipo == "Todos" && categoria != "Todas")
             {
-                query = "SELECT id,nombre,total FROM pokemon where cod_tipo= '" + categoria + "';";
+                query = "SELECT id,nombre,,id_tipo,cod_tipo,total,ataque, defensa, salud,  ataque_especial ,defensa_especial, velocidad,generacion,legendario FROM pokemon where cod_tipo= '" + categoria + "';";
             }
             else
             {
-                query = "SELECT id,nombre,total FROM pokemon where id_tipo= '" + tipo + "' and cod_tipo= '" + categoria + "';";
+                query = "SELECT id,nombre,,id_tipo,cod_tipo,total,ataque, defensa, salud,  ataque_especial ,defensa_especial, velocidad,generacion,legendario  FROM pokemon where id_tipo= '" + tipo + "' and cod_tipo= '" + categoria + "';";
             }
 
             SqlCommand cmd = new SqlCommand(query, con);
@@ -1165,11 +1192,11 @@ namespace Datos
             string query;
             if (tipo == "Todos")
             {
-                query = "SELECT nombre,tipo,descripcion FROM movimiento;";
+                query = "SELECT cod_movimiento,nombre,tipo,descripcion FROM movimiento;";
             }
             else
             {
-                query = "SELECT nombre,tipo,descripcion FROM movimiento where tipo= '" + tipo + "';";
+                query = "SELECT cod_movimiento, nombre,tipo,descripcion FROM movimiento where tipo= '" + tipo + "';";
             }
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataAdapter data = new SqlDataAdapter(cmd);
@@ -1186,21 +1213,21 @@ namespace Datos
             string query;
             if (ubicacion == "Todas" && nombre == "Todos")
             {
-                query = "SELECT id_entrenador,nombre_entrenador,ubicacion FROM entrenador;";
+                query = "SELECT  id_entrenador,nombre_entrenador,nombre_usuario,calificacion,telefono_entrenador, correo_electrónico,sitio_web,provincia,cantón,distrito,ubicación  FROM entrenador;";
             }
             else if (ubicacion == "Todas" && nombre != "Todos")
             {
-                query = "SELECT id_entrenador,nombre_entrenador,ubicacion FROM entrenador where nombre_entrenador= '"+nombre+"';";
+                query = "SELECT  id_entrenador,nombre_entrenador,nombre_usuario,calificacion,telefono_entrenador, correo_electrónico,sitio_web,provincia,cantón,distrito,ubicación  FROM entrenador where nombre_entrenador= '" +nombre+"';";
             }
             else if (ubicacion!= "Todas" && nombre == "Todos")
             {
-                query = "SELECT id_entrenador,nombre_entrenador,ubicacion FROM entrenador where ubicacion='" + ubicacion+"';";
+                query = "SELECT  id_entrenador,nombre_entrenador,nombre_usuario,calificacion,telefono_entrenador, correo_electrónico,sitio_web,provincia,cantón,distrito,ubicación  FROM entrenador where ubicacion='" + ubicacion+"';";
             }
             else
             {
-                query = "SELECT id_entrenador,nombre_entrenador,ubicacion FROM entrenador where ubicacion = '"+ubicacion+"' and nombre_entrenador= '"+nombre+"';";
+                query = "SELECT  id_entrenador,nombre_entrenador,nombre_usuario,calificacion,telefono_entrenador, correo_electrónico,sitio_web,provincia,cantón,distrito,ubicación FROM entrenador where ubicacion = '" + ubicacion+"' and nombre_entrenador= '"+nombre+"';";
             }
-
+      
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataAdapter data = new SqlDataAdapter(cmd);
             DataTable tabla = new DataTable();

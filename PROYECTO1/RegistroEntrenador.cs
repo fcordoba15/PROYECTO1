@@ -24,7 +24,7 @@ namespace PROYECTO1
         {
             if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && textBox13.Text == "" && textBox4.Text == ""
                  && textBox5.Text == "" && textBox6.Text == "" && textBox7.Text == "" && textBox8.Text == ""
-                  && textBox9.Text == "" && textBox10.Text == "" && textBox11.Text == "")
+                  && textBox9.Text == "" && textBox10.Text == "" && textBox11.Text == "" && textBox14.Text == "" && comboBox1.Text =="")
             {
                 MessageBox.Show("Ingrese todos los datos");
             }
@@ -163,6 +163,7 @@ namespace PROYECTO1
                     cn.Registrar_entrenadorUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
                     cn.Registrar_entrenador(textBox4.Text, textBox5.Text, textBox13.Text, textBox6.Text, textBox7.Text
                         , textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox1.Text);
+                    cn.Registrar_entrenador_red_social(comboBox1.Text, textBox14.Text, textBox4.Text);
 
                     Google_maps v1 = new Google_maps();
 

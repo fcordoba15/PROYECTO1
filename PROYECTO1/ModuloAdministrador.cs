@@ -27,7 +27,7 @@ namespace PROYECTO1
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            G_Admin_Movimiento m1 = new G_Admin_Movimiento();
+            TipoMovAdmin m1 = new TipoMovAdmin();
             m1.Show();
         }
 
@@ -43,6 +43,13 @@ namespace PROYECTO1
             this.Hide();
             G_Admin_Entrenadores m1 = new G_Admin_Entrenadores();
             m1.Show();
+        }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            VentanaInicio v4 = new VentanaInicio();
+            v4.Show();
         }
     }
 }

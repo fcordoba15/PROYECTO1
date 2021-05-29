@@ -77,6 +77,11 @@ namespace PROYECTO1
                         if (c == p[0])
                             validación_comilla++;
                     }
+                    foreach (char c in textBox14.Text)
+                    {
+                        if (c == p[0])
+                            validación_comilla++;
+                    }
                     if (validación_comilla > 0)
                     {
                         MessageBox.Show("¡Error! Los campos no deben tener comillas simples");

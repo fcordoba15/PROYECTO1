@@ -32,14 +32,19 @@ namespace PROYECTO1
             this.Texto_Bitacora = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.ID_Ent_Bitacora = new System.Windows.Forms.ComboBox();
             this.Regresar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Texto_Bitacora
@@ -72,23 +77,6 @@ namespace PROYECTO1
             this.label1.Size = new System.Drawing.Size(96, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "ID Entrenador";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(248, 455);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 17);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Fecha";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(160, 489);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(239, 22);
-            this.dateTimePicker1.TabIndex = 8;
             // 
             // label3
             // 
@@ -139,7 +127,7 @@ namespace PROYECTO1
             // 
             this.ID_Ent_Bitacora.FormattingEnabled = true;
             this.ID_Ent_Bitacora.Location = new System.Drawing.Point(15, 487);
-            this.ID_Ent_Bitacora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ID_Ent_Bitacora.Margin = new System.Windows.Forms.Padding(4);
             this.ID_Ent_Bitacora.Name = "ID_Ent_Bitacora";
             this.ID_Ent_Bitacora.Size = new System.Drawing.Size(125, 24);
             this.ID_Ent_Bitacora.TabIndex = 22;
@@ -156,20 +144,144 @@ namespace PROYECTO1
             this.Regresar.UseVisualStyleBackColor = true;
             this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(211, 455);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 17);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Día";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(305, 455);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 17);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Mes";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(395, 455);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(33, 17);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Año";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(0, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 27;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
+            this.comboBox2.Location = new System.Drawing.Point(194, 485);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(67, 24);
+            this.comboBox2.TabIndex = 28;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
+            this.comboBox3.Location = new System.Drawing.Point(284, 485);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(67, 24);
+            this.comboBox3.TabIndex = 29;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29"});
+            this.comboBox4.Location = new System.Drawing.Point(376, 485);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(67, 24);
+            this.comboBox4.TabIndex = 30;
+            // 
             // BitacoraEntrenador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(743, 614);
+            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Regresar);
             this.Controls.Add(this.ID_Ent_Bitacora);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Texto_Bitacora);
@@ -185,13 +297,18 @@ namespace PROYECTO1
         private System.Windows.Forms.TextBox Texto_Bitacora;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox ID_Ent_Bitacora;
         private System.Windows.Forms.Button Regresar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox4;
     }
 }

@@ -785,15 +785,15 @@ namespace Datos
          * ----------------------------CODIGO BITACORA ENTRENADOR
          * 
          */
-        public int InsertarBitacora(string fecha, string descripcion, int id_entrenador_bitacora)
+        public int InsertarBitacora(string fecha, string descripcion, string id_entrenador_bitacora)
         {
             int flag = 0;
             try
             {
-                
+                int result = Int32.Parse(id_entrenador_bitacora);
 
                 con.Open();
-                string query = "INSERT INTO bitacora VALUES ('" + fecha + "', '" + descripcion + "'," +
+                string query = "INSERT INTO bitacora VALUES ('"+fecha+"', '" + descripcion + "'," +
                     "'" + id_entrenador_bitacora + "')";
                 SqlCommand cmd = new SqlCommand(query, con);
                 flag = cmd.ExecuteNonQuery();

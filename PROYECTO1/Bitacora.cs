@@ -43,10 +43,18 @@ namespace PROYECTO1
 
                 //------------- REGISTRO EN LA BASE DE DATOS -------------
                 //int i = Convert.ToInt32(dateTimePicker1.Value.ToString());
-                int i2 = Convert.ToInt32(ID_Ent_Bitacora.Text);
-                cn.InsertarBitacora(dateTimePicker1.Value.ToString(), Texto_Bitacora.Text, i2);
 
-                a++;
+                if (comboBox2.Text!= "" && comboBox3.Text != "" && comboBox4.Text !="")
+                {
+                    string Fecha = comboBox2.Text + "-";
+                    Fecha = Fecha + comboBox3.Text + "-";
+                    Fecha = Fecha + comboBox4.Text; 
+                    cn.InsertarBitacora(Fecha, Texto_Bitacora.Text, ID_Ent_Bitacora.Text);
+
+                    a++;
+
+                }
+
             }
         }
 
@@ -55,6 +63,16 @@ namespace PROYECTO1
             this.Hide();
             ModuloEntrenador m1 = new ModuloEntrenador();
             m1.Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

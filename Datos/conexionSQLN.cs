@@ -245,7 +245,7 @@ namespace Negocios
         * ---------------------->CONSULTAS POKEMON ENTRENADOR
         * 
         */
-        public int InsertarBitacora(string fecha, string descripcion, int id_entrenador_bitacora)
+        public int InsertarBitacora(string fecha, string descripcion, string id_entrenador_bitacora)
         {
             return cn.InsertarBitacora(fecha, descripcion, id_entrenador_bitacora);
         }

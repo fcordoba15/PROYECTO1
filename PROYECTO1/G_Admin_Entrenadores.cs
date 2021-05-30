@@ -17,19 +17,22 @@ namespace PROYECTO1
         public G_Admin_Entrenadores()
         {
             InitializeComponent();
+            //------MOSTRAR TABLA ENTRENADOR-----
             GestionEntrenadoresAdminDG.DataSource = cn.ConsultaEntrenadoresAdmin();
         }
 
 
 
-
+        //--MODIFICAR ENTRENADOR
         private void ModificarEntrenador_Click_1(object sender, EventArgs e)
         {
             this.Hide();
+            //LLAMAR VENTANA
             Modificar_Entrenador v1 = new Modificar_Entrenador();
             v1.Show();
         }
 
+        //---REGRESAR
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -37,9 +40,11 @@ namespace PROYECTO1
             m1.Show();
         }
 
+        //---ELIMINAR
         private void EliminarEntrenador_Click_1(object sender, EventArgs e)
         {
             this.Hide();
+            //---NUEVA VENTANA
             G_Admin_Entrenador_Eliminar v1 = new G_Admin_Entrenador_Eliminar();
             v1.Show();
         }

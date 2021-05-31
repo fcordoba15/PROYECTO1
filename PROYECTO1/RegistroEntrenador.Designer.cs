@@ -412,7 +412,6 @@ namespace PROYECTO1
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RegistroEntrenador";
             this.Text = "sd";
-            this.Load += new System.EventHandler(this.RegistroEntrenador_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

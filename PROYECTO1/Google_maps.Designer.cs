@@ -87,7 +87,6 @@ namespace PROYECTO1
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Ubicación";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // label2
             // 
@@ -141,7 +140,6 @@ namespace PROYECTO1
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(162, 132);
             this.dataGridView1.TabIndex = 9;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SeleccionarRegistro);
             // 
             // Username

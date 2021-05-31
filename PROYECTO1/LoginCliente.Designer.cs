@@ -106,7 +106,6 @@ namespace PROYECTO1
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LoginCliente";
             this.Text = "LoginCliente";
-            this.Load += new System.EventHandler(this.LoginCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

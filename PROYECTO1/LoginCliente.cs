@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Biblioteca de clases
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,7 @@ namespace PROYECTO1
     public partial class LoginCliente : Form
     {
 
-        conexionSQLN cn = new conexionSQLN();
+        conexionSQLN cn = new conexionSQLN(); //Llamar a la clase
 
         public LoginCliente()
         {
@@ -23,24 +24,20 @@ namespace PROYECTO1
 
         private void Entrar_Click(object sender, EventArgs e)
         {
-            if (cn.conSQL_cliente(usuario.Text, pass.Text) == usuario.Text)
+            if (cn.conSQL_cliente(usuario.Text, pass.Text) == usuario.Text) //Validar
             {
-                MessageBox.Show("Se inició sesión");
+                MessageBox.Show("Se inició sesión");//Mensaje
 
-                this.Hide();
+                this.Hide();//Ocultar ventana actual
 
-                ModuloCliente m1 = new ModuloCliente();
-                m1.Show();
+                ModuloCliente m1 = new ModuloCliente();//Crear ventana
+                m1.Show();// Mostrar ventana
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Error");//Mensaje
             }
         }
 
-        private void LoginCliente_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -217,7 +217,6 @@ namespace PROYECTO1
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GestionPokemonesEntrenador";
             this.Text = "Gestion Pokemones Entrenador";
-            this.Load += new System.EventHandler(this.GestionPokemonesEntrenador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PokemonesEntrenadorDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

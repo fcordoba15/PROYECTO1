@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Bibliotecas que se van a utilizar
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,15 +16,15 @@ namespace PROYECTO1
     {
         public EresAdmin()
         {
-            InitializeComponent();
+            InitializeComponent();  //Iniciar ventana
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            VentanaInicio v1 = new VentanaInicio();
-            this.Hide();
+            VentanaInicio v1 = new VentanaInicio(); //Crear ventana
+            this.Hide();  //Ocultar ventana actual
 
-            v1.Show();
+            v1.Show();  //Mostrar ventana
 
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Bibliotecas que se van a utilizar
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace Datos
          * ------------------------- CODIGO LOGIN, REGISTRO USUARIO Y ENTRENADORES
          * 
          */
+
+        //CODIGO DE LOGIN
         public string consultalogin_cliente(string usuario, string contrasena)
         {
             String dato;
@@ -49,6 +52,7 @@ namespace Datos
             }
         }
 
+        //CODIGO DE LOGIN
         public string consultalogin_entrenador(string usuario, string contrasena)
         {
             string dato;
@@ -77,6 +81,8 @@ namespace Datos
             }
         }
 
+
+        //CODIGO DE LOGIN
         public string consultalogin_administrador(string usuario, string contrasena)
         {
 
@@ -103,7 +109,7 @@ namespace Datos
             }
         }
 
-
+        //CODIGO DE REGISTRO
         public void Resgistar_cliente_usuario(string usuario, string contrasena, string llave)
         {
             try
@@ -130,6 +136,7 @@ namespace Datos
             }
         }
 
+        //CODIGO DE REGISTRO
         public void Resgistar_Cliente(string cedula, string nombre, string telefono, string correo, string sitio_web,
             string provincia, string canton, string distrito, string usuario)
         {
@@ -157,6 +164,7 @@ namespace Datos
             }
         }
 
+        //CODIGO DE REGISTRO
         public void Resgistar_entrenador_usuario(string usuario, string contrasena, string llave)
         {
             try
@@ -183,7 +191,7 @@ namespace Datos
             }
         }
 
-
+        //CODIGO DE REGISTRO
         public void Resgistar_entrenador_red_social(string red_social, string usuario_red, string id)
         {
             try
@@ -210,6 +218,8 @@ namespace Datos
             }
         }
 
+
+        //CODIGO DE REGISTRO
         public void Resgistar_Entrenador(string cedula, string nombre, string calificacion, string telefono, string correo, 
             string sitio_web, string provincia, string canton, string distrito, string usuario)
         {
@@ -234,7 +244,7 @@ namespace Datos
             }
         }
 
-
+        //CODIGO DE REGISTRO
         public void Resgistar_administrador_usuario(string usuario, string contrasena, string llave)
         {
             try
@@ -506,7 +516,6 @@ namespace Datos
                 con.Close();
                 MessageBox.Show("Error: " + ex.Message);
                 return flag;
-                con.Close();
 
             }
         }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Blibiotecas que se van a utilizar
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,18 +15,18 @@ namespace PROYECTO1
 {
     public partial class GestionMov : Form
     {
-        conexionSQLN cn = new conexionSQLN();
+        conexionSQLN cn = new conexionSQLN(); //Llamar a la clase
         public GestionMov()
         {
             InitializeComponent();
-            ConsultaMovDG.DataSource = cn.ConsultaDT();
+            ConsultaMovDG.DataSource = cn.ConsultaDT(); //Consultar datos
         }
 
         private void Regresar_Click(object sender, EventArgs e)
         {
-            ModuloEntrenador v1 = new ModuloEntrenador();
-            this.Hide();
-            v1.Show();            
+            ModuloEntrenador v1 = new ModuloEntrenador(); //Crear ventana
+            this.Hide(); //Ocultar ventana actual
+            v1.Show();             // Mostrar ventana
         }
 
         private void Nuevo_Click(object sender, EventArgs e)
@@ -38,31 +40,31 @@ namespace PROYECTO1
                 int validación_comilla = 0;
                 foreach (char c in textBox3.Text)
                 {
-                    if (c == p[0])
+                    if (c == p[0]) //Validar
                         validación_comilla++;
                 }
-                if (validación_comilla > 0)
+                if (validación_comilla > 0) //Validar
                 {
-                    MessageBox.Show("¡Error! El ID del movimiento no debe tener comillas simples");
+                    MessageBox.Show("¡Error! El ID del movimiento no debe tener comillas simples"); //Mensaje
                     break;
                 }
 
                 //------------- VALIDACIONES DE DATOS NUMERICOS -------------
                 if (textBox1.Text.All(char.IsDigit) == false)
                 {
-                    MessageBox.Show("¡Error! El ID del entrenador debe ser numérico");
+                    MessageBox.Show("¡Error! El ID del entrenador debe ser numérico"); //Mensaje
                     break;
                 }
-                if (textBox2.Text.All(char.IsDigit) == false)
+                if (textBox2.Text.All(char.IsDigit) == false) //Validar
                 {
-                    MessageBox.Show("¡Error! El ID del Pokemon debe ser numérico");
+                    MessageBox.Show("¡Error! El ID del Pokemon debe ser numérico"); //Mensaje
                     break;
                 }
 
                 //------------- REGISTRO EN LA BASE DE DATOS -------------
-                int i = Convert.ToInt32(textBox2.Text);
+                int i = Convert.ToInt32(textBox2.Text); //Validar
                 cn.InsertarMovimiento(textBox1.Text, i, textBox3.Text);
-                ConsultaMovDG.DataSource = cn.ConsultaDT();
+                ConsultaMovDG.DataSource = cn.ConsultaDT(); //Consultar datos
                 a++;
             }
         }
@@ -79,31 +81,31 @@ namespace PROYECTO1
                 int validación_comilla = 0;
                 foreach (char c in textBox3.Text)
                 {
-                    if (c == p[0])
+                    if (c == p[0]) //Validar
                         validación_comilla++;
                 }
-                if (validación_comilla > 0)
+                if (validación_comilla > 0) //Validar
                 {
-                    MessageBox.Show("¡Error! El ID del movimiento no debe tener comillas simples");
+                    MessageBox.Show("¡Error! El ID del movimiento no debe tener comillas simples"); //Mensaje
                     break;
                 }
 
                 //------------- VALIDACIONES DE DATOS NUMERICOS -------------
                 if (textBox1.Text.All(char.IsDigit) == false)
                 {
-                    MessageBox.Show("¡Error! El ID del entrenador debe ser numérico");
+                    MessageBox.Show("¡Error! El ID del entrenador debe ser numérico"); //Mensaje
                     break;
                 }
                 if (textBox2.Text.All(char.IsDigit) == false)
                 {
-                    MessageBox.Show("¡Error! El ID del Pokemon debe ser numérico");
+                    MessageBox.Show("¡Error! El ID del Pokemon debe ser numérico"); //Mensaje
                     break;
                 }
 
                 //------------- REGISTRO EN LA BASE DE DATOS -------------
                 int i = Convert.ToInt32(textBox2.Text);
                 cn.ModificarMovimiento(textBox1.Text, i, textBox3.Text);
-                ConsultaMovDG.DataSource = cn.ConsultaDT();
+                ConsultaMovDG.DataSource = cn.ConsultaDT(); //Consultar datos
                 a++;
             }
         }
@@ -113,12 +115,7 @@ namespace PROYECTO1
         {
            int i = Convert.ToInt32(textBox2.Text);
            cn.EliminarMovimiento(textBox1.Text, i, textBox3.Text);
-           ConsultaMovDG.DataSource = cn.ConsultaDT();
-
-        }
-
-        private void GestionMov_Load(object sender, EventArgs e)
-        {
+           ConsultaMovDG.DataSource = cn.ConsultaDT(); //Consultar datos
 
         }
     }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Bibliotecas que se van a utilizar
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,67 +16,44 @@ namespace PROYECTO1
 {
     public partial class ConsultaPokEnt : Form
     {
-        conexionSQLN cn = new conexionSQLN();
+        conexionSQLN cn = new conexionSQLN();  //Llamar a la clase
         public ConsultaPokEnt()
         {
             InitializeComponent();
-            ConsultaPokDG.DataSource = cn.ConsultaPokemonDT();
+            ConsultaPokDG.DataSource = cn.ConsultaPokemonDT();  //Hacer consulta 
         }
 
         private void Crear_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            G_Admi_Pokemon_Agregar m1 = new G_Admi_Pokemon_Agregar();
-            m1.Show();
+            this.Hide();      //Ocultar ventana actual
+            G_Admi_Pokemon_Agregar m1 = new G_Admi_Pokemon_Agregar();  // Crear ventana
+            m1.Show();  //Mostrar ventana
          
            
         }
 
         private void EliminarPokEnt_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            G_EliminarPokAdmin m1 = new G_EliminarPokAdmin();
-            m1.Show();
+            this.Hide();  //Ocultar ventana
+            G_EliminarPokAdmin m1 = new G_EliminarPokAdmin();  //Crear ventana
+            m1.Show();  // Mostrar ventana
 
         }
 
         private void ModificarPokEnt_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            G_Admi_Pokemon_Modificar  m1 = new G_Admi_Pokemon_Modificar();
-            m1.Show();
+            this.Hide();  // Ocultar ventana
+            G_Admi_Pokemon_Modificar  m1 = new G_Admi_Pokemon_Modificar();  // Crear ventana
+            m1.Show(); // Mostrar ventana
         }
 
         private void Regresar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ModuloAdministrador m1 = new ModuloAdministrador();
-            m1.Show();
+            this.Hide();  // Ocultar ventana
+            ModuloAdministrador m1 = new ModuloAdministrador(); // Crear ventana
+            m1.Show(); // Mostrar ventana
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-                   }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ConsultaPokDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void ConsultaPokEnt_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

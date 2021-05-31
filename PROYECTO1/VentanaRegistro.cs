@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Bibliotecas que se van a utilizar
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,34 +20,34 @@ namespace PROYECTO1
 
         private void Registrar_cliente_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Hide();//Ocultar ventana actual
 
-            RegistroCliente v1 = new RegistroCliente();
+            RegistroCliente v1 = new RegistroCliente();//Crear ventana
 
-            v1.Show();
+            v1.Show();// Mostrar ventana
         }
 
         private void Registrar_entrenador_Click(object sender, EventArgs e)
         {
-            RegistroEntrenador v1 = new RegistroEntrenador();
-            this.Hide();
-            v1.Show();
+            RegistroEntrenador v1 = new RegistroEntrenador();//Crear ventana
+            this.Hide();//Ocultar ventana actual
+            v1.Show();// Mostrar ventana
         }
 
         private void Registrar_administrador_Click(object sender, EventArgs e)
         {
-            LoginAdministrador2 v1 = new LoginAdministrador2();
+            LoginAdministrador2 v1 = new LoginAdministrador2();//Crear ventana
 
-            this.Hide();
+            this.Hide();//Ocultar ventana actual
 
-            v1.Show();
+            v1.Show();// Mostrar ventana
         }
 
         private void volver_Click(object sender, EventArgs e)
         {
-            VentanaInicio v1 = new VentanaInicio();
-            this.Hide();
-            v1.Show();
+            VentanaInicio v1 = new VentanaInicio();// Mostrar ventana
+            this.Hide();//Ocultar ventana actual
+            v1.Show();// Mostrar ventana
         }
     }
 }

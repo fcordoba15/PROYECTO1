@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Bibliotecas que se van a utilizar
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +15,11 @@ namespace PROYECTO1
 {
     public partial class G_Admin_Usuarios : Form
     {
-        conexionSQLN cn = new conexionSQLN();
+        conexionSQLN cn = new conexionSQLN(); //Llamar a la clase
         public G_Admin_Usuarios()
         {
             InitializeComponent();
-            AdminUsuariosDG.DataSource = cn.ConsultaUsuariosMADT();
+            AdminUsuariosDG.DataSource = cn.ConsultaUsuariosMADT(); //Consultar datos
             cn.cm_Usuarios(comboBox1);
         }
 
@@ -29,32 +31,32 @@ namespace PROYECTO1
             {
                 //------------- VALIDACIONES DE COMILLAS -------------
                 string p = "'";
-                int validación_comilla = 0;
+                int validación_comilla = 0; 
                 foreach (char c in txt_Usuario.Text)
                 {
-                    if (c == p[0])
+                    if (c == p[0]) //Validar
                         validación_comilla++;
                 }
                 foreach (char c in txt_Password.Text)
                 {
-                    if (c == p[0])
+                    if (c == p[0]) //Validar
                         validación_comilla++;
                 }
                 if (validación_comilla > 0)
                 {
-                    MessageBox.Show("¡Error! No debe ingresar información con comillas simples");
+                    MessageBox.Show("¡Error! No debe ingresar información con comillas simples"); //Mensaje
                     break;
                 }
 
                 //------------- REGISTRO EN LA BASE DE DATOS -------------
-                cn.InsertarUsuarioAdmin(txt_Usuario.Text, txt_Password.Text, combo_Rol.Text);
+                cn.InsertarUsuarioAdmin(txt_Usuario.Text, txt_Password.Text, combo_Rol.Text); //Insertar datos
                 AdminUsuariosDG.DataSource = cn.ConsultaUsuariosMADT();
                 
-                MessageBox.Show("¡Usuario creado!");
+                MessageBox.Show("¡Usuario creado!"); //Mensaje
                 
-                this.Hide();
-                ModuloAdministrador v1 = new ModuloAdministrador();
-                v1.Show();
+                this.Hide(); //Ocultar ventana actual
+                ModuloAdministrador v1 = new ModuloAdministrador(); //Crear ventana
+                v1.Show(); // Mostrar ventana
 
                 a++;
             }
@@ -72,29 +74,29 @@ namespace PROYECTO1
                 int validación_comilla = 0;
                 foreach (char c in txt_Usuario.Text)
                 {
-                    if (c == p[0])
+                    if (c == p[0]) //Validar
                         validación_comilla++;
                 }
                 foreach (char c in txt_Password.Text)
                 {
-                    if (c == p[0])
+                    if (c == p[0]) //Validar
                         validación_comilla++;
                 }
                 if (validación_comilla > 0)
                 {
-                    MessageBox.Show("¡Error! No debe ingresar información con comillas simples");
+                    MessageBox.Show("¡Error! No debe ingresar información con comillas simples"); //Mensaje
                     break;
                 }
 
                 //------------- REGISTRO EN LA BASE DE DATOS -------------
-                cn.ModificarUsuarioAdmin(txt_Usuario.Text, txt_Password.Text, combo_Rol.Text);
+                cn.ModificarUsuarioAdmin(txt_Usuario.Text, txt_Password.Text, combo_Rol.Text); //Modificar datos
                 AdminUsuariosDG.DataSource = cn.ConsultaUsuariosMADT();
                 
-                MessageBox.Show("¡Usuario modificado!");
+                MessageBox.Show("¡Usuario modificado!"); //Mensaje
                 
-                this.Hide();
-                ModuloAdministrador v1 = new ModuloAdministrador();
-                v1.Show();
+                this.Hide(); //Ocultar ventana actual
+                ModuloAdministrador v1 = new ModuloAdministrador(); //Crear ventana
+                v1.Show(); // Mostrar ventana
 
                 a++;
             }
@@ -103,32 +105,28 @@ namespace PROYECTO1
         private void EliminarUsuario_Click(object sender, EventArgs e)
         {
             cn.EliminarUsuarioAdmin(txt_Usuario.Text);
-            AdminUsuariosDG.DataSource = cn.ConsultaUsuariosMADT();
-            MessageBox.Show("¡Eliminado con éxito!");
-            this.Hide();
-            ModuloAdministrador v1 = new ModuloAdministrador();
-            v1.Show();
+            AdminUsuariosDG.DataSource = cn.ConsultaUsuariosMADT(); //Consultar datos
+            MessageBox.Show("¡Eliminado con éxito!"); //Mensaje
+            this.Hide(); //Ocultar ventana actual
+            ModuloAdministrador v1 = new ModuloAdministrador(); //Crear ventana
+            v1.Show(); // Mostrar ventana
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            ModuloAdministrador v4 = new ModuloAdministrador();
-            v4.Show();
-            this.Hide();
+            ModuloAdministrador v4 = new ModuloAdministrador(); //Crear ventana
+            v4.Show(); // Mostrar ventana
+            this.Hide(); //Ocultar ventana actual
         }
 
-        private void G_Admin_Usuarios_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBox1.SelectedIndex > 0)
+            if(comboBox1.SelectedIndex > 0) //Validar
             {
                 
 
                 //cn.Imagen_Mostrar(picPokemon, i);
-                string[] valores = cn.Info_usuarios(comboBox1.Text);
+                string[] valores = cn.Info_usuarios(comboBox1.Text); //Asignar valores
                 txt_Usuario.Text = valores[0];
                 txt_Password.Text = valores[2];
                 

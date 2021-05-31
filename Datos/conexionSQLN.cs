@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Bibliotecas que se van a utilizar
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

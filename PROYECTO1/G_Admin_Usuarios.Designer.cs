@@ -227,7 +227,6 @@ namespace PROYECTO1
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "G_Admin_Usuarios";
             this.Text = "G_Admin_Usuarios";
-            this.Load += new System.EventHandler(this.G_Admin_Usuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AdminUsuariosDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

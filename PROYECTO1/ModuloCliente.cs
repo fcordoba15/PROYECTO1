@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Bibliotecas que se van a utilizar
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,7 @@ namespace PROYECTO1
     public partial class ModuloCliente : Form
     {
 
-        conexionSQLN cn = new conexionSQLN();
+        conexionSQLN cn = new conexionSQLN();//Llamar a la clase
 
         public ModuloCliente()
         {
@@ -27,7 +28,7 @@ namespace PROYECTO1
 
         private void Actualizar_Click(object sender, EventArgs e)
         {
-            if (Elemento.Text == "Entrenadores")
+            if (Elemento.Text == "Entrenadores") //Validar
             {
                 Tipo_movimiento.Hide();
 
@@ -54,7 +55,7 @@ namespace PROYECTO1
                 label4.Show();
 
             }
-            else if (Elemento.Text == "Movimientos")
+            else if (Elemento.Text == "Movimientos")//Validar
             {
                 Ubicacion_entrenador.Hide();
 
@@ -78,7 +79,7 @@ namespace PROYECTO1
 
                 label5.Show();
             }
-            else if (Elemento.Text == "Pokémon")
+            else if (Elemento.Text == "Pokémon")//Validar
             {
                 Ubicacion_entrenador.Hide();
 
@@ -104,7 +105,7 @@ namespace PROYECTO1
 
                 label2.Show();
             }
-            else
+            else//Validar
             {
                 Ubicacion_entrenador.Text = "Todas";
 
@@ -143,33 +144,33 @@ namespace PROYECTO1
         private void Busqueda_Click(object sender, EventArgs e)
         {
             if (Elemento.Text == "Entrenadores") {
-                Ver_datos.DataSource = cn.Cliente_entrenador(Ubicacion_entrenador.Text,Nombre_entrenador.Text);
+                Ver_datos.DataSource = cn.Cliente_entrenador(Ubicacion_entrenador.Text,Nombre_entrenador.Text); //Ver datos
             }
 
             else if (Elemento.Text == "Movimientos") {
-                Ver_datos.DataSource = cn.Cliente_movimiento(Tipo_movimiento.Text);
+                Ver_datos.DataSource = cn.Cliente_movimiento(Tipo_movimiento.Text);//Ver datos
             }
 
 
             else if (Elemento.Text == "Pokémon") {
-                Ver_datos.DataSource = cn.Cliente_pokemon(Categoria_pokemon.Text, Tipo_pokemon.Text);
+                Ver_datos.DataSource = cn.Cliente_pokemon(Categoria_pokemon.Text, Tipo_pokemon.Text);//Ver datos
             }
 
             else {
-                MessageBox.Show("Debe seleccionar lo que quiere buscar");
+                MessageBox.Show("Debe seleccionar lo que quiere buscar");//Ver datos
             }                      
         }
 
         private void volver_Click(object sender, EventArgs e)
         {
-            VentanaRoles v1 = new VentanaRoles();
-            this.Hide();
-            v1.Show();
+            VentanaRoles v1 = new VentanaRoles();//Crear ventana
+            this.Hide();//Ocultar ventana actual
+            v1.Show();// Mostrar ventana
 
         }
 
         
-        private void PDF_Click(object sender, EventArgs e)
+        private void PDF_Click(object sender, EventArgs e) //Crear PDF
         {
             BaseFont fuente = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
             PdfPTable Tabla_PDF = new PdfPTable(Ver_datos.Columns.Count);
@@ -194,11 +195,11 @@ namespace PROYECTO1
                 }
             }
 
-            var Guardar_Archivo = new SaveFileDialog();
-            string nombre_archivo = DateTime.Now.ToString("dddd, dd MMMM yyyy HH-mm-ss");
+            var Guardar_Archivo = new SaveFileDialog(); //Guadar PDF
+            string nombre_archivo = DateTime.Now.ToString("dddd, dd MMMM yyyy HH-mm-ss"); //Formato de nombre
             Guardar_Archivo.FileName = nombre_archivo;
             Guardar_Archivo.DefaultExt = ".pdf";
-            if (Guardar_Archivo.ShowDialog() == DialogResult.OK)
+            if (Guardar_Archivo.ShowDialog() == DialogResult.OK)//Validar
             {
                 using (FileStream stream = new FileStream(Guardar_Archivo.FileName, FileMode.Create))
                 {
@@ -210,11 +211,6 @@ namespace PROYECTO1
                     stream.Close();
                 }
             }
-        }
-
-        private void ModuloCliente_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Bibliotecas que se van a utilizar
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,31 +21,31 @@ namespace PROYECTO1
 
         private void Cerrar_Click(object sender, EventArgs e)
         {
-            VentanaRoles v4 = new VentanaRoles();
-            v4.Show();
-            this.Hide();
+            VentanaRoles v4 = new VentanaRoles();//Crear ventana
+            v4.Show();// Mostrar ventana
+            this.Hide();//Ocultar ventana actual
         }
 
         private void movimientosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            GestionMov m1 = new GestionMov();
-            this.Hide();
-            m1.Show();
+            GestionMov m1 = new GestionMov();//Crear ventana
+            this.Hide();//Ocultar ventana actual
+            m1.Show();// Mostrar ventana
         }
 
         private void bitacora_Click(object sender, EventArgs e)
         {
-            BitacoraEntrenador m1 = new BitacoraEntrenador();
-            this.Hide();
-            m1.Show();
+            BitacoraEntrenador m1 = new BitacoraEntrenador();//Crear ventana
+            this.Hide();//Ocultar ventana actual
+            m1.Show();// Mostrar ventana
         }
 
         private void pokemonesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionPokemonesEntrenador m1 = new GestionPokemonesEntrenador();
-            this.Hide();
-            m1.Show();
+            GestionPokemonesEntrenador m1 = new GestionPokemonesEntrenador();//Crear ventana
+            this.Hide();//Ocultar ventana actual
+            m1.Show();// Mostrar ventana
         }
 
 

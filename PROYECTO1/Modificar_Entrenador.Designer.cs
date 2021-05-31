@@ -262,7 +262,6 @@ namespace PROYECTO1
             this.label2.Size = new System.Drawing.Size(296, 17);
             this.label2.TabIndex = 68;
             this.label2.Text = "____________________________________";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -365,7 +364,6 @@ namespace PROYECTO1
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Modificar_Entrenador";
-            this.Load += new System.EventHandler(this.Modificar_Entrenador_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

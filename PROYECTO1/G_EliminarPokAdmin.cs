@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Bliotecas que se van a utilizar
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace PROYECTO1
 {
     public partial class G_EliminarPokAdmin : Form
     {
-        conexionSQLN cn = new conexionSQLN();
+        conexionSQLN cn = new conexionSQLN(); //Llamar a la clase
 
         public G_EliminarPokAdmin()
         {
@@ -41,41 +42,27 @@ namespace PROYECTO1
 
 
 
-                cn.EliminarPokemonAdministrador(i);
-                MessageBox.Show("Pokemon Eliminado");
-                this.Hide();
-                ConsultaPokEnt v2 = new ConsultaPokEnt();
-                v2.Show();
-                                  
+                cn.EliminarPokemonAdministrador(i);   //Eliminar datos
+                MessageBox.Show("Pokemon Eliminado");  //Mensaje
+                this.Hide(); //Ocultar ventana actual
+                ConsultaPokEnt v2 = new ConsultaPokEnt(); //Crear ventana
+                v2.Show(); // Mostrar ventana
+
             }
             else
             {
-                MessageBox.Show("Ingrese un numero positivo");
+                MessageBox.Show("Ingrese un numero positivo"); //Mensaje
             }
 
             
         }
 
-        private void txt_EliminarPok_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ConsultaPokEnt m2 = new ConsultaPokEnt();
-            m2.Show();
-        }
-
-        private void G_EliminarPokAdmin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_EliminarPok_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            this.Hide(); //Ocultar ventana actual
+            ConsultaPokEnt m2 = new ConsultaPokEnt(); //Crear ventana
+            m2.Show(); // Mostrar ventana
         }
     }
 }

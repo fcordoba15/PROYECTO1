@@ -111,7 +111,6 @@ namespace PROYECTO1
             this.txt_EliminarPok.Name = "txt_EliminarPok";
             this.txt_EliminarPok.Size = new System.Drawing.Size(121, 21);
             this.txt_EliminarPok.TabIndex = 10;
-            this.txt_EliminarPok.SelectedIndexChanged += new System.EventHandler(this.txt_EliminarPok_SelectedIndexChanged);
             // 
             // G_EliminarPokAdmin
             // 
@@ -128,7 +127,6 @@ namespace PROYECTO1
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "G_EliminarPokAdmin";
             this.Text = "G_EliminarPokAdmin";
-            this.Load += new System.EventHandler(this.G_EliminarPokAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Fotografia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

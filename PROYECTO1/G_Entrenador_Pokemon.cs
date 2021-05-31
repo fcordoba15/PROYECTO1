@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Biblioteca que se van a utilizar
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +14,11 @@ namespace PROYECTO1
 {
     public partial class GestionPokemonesEntrenador : Form
     {
-        conexionSQLN cn = new conexionSQLN();
+        conexionSQLN cn = new conexionSQLN(); //Llamar a la clase
         public GestionPokemonesEntrenador()
         {
             InitializeComponent();
-            PokemonesEntrenadorDG.DataSource = cn.ConsultaPokemonesEntrenador();
+            PokemonesEntrenadorDG.DataSource = cn.ConsultaPokemonesEntrenador(); //Consultar datos
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -24,46 +26,46 @@ namespace PROYECTO1
             //int i = Convert.ToInt32(Estado.SelectedItem);
             int i2 = Convert.ToInt32(txt_id_pokemon_entrenador.Text);
             cn.InsertarPokemonEntrenador(txt_id_entrenador_pokemon.Text, i2, Estado.GetItemText(Estado.SelectedItem));
-            PokemonesEntrenadorDG.DataSource = cn.ConsultaPokemonesEntrenador();
-            ModuloEntrenador v1 = new ModuloEntrenador();
-            MessageBox.Show("¡Creado con éxito!");
-            this.Hide();
-            v1.Show();
+            PokemonesEntrenadorDG.DataSource = cn.ConsultaPokemonesEntrenador(); //Consultar datos
+            ModuloEntrenador v1 = new ModuloEntrenador(); //Crear ventana
+            MessageBox.Show("¡Creado con éxito!"); //Mensjae
+            this.Hide(); //Ocultar ventana actual
+            v1.Show(); // Mostrar ventana
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
+            try //Validar
             {
                 int i2 = Convert.ToInt32(txt_id_pokemon_entrenador.Text);
                 cn.ModificarPokemonEntrenador(txt_id_entrenador_pokemon.Text, i2, Estado.GetItemText(Estado.SelectedItem));
-                PokemonesEntrenadorDG.DataSource = cn.ConsultaPokemonesEntrenador();
-                MessageBox.Show("¡Modificado!");
-                ModuloEntrenador v1 = new ModuloEntrenador();
-                this.Hide();
-                v1.Show();
+                PokemonesEntrenadorDG.DataSource = cn.ConsultaPokemonesEntrenador(); //Consultar datos
+                MessageBox.Show("¡Modificado!"); //Mensaje
+                ModuloEntrenador v1 = new ModuloEntrenador(); //Crear ventana
+                this.Hide();//Ocultar ventana actual
+                v1.Show();// Mostrar ventana
             }
-            catch (Exception ex)
+            catch (Exception ex)//Validar
             {
 
-                MessageBox.Show("Error" + ex);
+                MessageBox.Show("Error" + ex);//Mensaje
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
-            try
+            try//Validar
             {
                 int i2 = Convert.ToInt32(txt_id_pokemon_entrenador.Text);
                 cn.EliminarPokemonEntrenador(txt_id_entrenador_pokemon.Text, i2);
-                PokemonesEntrenadorDG.DataSource = cn.ConsultaPokemonesEntrenador();
-                MessageBox.Show("¡Eliminado con éxito!");
-                ModuloEntrenador v1 = new ModuloEntrenador();
-                this.Hide();
-                v1.Show();
+                PokemonesEntrenadorDG.DataSource = cn.ConsultaPokemonesEntrenador();//Consultar datos
+                MessageBox.Show("¡Eliminado con éxito!");//Mensaje
+                ModuloEntrenador v1 = new ModuloEntrenador();//Crear ventana
+                this.Hide();//Ocultar ventana actual
+                v1.Show();// Mostrar ventana
             }
-            catch (Exception ex)
+            catch (Exception ex)//Validar
             {
                 MessageBox.Show("Error:"+ex);
 
@@ -71,16 +73,12 @@ namespace PROYECTO1
 
         }
 
-        private void GestionPokemonesEntrenador_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ModuloEntrenador v3 = new ModuloEntrenador();
-            v3.Show();
+            this.Hide();//Ocultar ventana actual
+            ModuloEntrenador v3 = new ModuloEntrenador();//Crear ventana
+            v3.Show();// Mostrar ventana 
         }
     }
 }

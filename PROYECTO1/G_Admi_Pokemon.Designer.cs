@@ -48,7 +48,6 @@ namespace PROYECTO1
             this.ConsultaPokDG.RowTemplate.Height = 33;
             this.ConsultaPokDG.Size = new System.Drawing.Size(686, 223);
             this.ConsultaPokDG.TabIndex = 0;
-            this.ConsultaPokDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ConsultaPokDG_CellContentClick);
             // 
             // Regresar
             // 
@@ -111,7 +110,6 @@ namespace PROYECTO1
             this.label1.Size = new System.Drawing.Size(198, 42);
             this.label1.TabIndex = 5;
             this.label1.Text = "POKEMON";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // ConsultaPokEnt
             // 
@@ -128,7 +126,6 @@ namespace PROYECTO1
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ConsultaPokEnt";
             this.Text = "Gestion Pokemon Administrador";
-            this.Load += new System.EventHandler(this.ConsultaPokEnt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaPokDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

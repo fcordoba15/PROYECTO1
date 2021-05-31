@@ -161,7 +161,6 @@ namespace PROYECTO1
             this.label4.Size = new System.Drawing.Size(34, 17);
             this.label4.TabIndex = 25;
             this.label4.Text = "Mes";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label8
             // 
@@ -171,7 +170,6 @@ namespace PROYECTO1
             this.label8.Size = new System.Drawing.Size(33, 17);
             this.label8.TabIndex = 26;
             this.label8.Text = "Año";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // comboBox1
             // 
@@ -249,15 +247,16 @@ namespace PROYECTO1
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29"});
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030"});
             this.comboBox4.Location = new System.Drawing.Point(376, 485);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(67, 24);

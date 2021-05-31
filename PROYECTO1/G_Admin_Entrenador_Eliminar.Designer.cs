@@ -112,7 +112,6 @@ namespace PROYECTO1
             this.Controls.Add(this.label1);
             this.Name = "G_Admin_Entrenador_Eliminar";
             this.Text = "G_Admin_Entrenador_Eliminar";
-            this.Load += new System.EventHandler(this.G_Admin_Entrenador_Eliminar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

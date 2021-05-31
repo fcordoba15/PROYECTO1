@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Biblioteca que se van a utilizar
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,12 +19,12 @@ namespace PROYECTO1
 {
     public partial class G_maps_Entrenador : Form
     {
-        conexionSQLN cn = new conexionSQLN();
+        conexionSQLN cn = new conexionSQLN(); //Llamar a la clase
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
         DataTable dt;
 
-        int filaSeleccionada = 0;
+        int filaSeleccionada = 0;  //Asignar datos iniciales
         double LatInicial = 20.96881328132813906;
         double LngInicial = -89.6250915527344;
         public G_maps_Entrenador()
@@ -110,38 +111,33 @@ namespace PROYECTO1
                 int validación_comilla = 0;
                 foreach (char c in Username.Text)
                 {
-                    if (c == p[0])
+                    if (c == p[0]) //Validar
                         validación_comilla++;
                 }
                 foreach (char c in txtUbicacion.Text)
                 {
-                    if (c == p[0])
+                    if (c == p[0])//Validar
                         validación_comilla++;
                 }
                 if (validación_comilla > 0)
                 {
-                    MessageBox.Show("¡Error! Los campos no deben tener comillas simples");
+                    MessageBox.Show("¡Error! Los campos no deben tener comillas simples");//Mensaje
                     break;
                 }
 
 
                 //------------- REGISTRO EN LA BASE DE DATOS -------------
                 dt.Rows.Add(txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);
-                cn.Registrar_GMap(Username.Text, txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);
+                cn.Registrar_GMap(Username.Text, txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);//Registrar
                 
-                MessageBox.Show("Se realizó el registro");
-               
-                this.Hide();
-                VentanaInicio v2 = new VentanaInicio();
-                v2.Show();
-                
+                MessageBox.Show("Se realizó el registro");//Mensaje
+
+                this.Hide();//Ocultar ventana actual
+                VentanaInicio v2 = new VentanaInicio();//Crear ventana
+                v2.Show();// Mostrar ventana
+
                 a++;
             }
-        }
-
-        private void G_maps_Entrenador_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

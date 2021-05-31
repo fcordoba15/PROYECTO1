@@ -73,7 +73,6 @@ namespace PROYECTO1
             this.label1.Size = new System.Drawing.Size(157, 22);
             this.label1.TabIndex = 6;
             this.label1.Text = "Nuevo Pokemon";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -161,7 +160,6 @@ namespace PROYECTO1
             this.label3.Size = new System.Drawing.Size(59, 18);
             this.label3.TabIndex = 20;
             this.label3.Text = "Nombre";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -306,7 +304,6 @@ namespace PROYECTO1
             this.picPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPokemon.TabIndex = 33;
             this.picPokemon.TabStop = false;
-            this.picPokemon.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button1
             // 
@@ -449,7 +446,6 @@ namespace PROYECTO1
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "G_Admi_Pokemon_Agregar";
             this.Text = "G_Admi_Pokemon_Agregar";
-            this.Load += new System.EventHandler(this.G_Admi_Pokemon_Agregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picPokemon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

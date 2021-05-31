@@ -268,7 +268,6 @@ namespace PROYECTO1
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TipoMovAdmin";
             this.Text = "Gestion de Movimientos";
-            this.Load += new System.EventHandler(this.G_Admin_Movimiento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AdminConsultaMovDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Bibliotecas que se van a utilizar
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,7 @@ namespace PROYECTO1
     public partial class RegistroAdministrador : Form
     {
 
-        conexionSQLN cn = new conexionSQLN();
+        conexionSQLN cn = new conexionSQLN();//Llamar a la clase
 
         public RegistroAdministrador()
         {
@@ -25,44 +26,44 @@ namespace PROYECTO1
         {
 
 
-            if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" )
+            if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "")//Validar
             {
-                MessageBox.Show("Ingrese todos los datos");
+                MessageBox.Show("Ingrese todos los datos");//Mensaje
             }
             else
             {
                 int a = 0;
-                while (a==0)
+                while (a==0)//Validar
                 {
                     //------------- VALIDACIONES DE COMILLAS -------------
                     string p = "'";
                     int validación_comilla = 0;
                     foreach (char c in textBox1.Text)
                     {
-                        if (c == p[0])
+                        if (c == p[0])//Validar
                             validación_comilla++;
                     }
                     foreach (char c in textBox2.Text)
                     {
-                        if (c == p[0])
+                        if (c == p[0])//Validar
                             validación_comilla++;
                     }
-                    if (validación_comilla > 0)
+                    if (validación_comilla > 0)//Validar
                     {
-                        MessageBox.Show("¡Error! Los campos no debe tener comillas simples");
+                        MessageBox.Show("¡Error! Los campos no debe tener comillas simples");//Mensaje
                         break;
                     }
 
                     //------------- VALIDACIONES DE DATOS NUMERICOS -------------
-                    if (textBox3.Text.All(char.IsDigit) == false)
+                    if (textBox3.Text.All(char.IsDigit) == false)//Validar
                     {
-                        MessageBox.Show("¡Error! La llave de encriptación debe ser numérica");
+                        MessageBox.Show("¡Error! La llave de encriptación debe ser numérica");//Mensaje
                         break;
                     }
-                    EresAdmin v1 = new EresAdmin();
+                    EresAdmin v1 = new EresAdmin();//Crear ventana
                     cn.Registrar_administradorUsuario(textBox1.Text, textBox2.Text, textBox3.Text);
-                    this.Hide();
-                    v1.Show();
+                    this.Hide();//Ocultar ventana actual
+                    v1.Show();// Mostrar ventana
                     a++;
                 }    
             }
@@ -71,13 +72,9 @@ namespace PROYECTO1
         private void volver_Click(object sender, EventArgs e)
         {
             VentanaRegistro v1 = new VentanaRegistro();
-            this.Hide();
-            v1.Show();
+            this.Hide();//Ocultar ventana actual
+            v1.Show();// Mostrar ventana
         }
 
-        private void RegistroAdministrador_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

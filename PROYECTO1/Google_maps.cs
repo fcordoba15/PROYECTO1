@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Bibliotecas que se van a utilizar
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,20 +24,13 @@ namespace PROYECTO1
         GMapOverlay markerOverlay;
         DataTable dt;
 
-        int filaSeleccionada = 0;
+        int filaSeleccionada = 0;  //Asignar valores iniciales
         double LatInicial = 20.96881328132813906;
         double LngInicial = -89.6250915527344;
 
         public Google_maps()
         {
             InitializeComponent();
-        }
-
-        
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void gMapControl1_Load(object sender, EventArgs e)
@@ -75,11 +69,6 @@ namespace PROYECTO1
 
             gMapControl1.Overlays.Add(markerOverlay);
             
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void SeleccionarRegistro(object sender, DataGridViewCellMouseEventArgs e)
@@ -122,7 +111,7 @@ namespace PROYECTO1
         private void guardar_Click(object sender, EventArgs e)
         {
 
-            if (Username.Text == "")
+            if (Username.Text == "") //Validar
             {
                 MessageBox.Show("Debe ingresar un usuario válido");
             }
@@ -137,30 +126,30 @@ namespace PROYECTO1
                     int validación_comilla = 0;
                     foreach (char c in Username.Text)
                     {
-                        if (c == p[0])
+                        if (c == p[0])//Validar
                             validación_comilla++;
                     }
                     foreach (char c in txtUbicacion.Text)
                     {
-                        if (c == p[0])
+                        if (c == p[0])//Validar
                             validación_comilla++;
                     }
-                    if (validación_comilla > 0)
+                    if (validación_comilla > 0)//Validar
                     {
-                        MessageBox.Show("¡Error! Los campos no deben tener comillas simples");
+                        MessageBox.Show("¡Error! Los campos no deben tener comillas simples");//Mensaje
                         break;
                     }
 
 
                     //------------- REGISTRO EN LA BASE DE DATOS -------------
                     dt.Rows.Add(txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);
-                    cn.Registrar_GMap(Username.Text, txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);
+                    cn.Registrar_GMap(Username.Text, txtUbicacion.Text, txtLatitud.Text, txtLongitud.Text);//Registrar
                     
-                    MessageBox.Show("Se realizó el registro");
-                    
-                    this.Hide();
-                    VentanaInicio v2 = new VentanaInicio();
-                    v2.Show();
+                    MessageBox.Show("Se realizó el registro");//Mensaje
+
+                    this.Hide();//Ocultar ventana actual
+                    VentanaInicio v2 = new VentanaInicio();//Crear ventana
+                    v2.Show();// Mostrar ventana
 
                     a++;
                 }

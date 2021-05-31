@@ -120,7 +120,6 @@ namespace PROYECTO1
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "G_Admin_Entrenadores";
             this.Text = "Gestion de Entrenadores";
-            this.Load += new System.EventHandler(this.G_Admin_Entrenadores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GestionEntrenadoresAdminDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

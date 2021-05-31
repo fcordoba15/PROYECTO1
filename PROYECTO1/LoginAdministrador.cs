@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Bibliotecas que se van a utilizar
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,7 @@ namespace PROYECTO1
     public partial class LoginAdministrador : Form
     {
 
-        conexionSQLN cn = new conexionSQLN();
+        conexionSQLN cn = new conexionSQLN(); //Llamar a la clase
 
         public LoginAdministrador()
         {
@@ -25,25 +26,20 @@ namespace PROYECTO1
         private void Entrar_Click(object sender, EventArgs e)
         {
 
-            if (cn.conSQL_administrador(usuario.Text, pass.Text) == usuario.Text)
+            if (cn.conSQL_administrador(usuario.Text, pass.Text) == usuario.Text) //Validar
             {
-                MessageBox.Show("Se inició sesión");
+                MessageBox.Show("Se inició sesión");//Mensaje
 
-                this.Hide();
-                ModuloAdministrador m1 = new ModuloAdministrador();
-                m1.Show();
+                this.Hide();//Ocultar ventana actual
+                ModuloAdministrador m1 = new ModuloAdministrador();//Crear ventana
+                m1.Show();// Mostrar ventana
 
 
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Error");//Validar
             }
-        }
-
-        private void LoginAdministrador_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

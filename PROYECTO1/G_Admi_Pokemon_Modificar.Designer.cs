@@ -96,7 +96,6 @@ namespace PROYECTO1
             this.picPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPokemon.TabIndex = 62;
             this.picPokemon.TabStop = false;
-            this.picPokemon.Click += new System.EventHandler(this.picPokemon_Click);
             // 
             // comboBox1
             // 
@@ -266,7 +265,6 @@ namespace PROYECTO1
             this.Ataque_Especial.Name = "Ataque_Especial";
             this.Ataque_Especial.Size = new System.Drawing.Size(63, 22);
             this.Ataque_Especial.TabIndex = 45;
-            this.Ataque_Especial.TextChanged += new System.EventHandler(this.Ataque_Especial_TextChanged);
             // 
             // Defensa
             // 
@@ -342,7 +340,6 @@ namespace PROYECTO1
             this.label15.Size = new System.Drawing.Size(83, 18);
             this.label15.TabIndex = 66;
             this.label15.Text = "ID Pokemon";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // ID_pokemon
             // 
@@ -475,7 +472,6 @@ namespace PROYECTO1
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "G_Admi_Pokemon_Modificar";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picPokemon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

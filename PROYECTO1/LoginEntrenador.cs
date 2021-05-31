@@ -1,4 +1,5 @@
-﻿using Negocios;
+﻿//Bibliotecas que se van a utilizar
+using Negocios;
 using System;
 using System.Windows.Forms;
 
@@ -9,7 +10,7 @@ namespace PROYECTO1
     {
 
 
-        conexionSQLN cn = new conexionSQLN();
+        conexionSQLN cn = new conexionSQLN();//Llamar a la clase
         public LoginEntrenador()
         {
             InitializeComponent();
@@ -17,26 +18,22 @@ namespace PROYECTO1
 
         private void Ingresar_Click(object sender, EventArgs e)
         {
-            if (cn.conSQL_entrenador(usuario.Text, pass.Text) == usuario.Text)
+            if (cn.conSQL_entrenador(usuario.Text, pass.Text) == usuario.Text)//Validar
             {
-                MessageBox.Show("Se inició sesión");
+                MessageBox.Show("Se inició sesión");//Mensaje
 
-                this.Hide();
+                this.Hide();//Ocultar ventana actual
 
-                ModuloEntrenador m1 = new ModuloEntrenador();
-                m1.Show();
+                ModuloEntrenador m1 = new ModuloEntrenador();//Crear ventana
+                m1.Show();// Mostrar ventana
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Error");//Mensaje
             }
 
 
         }
 
-        private void LoginEntrenador_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

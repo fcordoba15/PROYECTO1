@@ -121,7 +121,6 @@ namespace PROYECTO1
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LoginAdministrador2";
             this.Text = "LoginAdministrador2";
-            this.Load += new System.EventHandler(this.LoginAdministrador2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

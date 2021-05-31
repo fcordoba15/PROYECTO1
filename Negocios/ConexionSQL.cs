@@ -14,7 +14,7 @@ namespace Datos
 {
     public class ConexionSQL
     {
-        static string conexionstring = "server= localhost\\SQLEXPRESS01; database= Proyecto; integrated security= true; MultipleActiveResultSets= true"; //Cambiar server segun SQL
+        static string conexionstring = "server= LAPTOP-OC2ENCL7; database= Proyecto; integrated security= true; MultipleActiveResultSets= true"; //Cambiar server segun SQL
         //SURFACEPROPEDRO\\SQLEXPRESS     //localhost\\SQLEXPRESS01   FABY  ---  LAPTOP-OC2ENCL7 RAN
 
         SqlConnection con = new SqlConnection(conexionstring);
@@ -1176,15 +1176,15 @@ namespace Datos
             }
             else if (tipo != "Todos" && categoria == "Todas") 
             {
-                query = "SELECT id,nombre,,id_tipo,cod_tipo,total,ataque, defensa, salud,  ataque_especial ,defensa_especial, velocidad, generacion,legendario  FROM pokemon where id_tipo= '" + tipo + "';";
+                query = "SELECT id,nombre,id_tipo,cod_tipo,total,ataque, defensa, salud,  ataque_especial ,defensa_especial, velocidad, generacion,legendario  FROM pokemon where id_tipo= '" + tipo + "';";
             }
             else if (tipo == "Todos" && categoria != "Todas")
             {
-                query = "SELECT id,nombre,,id_tipo,cod_tipo,total,ataque, defensa, salud,  ataque_especial ,defensa_especial, velocidad,generacion,legendario FROM pokemon where cod_tipo= '" + categoria + "';";
+                query = "SELECT id,nombre,id_tipo,cod_tipo,total,ataque, defensa, salud,  ataque_especial ,defensa_especial, velocidad,generacion,legendario FROM pokemon where cod_tipo= '" + categoria + "';";
             }
             else
             {
-                query = "SELECT id,nombre,,id_tipo,cod_tipo,total,ataque, defensa, salud,  ataque_especial ,defensa_especial, velocidad,generacion,legendario  FROM pokemon where id_tipo= '" + tipo + "' and cod_tipo= '" + categoria + "';";
+                query = "SELECT id,nombre,id_tipo,cod_tipo,total,ataque, defensa, salud,  ataque_especial ,defensa_especial, velocidad,generacion,legendario  FROM pokemon where id_tipo= '" + tipo + "' and cod_tipo= '" + categoria + "';";
             }
 
             SqlCommand cmd = new SqlCommand(query, con);

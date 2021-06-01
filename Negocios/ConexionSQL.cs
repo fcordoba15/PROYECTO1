@@ -1230,11 +1230,11 @@ namespace Datos
             }
             else if (ubicacion!= "Todas" && nombre == "Todos")
             {
-                query = "SELECT  id_entrenador,nombre_entrenador,nombre_usuario,calificacion,telefono_entrenador, correo_electrónico,sitio_web,provincia,cantón,distrito,ubicación  FROM entrenador where ubicacion='" + ubicacion+"';";
+                query = "SELECT  id_entrenador,nombre_entrenador,nombre_usuario,calificacion,telefono_entrenador, correo_electrónico,sitio_web,provincia,cantón,distrito,ubicación  FROM entrenador where ubicación='" + ubicacion+"';";
             }
             else
             {
-                query = "SELECT  id_entrenador,nombre_entrenador,nombre_usuario,calificacion,telefono_entrenador, correo_electrónico,sitio_web,provincia,cantón,distrito,ubicación FROM entrenador where ubicacion = '" + ubicacion+"' and nombre_entrenador= '"+nombre+"';";
+                query = "SELECT  id_entrenador,nombre_entrenador,nombre_usuario,calificacion,telefono_entrenador, correo_electrónico,sitio_web,provincia,cantón,distrito,ubicación FROM entrenador where ubicación = '" + ubicacion+"' and nombre_entrenador= '"+nombre+"';";
             }
       
             SqlCommand cmd = new SqlCommand(query, con);

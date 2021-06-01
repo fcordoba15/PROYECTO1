@@ -16,6 +16,7 @@ namespace PROYECTO1
 {
     public partial class G_Admi_Pokemon_Modificar : Form
     {
+        int validar_foto = 0;
         conexionSQLN cn = new conexionSQLN(); //Llamar a la clase
         public G_Admi_Pokemon_Modificar()
         {
@@ -26,6 +27,7 @@ namespace PROYECTO1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            validar_foto++;
             OpenFileDialog fotografia = new OpenFileDialog();  //Seleccionar archivo
             DialogResult rs = fotografia.ShowDialog();
             if (rs == DialogResult.OK)
@@ -39,53 +41,60 @@ namespace PROYECTO1
         private void button2_Click(object sender, EventArgs e)
         {
             //--------------------------------- VALIDACIONES DE ESCRITURA EN CAMPOS ---------------------------------
-            int a = 0;
-            while (a == 0)
+            if (validar_foto > 0)
             {
-                //------------- VALIDACIONES DE COMILLAS -------------
-                string p = "'";
-                int validación_comilla = 0;
-                foreach (char c in ID_Tipo.Text)
+                int a = 0;
+                while (a == 0)
                 {
-                    if (c == p[0])          //Validar
-                        validación_comilla++;
-                }
-                foreach (char c in Codigo_Tipo.Text)
-                {
-                    if (c == p[0])          //Validar
-                        validación_comilla++;
-                }
-                foreach (char c in Nombre_Pokemon.Text)
-                {
-                    if (c == p[0])          //Validar
-                        validación_comilla++;
-                }
-                if (validación_comilla > 0)
-                {
-                    MessageBox.Show("¡Error! No debe ingresar información con comillas simples"); //Mensaje de error
-                    break;
-                }
+                    //------------- VALIDACIONES DE COMILLAS -------------
+                    string p = "'";
+                    int validación_comilla = 0;
+                    foreach (char c in ID_Tipo.Text)
+                    {
+                        if (c == p[0])          //Validar
+                            validación_comilla++;
+                    }
+                    foreach (char c in Codigo_Tipo.Text)
+                    {
+                        if (c == p[0])          //Validar
+                            validación_comilla++;
+                    }
+                    foreach (char c in Nombre_Pokemon.Text)
+                    {
+                        if (c == p[0])          //Validar
+                            validación_comilla++;
+                    }
+                    if (validación_comilla > 0)
+                    {
+                        MessageBox.Show("¡Error! No debe ingresar información con comillas simples"); //Mensaje de error
+                        break;
+                    }
 
-                //------------- REGISTRO EN LA BASE DE DATOS -------------
-                System.IO.MemoryStream ms = new System.IO.MemoryStream(); 
-                picPokemon.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                int i = Convert.ToInt32(ID_pokemon.Text);
-                
-                cn.ModificarPokemonAdministrador(i, Nombre_Pokemon.Text, ID_Tipo.Text, Codigo_Tipo.Text, Total.Text,
-                Salud.Text, Ataque.Text, Defensa.Text, Ataque_Especial.Text, Defensa_Especial.Text,
-                Velocidad.Text, Generacion.Text, comboBox1.Text, ms.GetBuffer()); //Ingresar datos 
-                
-                MessageBox.Show("Pokemon modificado correctamente"); //Mensaje 
-               
-                this.Hide();                            //Ocultar ventana
-                ConsultaPokEnt m2 = new ConsultaPokEnt(); //Crear ventana
-                m2.Show();       //Mostrar ventana
+                    //------------- REGISTRO EN LA BASE DE DATOS -------------
+                    System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                    picPokemon.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    int i = Convert.ToInt32(ID_pokemon.Text);
 
-                a++;
+                    cn.ModificarPokemonAdministrador(i, Nombre_Pokemon.Text, ID_Tipo.Text, Codigo_Tipo.Text, Total.Text,
+                    Salud.Text, Ataque.Text, Defensa.Text, Ataque_Especial.Text, Defensa_Especial.Text,
+                    Velocidad.Text, Generacion.Text, comboBox1.Text, ms.GetBuffer()); //Ingresar datos 
+
+                    MessageBox.Show("Pokemon modificado correctamente"); //Mensaje 
+
+                    this.Hide();                            //Ocultar ventana
+                    ConsultaPokEnt m2 = new ConsultaPokEnt(); //Crear ventana
+                    m2.Show();       //Mostrar ventana
+
+                    a++;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese una foto");
             }
         }
 
-        private void ID_pokemon_SelectedIndexChanged(object sender, EventArgs e) 
+    private void ID_pokemon_SelectedIndexChanged(object sender, EventArgs e) 
         { 
             if (ID_pokemon.SelectedIndex>0)   //Validar
             {

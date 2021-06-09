@@ -31,7 +31,6 @@ namespace Datos
             String dato;
             try
             {
-               
                 con.Open();
                 string query = "EXEC [LoginUsuario] '" + usuario + "', 'Cliente', '" + contrasena + "'";
 
